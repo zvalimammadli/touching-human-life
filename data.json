@@ -1,23 +1,14 @@
-{
-  "stories": [
-    {
-      "id": "edu-case",
-      "category": "Education rights",
-      "title": "Education Rights Case",
-      "description": "Access to education and equal opportunities",
-      "image": "education.jpg",
-      "video": "https://youtu.be/2hEShAKlh1s",
-      "problem": "A student faced limitations in accessing education.",
-      "action": "The Ombudsman raised the issue before the Constitutional Court.",
-      "result": "The decision improved access to education rights.",
-      "az": {
-        "category": "Təhsil hüquqları",
-        "title": "Təhsil hüquqları işi",
-        "description": "Təhsilə və bərabər imkanlara çıxış",
-        "problem": "Bir tələbə təhsilə çıxışda məhdudiyyətlərlə üzləşmişdi.",
-        "action": "Ombudsman məsələni Konstitusiya Məhkəməsi qarşısında qaldırmışdır.",
-        "result": "Qərar təhsil hüququna çıxışı yaxşılaşdırmışdır."
-      }
-    }
-  ]
-}
+[
+  {
+    "title": "Social Benefit Case",
+    "problem": "A single father could not receive social assistance.",
+    "solution": "Ombudsman applied to the Constitutional Court.",
+    "result": "Law was changed and the father received support."
+  },
+  {
+    "title": "Education Access",
+    "problem": "Child was denied access to education.",
+    "solution": "Legal complaint submitted.",
+    "result": "Child was enrolled successfully."
+  }
+]
