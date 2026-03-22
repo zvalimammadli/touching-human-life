@@ -149,7 +149,7 @@ function toggleLanguage() {
 
 async function loadStories() {
   try {
-    const response = await fetch("data.json");
+    const response = await fetch("./data.json");
     const data = await response.json();
     allStories = data;
     updateStories();
