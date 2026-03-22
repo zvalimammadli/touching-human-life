@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Touching Human Life</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-badge">T</div>
+      <div class="brand-text">
+        <h1>Touching Human Life</h1>
+        <p id="brand-subtitle">Legal stories in plain language</p>
+      </div>
+    </div>
+
+    <button id="langToggle" class="lang-btn">EN | AZ</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h2 id="hero-title">Legal stories that change lives</h2>
+        <p id="hero-text">
+          A digital platform that explains constitutional justice through real human stories,
+          showing the problem, the legal step, and the impact on people's lives.
+        </p>
+
+        <div class="tags">
+          <span id="tag1">Human-centered</span>
+          <span id="tag2">Simple language</span>
+          <span id="tag3">Video stories</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <h3 id="story-box-title">How each story is told</h3>
+
+        <div class="info-box">
+          <strong id="box-problem-title">Problem</strong>
+          <p id="box-problem-text">What was the issue affecting a person’s life?</p>
+        </div>
+
+        <div class="info-box">
+          <strong id="box-action-title">Action</strong>
+          <p id="box-action-text">What legal step was taken by the Ombudsman?</p>
+        </div>
+
+        <div class="info-box">
+          <strong id="box-result-title">Result</strong>
+          <p id="box-result-text">What changed in law, interpretation, or practice?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stories-section">
+      <div class="stories-header">
+        <h3 id="stories-title">Stories</h3>
+        <input id="searchInput" type="text" placeholder="Search stories..." />
+      </div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+        <button class="filter-btn" data-filter="Social rights" id="filter-social">Social rights</button>
+        <button class="filter-btn" data-filter="Justice" id="filter-justice">Justice</button>
+        <button class="filter-btn" data-filter="Child rights" id="filter-child">Child rights</button>
+      </div>
+
+      <div id="cardsContainer" class="cards-grid"></div>
+
+      <p id="emptyState" class="empty-state" style="display:none;">No stories found.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
