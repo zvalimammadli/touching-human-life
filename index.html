@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Touching Human Life</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -18,8 +19,12 @@
       font-family: Arial, Helvetica, sans-serif;
       color: #fff;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.8)),
+        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.82)),
         url('background.jpg') center/cover no-repeat fixed;
+    }
+
+    a {
+      color: inherit;
     }
 
     .site-header {
@@ -32,24 +37,25 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px 36px;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.34);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .header-left {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 30px;
       flex-wrap: wrap;
     }
 
     .logo {
       font-size: 20px;
       font-weight: 700;
-      color: #fff;
       text-decoration: none;
       white-space: nowrap;
+      letter-spacing: 0.2px;
     }
 
     .main-nav {
@@ -67,8 +73,9 @@
       cursor: pointer;
       font-size: 15px;
       font-weight: 600;
-      opacity: 0.9;
+      opacity: 0.88;
       transition: 0.25s ease;
+      padding: 0;
     }
 
     .main-nav a:hover,
@@ -76,6 +83,7 @@
     .main-nav a.active,
     .lang-switch button.active {
       opacity: 1;
+      transform: translateY(-1px);
     }
 
     .lang-switch {
@@ -89,15 +97,15 @@
     }
 
     .divider {
-      opacity: 0.5;
+      opacity: 0.45;
     }
 
     main {
-      padding-top: 88px;
+      padding-top: 86px;
     }
 
     section {
-      padding: 70px 24px;
+      padding: 72px 20px;
     }
 
     .hero {
@@ -107,17 +115,17 @@
     }
 
     .container {
-      max-width: 1100px;
-      margin: 0 auto;
       width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
     }
 
     .glass-box {
-      background: rgba(8, 8, 8, 0.42);
+      background: rgba(10, 10, 10, 0.42);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 24px;
       padding: 42px;
-      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
     }
 
     h1 {
@@ -131,13 +139,14 @@
       margin: 0 0 18px;
       font-size: clamp(28px, 4vw, 42px);
       line-height: 1.15;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
     }
 
     p {
       margin: 0 0 16px;
       font-size: 18px;
       line-height: 1.8;
-      color: #f2f2f2;
+      color: #f1f1f1;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
     }
 
@@ -154,9 +163,17 @@
       font-weight: 700;
     }
 
+    .story-note {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+      margin-top: 18px;
+    }
+
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
       margin-top: 24px;
     }
@@ -179,31 +196,42 @@
       aspect-ratio: 16 / 9;
       border: 0;
       display: block;
+      background: #000;
     }
 
     .card-content {
-      padding: 20px;
+      padding: 22px;
     }
 
     .card-title {
       margin: 0 0 10px;
       font-size: 22px;
       font-weight: 700;
+      line-height: 1.35;
     }
 
     .card-text {
-      margin: 0;
+      margin: 0 0 16px;
       font-size: 16px;
       line-height: 1.7;
       color: #ededed;
     }
 
-    .story-note {
-      padding: 24px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px dashed rgba(255, 255, 255, 0.18);
-      margin-top: 18px;
+    .detail-link {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 11px 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .detail-link:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
 
     .hidden {
@@ -240,6 +268,10 @@
 
       p {
         font-size: 16px;
+      }
+
+      .card-title {
+        font-size: 20px;
       }
     }
   </style>
@@ -357,13 +389,14 @@
                 <iframe
                   class="video-thumb"
                   src="https://www.youtube.com/embed/c_ly2NyXYOM"
-                  title="Hekayə video 1"
+                  title="Sosial müavinət / tək ata məsələsi"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
                 </iframe>
                 <div class="card-content">
-                  <h3 class="card-title">Hekayə 1</h3>
-                  <p class="card-text">Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış ilk hekayə əsaslı video.</p>
+                  <h3 class="card-title">Sosial müavinət / tək ata məsələsi</h3>
+                  <p class="card-text">Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</p>
+                  <a class="detail-link" href="case.html">Ətraflı məlumat</a>
                 </div>
               </div>
             </div>
@@ -376,13 +409,14 @@
                 <iframe
                   class="video-thumb"
                   src="https://www.youtube.com/embed/c_ly2NyXYOM"
-                  title="Story video 1"
+                  title="Social benefit / single father case"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
                 </iframe>
                 <div class="card-content">
-                  <h3 class="card-title">Story 1</h3>
-                  <p class="card-text">The first story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</p>
+                  <h3 class="card-title">Social benefit / single father case</h3>
+                  <p class="card-text">A story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</p>
+                  <a class="detail-link" href="case.html">Detailed information</a>
                 </div>
               </div>
             </div>
