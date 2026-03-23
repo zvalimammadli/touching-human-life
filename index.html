@@ -1,88 +1,530 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>İnsan həyatına toxunmaq</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İnsan həyatına toxunmaq</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-body {
-  margin:0;
-  font-family: Arial;
-  color:white;
-  background:
-    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.85)),
-    url('background.jpg') center/cover no-repeat fixed;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.header {
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
-  background:rgba(0,0,0,0.4);
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.78)),
+        url('background.jpg') center center / cover no-repeat fixed;
+      min-height: 100vh;
+    }
 
-.nav a {
-  margin-right:20px;
-  color:white;
-  text-decoration:none;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-section {
-  padding:120px 40px;
-}
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.container {
-  max-width:900px;
-}
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-h1 {
-  font-size:48px;
-}
+    .brand {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
 
-.btn {
-  display:inline-block;
-  margin-top:20px;
-  padding:10px 18px;
-  background:rgba(255,255,255,0.15);
-  border-radius:8px;
-}
-</style>
+    .right-side {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.92);
+      transition: 0.25s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #ffffff;
+      opacity: 1;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .lang-switch button {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .lang-switch button.active {
+      color: #ffffff;
+    }
+
+    main {
+      padding-top: 96px;
+    }
+
+    section {
+      padding: 48px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .panel {
+      background: rgba(8, 12, 20, 0.48);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero {
+      min-height: calc(100vh - 96px);
+      display: flex;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.84);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 74px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      margin-bottom: 22px;
+      line-height: 1.15;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.94);
+      margin-bottom: 16px;
+    }
+
+    .lead {
+      font-size: 22px;
+      max-width: 900px;
+    }
+
+    .tagline {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .qa-box {
+      margin: 24px 0;
+      padding: 22px 24px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .qa-box p {
+      margin-bottom: 10px;
+    }
+
+    .story-box {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 10px;
+    }
+
+    .video-card {
+      overflow: hidden;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+      background: #000;
+    }
+
+    .video-content {
+      padding: 22px;
+    }
+
+    .video-title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .video-text {
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 16px;
+    }
+
+    .video-link {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .video-link:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .header-inner {
+        padding: 14px 16px;
+      }
+
+      .right-side {
+        gap: 14px;
+      }
+
+      .main-nav {
+        gap: 14px;
+      }
+
+      .panel {
+        padding: 28px 22px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .lead,
+      .tagline {
+        font-size: 19px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .right-side {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .main-nav {
+        gap: 12px;
+      }
+
+      .brand {
+        font-size: 20px;
+      }
+
+      section {
+        padding: 34px 14px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand" data-az="İnsan həyatına toxunmaq" data-en="Touching Human Life">
+        İnsan həyatına toxunmaq
+      </div>
 
-<div class="header">
-  <div>İnsan həyatına toxunmaq</div>
-  <div class="nav">
-    <a href="index.html">Ana səhifə</a>
-    <a href="#about">Haqqında</a>
-    <a href="stories.html">Hekayələr</a>
-  </div>
-</div>
+      <div class="right-side">
+        <nav class="main-nav">
+          <a href="#home" class="nav-link active" data-az="Ana səhifə" data-en="Home">Ana səhifə</a>
+          <a href="#about" class="nav-link" data-az="Haqqında" data-en="About">Haqqında</a>
+          <a href="#stories" class="nav-link" data-az="Hekayələr" data-en="Stories">Hekayələr</a>
+          <a href="#videos" class="nav-link" data-az="Videolar" data-en="Videos">Videolar</a>
+        </nav>
 
-<section>
-<div class="container">
-<h1>İnsan həyatına toxunmaq</h1>
+        <div class="lang-switch">
+          <button id="btnAz" class="active" type="button">AZ</button>
+          <span>/</span>
+          <button id="btnEn" type="button">ENG</button>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<p>Hüquqi qərarları sadə və anlaşıqlı dildə, hekayələr vasitəsilə təqdim edən platforma.</p>
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="panel">
+          <div class="lang-az">
+            <span class="eyebrow">Hüquqi hekayələr sadə dildə</span>
+            <h1>İnsan həyatına toxunmaq</h1>
+            <p class="lead">“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə və anlaşıqlı dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
+            <p class="tagline">Bir qayda dəyişəndə, bir həyat dəyişir.</p>
+          </div>
 
-<a href="stories.html" class="btn">Hekayələrə bax</a>
-</div>
-</section>
+          <div class="lang-en hidden">
+            <span class="eyebrow">Legal stories in simple language</span>
+            <h1>Touching Human Life</h1>
+            <p class="lead">“Touching Human Life” is a platform that presents legal decisions to people in a simpler and more understandable way through stories.</p>
+            <p class="tagline">When one rule changes, one life changes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="about">
-<div class="container">
-<h2>Haqqında</h2>
+    <section id="about">
+      <div class="container">
+        <div class="panel">
+          <div class="lang-az">
+            <h2>Haqqında</h2>
+            <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə və anlaşıqlı dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
+            <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktların tətbiqi nəticəsində şəxsin hüquqları pozulduqda, Müvəkkil Azərbaycan Respublikasının Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.</p>
+            <p>Müvəkkilin müraciətləri əsasında Konstitusiya Məhkəməsi tərəfindən baxılan hər bir işin arxasında real insan hekayəsi dayanır.</p>
+            <p>Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar təqdim olunur. Bu videolarda qəbul edilmiş qərarların insanların həyatında yaratdığı dəyişikliklər sadə və aydın şəkildə izah edilir.</p>
 
-<p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, şəxsin hüquqları pozulduqda Müvəkkil Konstitusiya Məhkəməsinə müraciət edə bilər.</p>
+            <div class="qa-box">
+              <p><strong>Hər bir hekayə üç əsas suala cavab verir:</strong></p>
+              <p>• Problem nə idi?</p>
+              <p>• Hansı addım atıldı?</p>
+              <p>• İnsanların həyatında nə dəyişdi?</p>
+            </div>
 
-<p>Bu platforma həmin müraciətlər əsasında hazırlanmış hekayələri sadə formada təqdim edir.</p>
-</div>
-</section>
+            <p>Məqsədimiz mürəkkəb hüquqi prosesləri sadə və anlaşıqlı formada izah etməkdir.</p>
+            <p><strong>Bir qayda dəyişəndə, bir həyat dəyişir.</strong></p>
+          </div>
 
+          <div class="lang-en hidden">
+            <h2>About</h2>
+            <p>“Touching Human Life” is a platform that presents legal decisions to people in a simpler and more understandable way through stories.</p>
+            <p>Under the Constitutional Law of the Republic of Azerbaijan on the Commissioner for Human Rights (Ombudsman), where a person’s rights are violated as a result of the application of normative legal acts in force, the Ombudsman may apply to the Constitutional Court of the Republic of Azerbaijan with a request.</p>
+            <p>Behind every case examined by the Constitutional Court on the basis of the Ombudsman’s applications, there is a real human story.</p>
+            <p>Through this platform, short story-based videos prepared on the basis of applications submitted by the Ombudsman to the Constitutional Court are presented. These videos explain in a simple and clear way the changes created in people’s lives by the decisions adopted.</p>
+
+            <div class="qa-box">
+              <p><strong>Each story answers three key questions:</strong></p>
+              <p>• What was the problem?</p>
+              <p>• What step was taken?</p>
+              <p>• What changed in people’s lives?</p>
+            </div>
+
+            <p>Our aim is to explain complex legal processes in a simple and understandable form.</p>
+            <p><strong>When one rule changes, one life changes.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stories">
+      <div class="container">
+        <div class="panel">
+          <div class="lang-az">
+            <h2>Hekayələr</h2>
+            <div class="story-box">
+              <p><strong>Təhsil hüququnun təmin edilməsi</strong></p>
+              <p>Bu bölmədə Ombudsmanın müraciətləri əsasında Konstitusiya Məhkəməsində baxılmış işlər sadə, anlaşıqlı və insan hekayəsinə yaxın dildə təqdim olunacaq.</p>
+            </div>
+          </div>
+
+          <div class="lang-en hidden">
+            <h2>Stories</h2>
+            <div class="story-box">
+              <p><strong>Ensuring the Right to Education</strong></p>
+              <p>In this section, cases examined by the Constitutional Court on the basis of the Ombudsman’s applications will be presented in simple, understandable language centered on human stories.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos">
+      <div class="container">
+        <div class="panel">
+          <div class="lang-az">
+            <h2>Videolar</h2>
+            <div class="video-grid">
+              <div class="video-card">
+                <iframe
+                  class="video-frame"
+                  src="https://www.youtube.com/embed/c_ly2NyXYOM"
+                  title="Təhsil hüququnun təmin edilməsi"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+
+                <div class="video-content">
+                  <div class="video-title">Təhsil hüququnun təmin edilməsi</div>
+                  <div class="video-text">Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</div>
+                  <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank" rel="noopener noreferrer">YouTube-da aç</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lang-en hidden">
+            <h2>Videos</h2>
+            <div class="video-grid">
+              <div class="video-card">
+                <iframe
+                  class="video-frame"
+                  src="https://www.youtube.com/embed/c_ly2NyXYOM"
+                  title="Ensuring the Right to Education"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+
+                <div class="video-content">
+                  <div class="video-title">Ensuring the Right to Education</div>
+                  <div class="video-text">A story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</div>
+                  <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const btnAz = document.getElementById("btnAz");
+    const btnEn = document.getElementById("btnEn");
+    const azBlocks = document.querySelectorAll(".lang-az");
+    const enBlocks = document.querySelectorAll(".lang-en");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("main section");
+    const translatable = document.querySelectorAll("[data-az][data-en]");
+
+    function setLanguage(lang) {
+      if (lang === "en") {
+        azBlocks.forEach(el => el.classList.add("hidden"));
+        enBlocks.forEach(el => el.classList.remove("hidden"));
+        translatable.forEach(el => el.textContent = el.dataset.en);
+        btnAz.classList.remove("active");
+        btnEn.classList.add("active");
+        document.documentElement.lang = "en";
+      } else {
+        enBlocks.forEach(el => el.classList.add("hidden"));
+        azBlocks.forEach(el => el.classList.remove("hidden"));
+        translatable.forEach(el => el.textContent = el.dataset.az);
+        btnEn.classList.remove("active");
+        btnAz.classList.add("active");
+        document.documentElement.lang = "az";
+      }
+      localStorage.setItem("siteLanguage", lang);
+    }
+
+    btnAz.addEventListener("click", () => setLanguage("az"));
+    btnEn.addEventListener("click", () => setLanguage("en"));
+
+    const savedLanguage = localStorage.getItem("siteLanguage") || "az";
+    setLanguage(savedLanguage);
+
+    window.addEventListener("scroll", () => {
+      let current = "home";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 130;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
