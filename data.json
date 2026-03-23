@@ -1,14 +1,26 @@
 [
   {
-    "title": "Social Benefit Case",
-    "problem": "A single father could not receive social assistance.",
-    "solution": "Ombudsman applied to the Constitutional Court.",
-    "result": "Law was changed and the father received support."
+    "title": "Sosial müavinət məsələsi",
+    "category": "Sosial hüquqlar",
+    "problem": "Tək ata sosial müavinət almaqda çətinliklə üzləşmişdi.",
+    "solution": "Ombudsman məsələni araşdıraraq Konstitusiya Məhkəməsinə müraciət etmişdi.",
+    "result": "Qərardan sonra hüquqi yanaşma dəqiqləşdi və hüquqların təmininə əlavə imkan yarandı.",
+    "link": ""
   },
   {
-    "title": "Education Access",
-    "problem": "Child was denied access to education.",
-    "solution": "Legal complaint submitted.",
-    "result": "Child was enrolled successfully."
+    "title": "Təhsilə çıxış məsələsi",
+    "category": "Uşaq hüquqları",
+    "problem": "Bir uşağın təhsilə çıxışında hüquqi maneə yaranmışdı.",
+    "solution": "Məsələ hüquqi müstəvidə qaldırıldı və aidiyyəti orqanlara təqdim olundu.",
+    "result": "Uşağın təhsilə çıxış hüququnun müdafiəsi istiqamətində müsbət dəyişiklik baş verdi.",
+    "link": ""
+  },
+  {
+    "title": "Məhkəməyə müraciət hüququ",
+    "category": "Ədalət mühakiməsi",
+    "problem": "Şəxsin müdafiə vasitələrindən effektiv istifadə imkanları məhdudlaşmışdı.",
+    "solution": "Normativ hüquqi baza üzrə məsələ Konstitusiya nəzarətinə çıxarıldı.",
+    "result": "Hüquqi təminatların tətbiqində daha aydın yanaşma formalaşdı.",
+    "link": ""
   }
 ]
