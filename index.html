@@ -290,7 +290,7 @@
 </head>
 <body>
   <header class="header">
-    <div class="brand">İnsan həyatına toxunmaq</div>
+    <div class="brand" data-az="İnsan həyatına toxunmaq" data-en="Touching Human Life">İnsan həyatına toxunmaq</div>
 
     <div style="display:flex; align-items:center; flex-wrap:wrap; gap:14px;">
       <nav class="nav">
@@ -412,13 +412,7 @@
             </div>
           </div>
 
-          <div class="lang lang-en hidden">
-            <h2>Stories</h2>
-            <div class="story-box">
-              <p><strong>Ensuring the Right to Education</strong></p>
-              <p>In this section, cases examined by the Constitutional Court on the basis of the Ombudsman’s applications will be presented in simple, understandable language centered on human stories.</p>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -476,9 +470,13 @@
     const azBlocks = document.querySelectorAll('.lang-az');
     const enBlocks = document.querySelectorAll('.lang-en');
     const navLinks = document.querySelectorAll('.nav-link');
+    const translatable = document.querySelectorAll('[data-az][data-en]');
     const sections = document.querySelectorAll('main section');
 
     function setLanguage(lang) {
+      translatable.forEach(el => {
+        el.textContent = lang === 'en' ? el.dataset.en : el.dataset.az;
+      });
       if (lang === 'en') {
         azBlocks.forEach(el => el.classList.add('hidden'));
         enBlocks.forEach(el => el.classList.remove('hidden'));
