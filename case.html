@@ -3,250 +3,329 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sosial müavinət / tək ata məsələsi</title>
+  <title>Təhsil hüququnun təmin edilməsi</title>
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: #fff;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.84)),
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.80)),
         url('background.jpg') center/cover no-repeat fixed;
-    }
-
-    .page {
       min-height: 100vh;
-      padding: 40px 20px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.45);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 980px;
-      background: rgba(10, 10, 10, 0.45);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 40px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
-    }
-
-    .topbar {
-      display: flex;
       justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .top-actions {
+      display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
     .back-link,
-    .lang-switch button {
+    .action-link {
       display: inline-block;
-      text-decoration: none;
-      color: #fff;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.14);
       padding: 10px 16px;
-      border-radius: 12px;
-      font-weight: 600;
-      cursor: pointer;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+      font-weight: 700;
     }
 
     .lang-switch {
       display: flex;
       align-items: center;
       gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
     .lang-switch button {
       background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.75);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
     }
 
     .lang-switch button.active {
-      background: rgba(255,255,255,0.12);
+      color: #fff;
+    }
+
+    main {
+      padding: 34px 18px 50px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .panel {
+      background: rgba(8, 12, 18, 0.46);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 16px 50px rgba(0,0,0,0.25);
     }
 
     h1 {
-      margin: 0 0 18px;
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.15;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.1;
+      margin-bottom: 18px;
     }
 
     h2 {
-      margin: 28px 0 12px;
-      font-size: 24px;
+      font-size: 26px;
+      margin-bottom: 16px;
     }
 
     p {
-      margin: 0 0 16px;
       font-size: 18px;
       line-height: 1.8;
-      color: #f1f1f1;
+      color: rgba(255,255,255,0.94);
+      margin-bottom: 16px;
     }
 
-    .video-box {
-      margin: 26px 0 10px;
-      border-radius: 20px;
+    .lead {
+      font-size: 21px;
+    }
+
+    .video-wrap {
+      margin: 28px 0 34px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
     }
 
-    iframe {
+    .video-frame {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16/9;
       border: 0;
       display: block;
+      background: #000;
     }
 
-    .section-box {
-      margin-top: 22px;
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin: 26px 0 10px;
+    }
+
+    .info-box {
       padding: 22px;
       border-radius: 18px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.08);
     }
 
+    .info-box h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
+      font-size: 16px;
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
     .hidden {
       display: none;
     }
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 24px;
+    @media (max-width: 800px) {
+      .panel {
+        padding: 28px 22px;
       }
 
       p {
         font-size: 16px;
       }
+
+      .lead {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="container">
-      <div class="topbar">
-        <a href="index.html#videos" class="back-link">← Geri qayıt</a>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand" data-az="İnsan həyatına toxunmaq" data-en="Touching Human Life">
+        İnsan həyatına toxunmaq
+      </div>
+
+      <div class="top-actions">
+        <a class="back-link" href="index.html" data-az="← Ana səhifəyə qayıt" data-en="← Back to home">← Ana səhifəyə qayıt</a>
 
         <div class="lang-switch">
-          <button id="azBtn" class="active">AZ</button>
-          <button id="enBtn">ENG</button>
-        </div>
-      </div>
-
-      <div class="lang lang-az">
-        <h1>Sosial müavinət / tək ata məsələsi</h1>
-
-        <p>
-          Bu iş sosial təminat və ailə münasibətləri sahəsində hüquqi tənzimləmənin insanların gündəlik həyatına necə təsir etdiyini göstərən nümunələrdəndir.
-        </p>
-
-        <div class="video-box">
-          <iframe
-            src="https://www.youtube.com/embed/c_ly2NyXYOM"
-            title="Sosial müavinət / tək ata məsələsi"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <div class="section-box">
-          <h2>Problem nə idi?</h2>
-          <p>
-            Mövcud hüquqi tənzimləmə nəticəsində bəzi hallarda uşağı təkbaşına böyüdən ataların sosial təminat imkanlarına çıxışında çətinlik yaranırdı. Bu isə ailənin sosial müdafiəsinə və uşağın rifahına birbaşa təsir göstərirdi.
-          </p>
-        </div>
-
-        <div class="section-box">
-          <h2>Hansı addım atıldı?</h2>
-          <p>
-            Ombudsman məsələni insan hüquqları baxımından qiymətləndirərək Konstitusiya Məhkəməsinə sorğu ilə müraciət etdi. Məqsəd hüquqi tənzimləmənin Konstitusiyada təsbit olunmuş bərabərlik, sosial müdafiə və ədalət prinsiplərinə uyğunluğunu araşdırmaq idi.
-          </p>
-        </div>
-
-        <div class="section-box">
-          <h2>İnsanların həyatında nə dəyişdi?</h2>
-          <p>
-            Qərar nəticəsində mövcud qaydaların insanların həyatına təsiri daha aydın qiymətləndirildi və sosial təminat məsələlərində daha ədalətli yanaşmanın tətbiqinə hüquqi zəmin yarandı. Beləliklə, hüquqi dəyişikliklərin real insan həyatına necə toxunduğu daha görünən oldu.
-          </p>
-        </div>
-      </div>
-
-      <div class="lang lang-en hidden">
-        <h1>Social benefit / single father case</h1>
-
-        <p>
-          This case is an example of how legal regulation in the field of social protection and family relations can directly affect people’s daily lives.
-        </p>
-
-        <div class="video-box">
-          <iframe
-            src="https://www.youtube.com/embed/c_ly2NyXYOM"
-            title="Social benefit / single father case"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <div class="section-box">
-          <h2>What was the problem?</h2>
-          <p>
-            Under the existing legal regulation, in some cases fathers raising children alone faced difficulties in accessing social protection opportunities. This directly affected the social protection of the family and the well-being of the child.
-          </p>
-        </div>
-
-        <div class="section-box">
-          <h2>What step was taken?</h2>
-          <p>
-            The Ombudsman assessed the matter from a human rights perspective and applied to the Constitutional Court. The aim was to examine whether the legal regulation was compatible with the constitutional principles of equality, social protection and justice.
-          </p>
-        </div>
-
-        <div class="section-box">
-          <h2>What changed in people’s lives?</h2>
-          <p>
-            As a result of the decision, the effect of the existing rules on people’s lives was assessed more clearly, and a stronger legal basis emerged for a fairer approach in matters of social protection. This made it more visible how a legal change can touch a real human life.
-          </p>
+          <button id="btnAz" class="active" type="button">AZ</button>
+          <span>/</span>
+          <button id="btnEn" type="button">ENG</button>
         </div>
       </div>
     </div>
-  </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="panel">
+        <div class="lang-az">
+          <h1>Təhsil hüququnun təmin edilməsi</h1>
+          <p class="lead">Bu səhifədə Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış video, qısa izah və rəsmi qərara keçid təqdim olunur.</p>
+
+          <div class="video-wrap">
+            <iframe
+              class="video-frame"
+              src="https://www.youtube.com/embed/c_ly2NyXYOM"
+              title="Təhsil hüququnun təmin edilməsi"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-box">
+              <h3>Problem nə idi?</h3>
+              <p>Təhsil hüququnun təmin edilməsi ilə bağlı hüquqi məsələ mövcud olmuş və bu məsələ Konstitusiya Məhkəməsinin baxışına çıxarılmışdır.</p>
+            </div>
+
+            <div class="info-box">
+              <h3>Hansı addım atıldı?</h3>
+              <p>Ombudsman hüquqların qorunması məqsədilə Konstitusiya Məhkəməsinə sorğu ilə müraciət etmişdir.</p>
+            </div>
+
+            <div class="info-box">
+              <h3>Nə dəyişdi?</h3>
+              <p>Qərar nəticəsində təhsil hüququnun daha aydın və effektiv şəkildə təmin olunmasına hüquqi töhfə verilmişdir.</p>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <a class="action-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank" rel="noopener noreferrer">YouTube-da aç</a>
+            <a class="action-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank" rel="noopener noreferrer">Konstitusiya Məhkəməsinin qərarı</a>
+          </div>
+        </div>
+
+        <div class="lang-en hidden">
+          <h1>Ensuring the Right to Education</h1>
+          <p class="lead">This page presents the video prepared on the basis of the Ombudsman’s application to the Constitutional Court, together with a short explanation and a link to the official decision.</p>
+
+          <div class="video-wrap">
+            <iframe
+              class="video-frame"
+              src="https://www.youtube.com/embed/c_ly2NyXYOM"
+              title="Ensuring the Right to Education"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-box">
+              <h3>What was the problem?</h3>
+              <p>A legal issue concerning the protection of the right to education arose and was brought before the Constitutional Court.</p>
+            </div>
+
+            <div class="info-box">
+              <h3>What step was taken?</h3>
+              <p>The Ombudsman applied to the Constitutional Court in order to protect the relevant rights.</p>
+            </div>
+
+            <div class="info-box">
+              <h3>What changed?</h3>
+              <p>The decision contributed to a clearer and more effective protection of the right to education.</p>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <a class="action-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+            <a class="action-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank" rel="noopener noreferrer">Constitutional Court decision</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <script>
-    const azBtn = document.getElementById('azBtn');
-    const enBtn = document.getElementById('enBtn');
+    const btnAz = document.getElementById('btnAz');
+    const btnEn = document.getElementById('btnEn');
     const azBlocks = document.querySelectorAll('.lang-az');
     const enBlocks = document.querySelectorAll('.lang-en');
+    const translateItems = document.querySelectorAll('[data-az][data-en]');
 
     function setLanguage(lang) {
       if (lang === 'en') {
         azBlocks.forEach(el => el.classList.add('hidden'));
         enBlocks.forEach(el => el.classList.remove('hidden'));
-        azBtn.classList.remove('active');
-        enBtn.classList.add('active');
+        translateItems.forEach(el => el.textContent = el.dataset.en);
+        btnAz.classList.remove('active');
+        btnEn.classList.add('active');
         document.documentElement.lang = 'en';
       } else {
         enBlocks.forEach(el => el.classList.add('hidden'));
         azBlocks.forEach(el => el.classList.remove('hidden'));
-        enBtn.classList.remove('active');
-        azBtn.classList.add('active');
+        translateItems.forEach(el => el.textContent = el.dataset.az);
+        btnEn.classList.remove('active');
+        btnAz.classList.add('active');
         document.documentElement.lang = 'az';
       }
-
-      localStorage.setItem('caseLang', lang);
+      localStorage.setItem('siteLanguage', lang);
     }
 
-    azBtn.addEventListener('click', () => setLanguage('az'));
-    enBtn.addEventListener('click', () => setLanguage('en'));
+    btnAz.addEventListener('click', () => setLanguage('az'));
+    btnEn.addEventListener('click', () => setLanguage('en'));
 
-    const savedLang = localStorage.getItem('caseLang') || 'az';
-    setLanguage(savedLang);
+    setLanguage(localStorage.getItem('siteLanguage') || 'az');
   </script>
 </body>
 </html>
