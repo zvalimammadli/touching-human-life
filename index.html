@@ -19,7 +19,7 @@
       font-family: Arial, Helvetica, sans-serif;
       color: #ffffff;
       background:
-        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.82)),
+        linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.84)),
         url('background.jpg') center center / cover no-repeat fixed;
       min-height: 100vh;
     }
@@ -35,64 +35,79 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 34px;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(0, 0, 0, 0.38);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
     .brand {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
       white-space: nowrap;
+    }
+
+    .right-side {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
     }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 22px;
       flex-wrap: wrap;
     }
 
     .nav a {
       font-size: 15px;
       font-weight: 600;
-      opacity: 0.92;
-      transition: 0.25s ease;
+      color: rgba(255, 255, 255, 0.92);
+      transition: opacity 0.25s ease;
     }
 
     .nav a:hover,
     .nav a.active {
       opacity: 1;
+      color: #ffffff;
     }
 
     .lang-switch {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-left: 16px;
-      padding: 7px 10px;
+      padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .lang-switch button {
       background: transparent;
       border: none;
-      color: #fff;
+      color: rgba(255, 255, 255, 0.75);
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
-      opacity: 0.75;
+      transition: 0.2s ease;
     }
 
     .lang-switch button.active {
-      opacity: 1;
+      color: #ffffff;
     }
 
     main {
@@ -100,21 +115,20 @@
     }
 
     section {
-      padding: 52px 20px;
+      padding: 48px 18px;
     }
 
     .container {
-      width: 100%;
       max-width: 1120px;
       margin: 0 auto;
     }
 
     .panel {
-      background: rgba(10, 15, 25, 0.48);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(10, 16, 26, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 24px;
-      padding: 42px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      padding: 40px;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
     }
 
     .hero {
@@ -125,54 +139,57 @@
 
     .eyebrow {
       display: inline-block;
-      font-size: 16px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.86);
       margin-bottom: 18px;
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.84);
     }
 
     h1 {
-      font-size: clamp(42px, 6vw, 74px);
-      line-height: 1.04;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1.05;
       margin-bottom: 22px;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.42);
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
     }
 
     h2 {
-      font-size: clamp(30px, 4vw, 48px);
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
       margin-bottom: 22px;
     }
 
     p {
       font-size: 18px;
       line-height: 1.85;
-      color: rgba(255,255,255,0.94);
-      margin-bottom: 18px;
+      color: rgba(255, 255, 255, 0.94);
+      margin-bottom: 16px;
     }
 
     .lead {
       font-size: 22px;
-      max-width: 920px;
+      max-width: 900px;
       color: #ffffff;
     }
 
     .tagline {
       font-size: 22px;
       font-weight: 700;
-      margin-top: 12px;
+      margin-top: 8px;
       color: #ffffff;
     }
 
-    .qa-box {
-      margin: 28px 0;
+    .qa-box,
+    .story-box {
+      margin-top: 24px;
       padding: 22px 24px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .qa-box p {
-      margin-bottom: 10px;
+    .qa-box p:last-child,
+    .story-box p:last-child {
+      margin-bottom: 0;
     }
 
     .video-grid {
@@ -185,14 +202,14 @@
     .video-card {
       overflow: hidden;
       border-radius: 22px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .video-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.32);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
     }
 
     .video-frame {
@@ -210,14 +227,14 @@
     .video-title {
       font-size: 22px;
       font-weight: 700;
-      margin-bottom: 10px;
       line-height: 1.4;
+      margin-bottom: 10px;
     }
 
     .video-text {
       font-size: 16px;
       line-height: 1.75;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
       margin-bottom: 16px;
     }
 
@@ -225,22 +242,15 @@
       display: inline-block;
       padding: 10px 16px;
       border-radius: 10px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       font-size: 14px;
       font-weight: 700;
-      transition: 0.25s ease;
+      transition: background 0.25s ease;
     }
 
     .video-link:hover {
-      background: rgba(255,255,255,0.18);
-    }
-
-    .story-box {
-      padding: 24px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.18);
     }
 
     .hidden {
@@ -248,14 +258,8 @@
     }
 
     @media (max-width: 900px) {
-      .header {
-        padding: 16px 18px;
-        align-items: flex-start;
-        gap: 14px;
-      }
-
-      .nav {
-        gap: 14px;
+      .header-inner {
+        padding: 14px 16px;
       }
 
       .panel {
@@ -272,8 +276,32 @@
       }
     }
 
-    @media (max-width: 620px) {
-      .header {
+    @media (max-width: 680px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .right-side {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav {
+        gap: 14px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .right-side {
         flex-direction: column;
         align-items: flex-start;
       }
@@ -281,29 +309,29 @@
       .nav {
         width: 100%;
       }
-
-      .hero {
-        min-height: auto;
-      }
     }
   </style>
 </head>
 <body>
   <header class="header">
-    <div class="brand" data-az="İnsan həyatına toxunmaq" data-en="Touching Human Life">İnsan həyatına toxunmaq</div>
+    <div class="header-inner">
+      <div class="brand" data-az="İnsan həyatına toxunmaq" data-en="Touching Human Life">
+        İnsan həyatına toxunmaq
+      </div>
 
-    <div style="display:flex; align-items:center; flex-wrap:wrap; gap:14px;">
-      <nav class="nav">
-        <a href="#home" class="nav-link active" data-az="Ana səhifə" data-en="Home">Ana səhifə</a>
-        <a href="#about" class="nav-link" data-az="Haqqında" data-en="About">Haqqında</a>
-        <a href="#stories" class="nav-link" data-az="Hekayələr" data-en="Stories">Hekayələr</a>
-        <a href="#videos" class="nav-link" data-az="Videolar" data-en="Videos">Videolar</a>
-      </nav>
+      <div class="right-side">
+        <nav class="nav">
+          <a href="#home" class="nav-link active" data-az="Ana səhifə" data-en="Home">Ana səhifə</a>
+          <a href="#about" class="nav-link" data-az="Haqqında" data-en="About">Haqqında</a>
+          <a href="#stories" class="nav-link" data-az="Hekayələr" data-en="Stories">Hekayələr</a>
+          <a href="#videos" class="nav-link" data-az="Videolar" data-en="Videos">Videolar</a>
+        </nav>
 
-      <div class="lang-switch">
-        <button id="btnAz" class="active">AZ</button>
-        <span>/</span>
-        <button id="btnEn">ENG</button>
+        <div class="lang-switch">
+          <button id="btnAz" class="active" type="button">AZ</button>
+          <span>/</span>
+          <button id="btnEn" type="button">ENG</button>
+        </div>
       </div>
     </div>
   </header>
@@ -411,8 +439,6 @@
               <p>Ultimately, this approach demonstrated that legal norms should be applied not only formally, but also in line with the essence of human rights. Ensuring the right to education requires taking into account the specific situation of each individual.</p>
             </div>
           </div>
-
-          
         </div>
       </div>
     </section>
@@ -427,12 +453,12 @@
                 <iframe
                   class="video-frame"
                   src="https://www.youtube.com/embed/c_ly2NyXYOM"
-                  title="Təhsil hüququnun təmin edilməsi"
+                  title="Təhsil hüququnun təmin olunması"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
                 </iframe>
                 <div class="video-content">
-                  <div class="video-title">Təhsil hüququnun təmin edilməsi</div>
+                  <div class="video-title">Təhsil hüququnun təmin olunması</div>
                   <div class="video-text">Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</div>
                   <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank" rel="noopener noreferrer">YouTube-da aç</a>
                 </div>
@@ -470,13 +496,16 @@
     const azBlocks = document.querySelectorAll('.lang-az');
     const enBlocks = document.querySelectorAll('.lang-en');
     const navLinks = document.querySelectorAll('.nav-link');
-    const translatable = document.querySelectorAll('[data-az][data-en]');
     const sections = document.querySelectorAll('main section');
+    const translatable = document.querySelectorAll('[data-az][data-en]');
 
     function setLanguage(lang) {
       translatable.forEach(el => {
-        el.textContent = lang === 'en' ? el.dataset.en : el.dataset.az;
+        el.textContent = lang === 'en'
+          ? el.getAttribute('data-en')
+          : el.getAttribute('data-az');
       });
+
       if (lang === 'en') {
         azBlocks.forEach(el => el.classList.add('hidden'));
         enBlocks.forEach(el => el.classList.remove('hidden'));
@@ -490,6 +519,7 @@
         btnAz.classList.add('active');
         document.documentElement.lang = 'az';
       }
+
       localStorage.setItem('siteLanguage', lang);
     }
 
@@ -511,7 +541,7 @@
 
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
+        if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
         }
       });
@@ -519,4 +549,3 @@
   </script>
 </body>
 </html>
-
