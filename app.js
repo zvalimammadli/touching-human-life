@@ -11,6 +11,10 @@ const siteData = {
     heroTitle: "İnsan həyatına toxunmaq",
     heroStoriesBtn: "Hekayələrə keç",
     heroVideosBtn: "Videolara bax",
+    featuredTag: "Seçilmiş video",
+    featuredTitle: "Təhsil hüququ üzrə video",
+    featuredVideoText: "Təhsil hüququ ilə bağlı hazırlanmış hekayə əsaslı video.",
+    detailLabel: "Daha ətraflı məlumat üçün:",
     aboutTag: "Platforma haqqında",
     aboutTitle: "Haqqında",
     storiesTag: "Hekayələr arxivi",
@@ -20,20 +24,15 @@ const siteData = {
     searchPlaceholder: "Axtar...",
     watchVideo: "Videoya bax",
     playLabel: "YouTube video",
-    allFilter: "Hamısı",
     noStories: "Axtarışa uyğun hekayə tapılmadı.",
-    stat1Label: "Format",
-    stat1Value: "Sadə hekayələr",
-    stat2Label: "Yanaşma",
-    stat2Value: "İnsan mərkəzli",
-    stat3Label: "Məqsəd",
-    stat3Value: "Hüququ anlaşıqlı etmək",
-    point1Title: "Sadə dil",
-    point1Text: "Mürəkkəb hüquqi məsələlər daha aydın formada təqdim olunur.",
-    point2Title: "Real hekayələr",
-    point2Text: "Hər qərarın arxasında dayanan insan hekayəsi görünən olur.",
-    point3Title: "Aydın nəticə",
-    point3Text: "Qərardan sonra həyatlarda nə dəyişdiyi izah edilir."
+    categories: {
+      all: "Hamısı",
+      education-right: "Təhsil hüququ",
+      child-rights: "Uşaq hüquqları",
+      disability-rights: "Əlilliyi olan şəxslərin hüquqları",
+      social-security: "Sosial təminat",
+      equality-rights: "Hüquq bərabərliyinin təmini"
+    }
   },
   en: {
     nav: {
@@ -47,6 +46,10 @@ const siteData = {
     heroTitle: "Touching Human Life",
     heroStoriesBtn: "Go to stories",
     heroVideosBtn: "Watch videos",
+    featuredTag: "Featured video",
+    featuredTitle: "Video on the right to education",
+    featuredVideoText: "A story-based video prepared on the right to education.",
+    detailLabel: "For more detailed information:",
     aboutTag: "About the platform",
     aboutTitle: "About",
     storiesTag: "Story archive",
@@ -56,20 +59,15 @@ const siteData = {
     searchPlaceholder: "Search...",
     watchVideo: "Watch video",
     playLabel: "YouTube video",
-    allFilter: "All",
     noStories: "No stories found for this search.",
-    stat1Label: "Format",
-    stat1Value: "Simple stories",
-    stat2Label: "Approach",
-    stat2Value: "Human-centered",
-    stat3Label: "Purpose",
-    stat3Value: "Making law understandable",
-    point1Title: "Simple language",
-    point1Text: "Complex legal issues are presented in a clearer way.",
-    point2Title: "Real stories",
-    point2Text: "The human story behind each decision becomes visible.",
-    point3Title: "Clear result",
-    point3Text: "It explains what changed in people’s lives after the decision."
+    categories: {
+      all: "All",
+      education-right: "Right to education",
+      child-rights: "Child rights",
+      disability-rights: "Rights of persons with disabilities",
+      social-security: "Social security",
+      equality-rights: "Equality before the law"
+    }
   }
 };
 
@@ -85,6 +83,10 @@ const heroEyebrow = document.getElementById("heroEyebrow");
 const heroTitle = document.getElementById("hero-title");
 const heroStoriesBtn = document.getElementById("heroStoriesBtn");
 const heroVideosBtn = document.getElementById("heroVideosBtn");
+const featuredTag = document.getElementById("featuredTag");
+const featuredTitle = document.getElementById("featuredTitle");
+const featuredVideoText = document.getElementById("featuredVideoText");
+const detailLabel = document.getElementById("detailLabel");
 const aboutTag = document.getElementById("aboutTag");
 const aboutTitle = document.getElementById("about-title");
 const storiesTag = document.getElementById("storiesTag");
@@ -107,20 +109,6 @@ const homeTextEn = document.getElementById("home-text-en");
 const aboutTextAz = document.getElementById("about-text-az");
 const aboutTextEn = document.getElementById("about-text-en");
 
-const stat1Label = document.getElementById("stat1Label");
-const stat1Value = document.getElementById("stat1Value");
-const stat2Label = document.getElementById("stat2Label");
-const stat2Value = document.getElementById("stat2Value");
-const stat3Label = document.getElementById("stat3Label");
-const stat3Value = document.getElementById("stat3Value");
-
-const point1Title = document.getElementById("point1Title");
-const point1Text = document.getElementById("point1Text");
-const point2Title = document.getElementById("point2Title");
-const point2Text = document.getElementById("point2Text");
-const point3Title = document.getElementById("point3Title");
-const point3Text = document.getElementById("point3Text");
-
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem("siteLang", lang);
@@ -132,6 +120,10 @@ function setLanguage(lang) {
   heroTitle.textContent = t.heroTitle;
   heroStoriesBtn.textContent = t.heroStoriesBtn;
   heroVideosBtn.textContent = t.heroVideosBtn;
+  featuredTag.textContent = t.featuredTag;
+  featuredTitle.textContent = t.featuredTitle;
+  featuredVideoText.textContent = t.featuredVideoText;
+  detailLabel.textContent = t.detailLabel;
   aboutTag.textContent = t.aboutTag;
   aboutTitle.textContent = t.aboutTitle;
   storiesTag.textContent = t.storiesTag;
@@ -143,20 +135,6 @@ function setLanguage(lang) {
   navAbout.textContent = t.nav.about;
   navStories.textContent = t.nav.stories;
   navVideos.textContent = t.nav.videos;
-
-  stat1Label.textContent = t.stat1Label;
-  stat1Value.textContent = t.stat1Value;
-  stat2Label.textContent = t.stat2Label;
-  stat2Value.textContent = t.stat2Value;
-  stat3Label.textContent = t.stat3Label;
-  stat3Value.textContent = t.stat3Value;
-
-  point1Title.textContent = t.point1Title;
-  point1Text.textContent = t.point1Text;
-  point2Title.textContent = t.point2Title;
-  point2Text.textContent = t.point2Text;
-  point3Title.textContent = t.point3Title;
-  point3Text.textContent = t.point3Text;
 
   searchInput.placeholder = t.searchPlaceholder;
 
@@ -209,30 +187,21 @@ function getFilteredStories() {
 
 function renderFilters() {
   const t = siteData[currentLang];
-  const categoryMap = new Map();
-
-  stories.forEach((story) => {
-    if (!categoryMap.has(story.categoryKey)) {
-      categoryMap.set(story.categoryKey, story.category[currentLang]);
-    }
-  });
+  const order = [
+    "all",
+    "education-right",
+    "child-rights",
+    "disability-rights",
+    "social-security",
+    "equality-rights"
+  ];
 
   filters.innerHTML = "";
 
-  const allButton = document.createElement("button");
-  allButton.className = `filter-btn ${selectedCategory === "all" ? "active" : ""}`;
-  allButton.textContent = t.allFilter;
-  allButton.addEventListener("click", () => {
-    selectedCategory = "all";
-    renderFilters();
-    renderStories();
-  });
-  filters.appendChild(allButton);
-
-  categoryMap.forEach((value, key) => {
+  order.forEach((key) => {
     const button = document.createElement("button");
     button.className = `filter-btn ${selectedCategory === key ? "active" : ""}`;
-    button.textContent = value;
+    button.textContent = t.categories[key];
     button.addEventListener("click", () => {
       selectedCategory = key;
       renderFilters();
@@ -292,6 +261,10 @@ function renderVideos() {
       <div class="video-body">
         <h3 class="video-title">${video.title[currentLang]}</h3>
         <p>${video.description[currentLang]}</p>
+        <p class="detail-link-line">
+          <span>${t.detailLabel}</span>
+          <a href="${video.moreInfo}" target="_blank" rel="noopener noreferrer">${video.moreInfo}</a>
+        </p>
         <a class="video-link" href="${video.url}" target="_blank" rel="noopener noreferrer">${t.watchVideo}</a>
       </div>
     `;
