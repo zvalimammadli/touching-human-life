@@ -32,6 +32,11 @@ const siteData = {
       disability-rights: "Əlilliyi olan şəxslərin hüquqları",
       social-security: "Sosial təminat",
       equality-rights: "Hüquq bərabərliyinin təmini"
+    },
+    labels: {
+      problem: "Problem:",
+      step: "Addım:",
+      result: "Nəticə:"
     }
   },
   en: {
@@ -66,7 +71,12 @@ const siteData = {
       child-rights: "Child rights",
       disability-rights: "Rights of persons with disabilities",
       social-security: "Social security",
-      equality-rights: "Equality before the law"
+      equality-rights: "Ensuring equality of rights"
+    },
+    labels: {
+      problem: "Problem:",
+      step: "Step:",
+      result: "Result:"
     }
   }
 };
@@ -200,6 +210,7 @@ function renderFilters() {
 
   order.forEach((key) => {
     const button = document.createElement("button");
+    button.type = "button";
     button.className = `filter-btn ${selectedCategory === key ? "active" : ""}`;
     button.textContent = t.categories[key];
     button.addEventListener("click", () => {
@@ -233,9 +244,9 @@ function renderStories() {
       <div class="story-body">
         <div class="story-category">${story.category[currentLang]}</div>
         <h3 class="story-title">${story.title[currentLang]}</h3>
-        <p class="story-line"><strong>${currentLang === "az" ? "Problem:" : "Problem:"}</strong> ${story.problem[currentLang]}</p>
-        <p class="story-line"><strong>${currentLang === "az" ? "Addım:" : "Step:"}</strong> ${story.step[currentLang]}</p>
-        <p class="story-line"><strong>${currentLang === "az" ? "Nəticə:" : "Result:"}</strong> ${story.result[currentLang]}</p>
+        <p class="story-line"><strong>${t.labels.problem}</strong> ${story.problem[currentLang]}</p>
+        <p class="story-line"><strong>${t.labels.step}</strong> ${story.step[currentLang]}</p>
+        <p class="story-line"><strong>${t.labels.result}</strong> ${story.result[currentLang]}</p>
       </div>
     `;
 
@@ -246,6 +257,14 @@ function renderStories() {
 function renderVideos() {
   const t = siteData[currentLang];
   videosContainer.innerHTML = "";
+
+  if (!videos.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty-state";
+    empty.textContent = t.noStories;
+    videosContainer.appendChild(empty);
+    return;
+  }
 
   videos.forEach((video) => {
     const card = document.createElement("article");
@@ -277,8 +296,8 @@ async function loadData() {
   try {
     const response = await fetch("data.json");
     const data = await response.json();
-    stories = data.stories || [];
-    videos = data.videos || [];
+    stories = Array.isArray(data.stories) ? data.stories : [];
+    videos = Array.isArray(data.videos) ? data.videos : [];
     setLanguage(currentLang);
   } catch (error) {
     console.error("Data loading error:", error);
