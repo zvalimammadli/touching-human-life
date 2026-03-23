@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Touching Human Life</title>
-
   <style>
     * {
       box-sizing: border-box;
@@ -16,59 +15,115 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
       background:
         linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
         url('background.jpg') center/cover no-repeat fixed;
       line-height: 1.7;
     }
 
-    header {
+    .site-header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      padding: 16px 30px;
+      z-index: 1000;
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
-      gap: 30px;
+      padding: 16px 28px;
       background: rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(8px);
-      z-index: 1000;
+      -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    nav {
+    .header-left {
       display: flex;
+      align-items: center;
+      gap: 26px;
       flex-wrap: wrap;
-      gap: 20px;
     }
 
-    nav a {
-      color: white;
+    .logo {
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
+      font-size: 20px;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
-    nav a:hover {
+    .main-nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      opacity: 0.92;
+      transition: 0.25s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      opacity: 1;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .lang-switch button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 14px;
       opacity: 0.8;
+    }
+
+    .lang-switch button.active {
+      opacity: 1;
+    }
+
+    .divider {
+      opacity: 0.5;
+    }
+
+    main {
+      padding-top: 82px;
     }
 
     section {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 110px 20px 60px;
+      padding: 72px 20px 20px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
     }
 
     .box {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.25);
     }
 
     h1, h2, h3 {
@@ -77,23 +132,37 @@
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 30px;
+      font-size: clamp(34px, 5vw, 56px);
       margin-bottom: 18px;
     }
 
+    h2 {
+      font-size: clamp(28px, 4vw, 38px);
+      margin-bottom: 16px;
+    }
+
     h3 {
-      font-size: 22px;
+      font-size: 24px;
       margin-bottom: 12px;
     }
 
     p {
       font-size: 18px;
-      margin-bottom: 16px;
+      margin: 0 0 16px;
+      color: #f3f3f3;
+    }
+
+    .qa-box {
+      margin-top: 22px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .qa-box p {
+      margin-bottom: 10px;
+      font-weight: 700;
     }
 
     .card {
@@ -132,30 +201,38 @@
       background: rgba(255,255,255,0.28);
     }
 
+    .hidden {
+      display: none;
+    }
+
     @media (max-width: 768px) {
-      header {
+      .site-header {
         padding: 14px 16px;
-        gap: 16px;
+        align-items: flex-start;
       }
 
-      nav {
+      .header-left {
         gap: 14px;
       }
 
+      .main-nav {
+        gap: 12px;
+      }
+
+      .main-nav a {
+        font-size: 14px;
+      }
+
+      main {
+        padding-top: 90px;
+      }
+
       section {
-        padding: 100px 16px 40px;
+        padding: 58px 16px 12px;
       }
 
       .box {
         padding: 20px;
-      }
-
-      h1 {
-        font-size: 32px;
-      }
-
-      h2 {
-        font-size: 26px;
       }
 
       p {
@@ -168,85 +245,214 @@
     }
   </style>
 </head>
-
 <body>
 
-  <header>
-    <nav>
-      <a href="#home">Ana səhifə</a>
-      <a href="#about">Haqqında</a>
-      <a href="#stories">Hekayələr</a>
-      <a href="#videos">Videolar</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-left">
+      <a href="#home" class="logo">Touching Human Life</a>
+
+      <nav class="main-nav">
+        <a href="#home" class="nav-link active" data-az="Ana səhifə" data-en="Home">Ana səhifə</a>
+        <a href="#about" class="nav-link" data-az="Haqqında" data-en="About">Haqqında</a>
+        <a href="#stories" class="nav-link" data-az="Hekayələr" data-en="Stories">Hekayələr</a>
+        <a href="#videos" class="nav-link" data-az="Videolar" data-en="Videos">Videolar</a>
+      </nav>
+    </div>
+
+    <div class="lang-switch">
+      <button id="azBtn" class="active">AZ</button>
+      <span class="divider">/</span>
+      <button id="enBtn">ENG</button>
+    </div>
   </header>
 
-  <section id="home">
-    <div class="box">
-      <h1>Təhsil hüququnun təmini</h1>
+  <main>
+    <section id="home" class="hero">
+      <div class="box">
+        <div class="lang lang-az">
+          <h1>Təhsil hüququnun təmini</h1>
 
-      <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
+          <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
 
-      <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktlar nəticəsində şəxsin hüquqları pozulduqda Müvəkkil Azərbaycan Respublikasının Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.</p>
+          <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktlar nəticəsində şəxsin hüquqları pozulduqda Müvəkkil Azərbaycan Respublikasının Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.</p>
 
-      <p>Müvəkkilin sorğusuna əsasən Konstitusiya Məhkəməsi tərəfindən baxılan hər bir işin arxasında real insan hekayəsi dayanır.</p>
+          <p>Müvəkkilin sorğusuna əsasən Konstitusiya Məhkəməsi tərəfindən baxılan hər bir işin arxasında real insan hekayəsi dayanır.</p>
 
-      <p>Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar paylaşılır. Burada qəbul edilmiş qərarların insanların həyatında hansı dəyişikliklərə səbəb olduğu sadə və aydın dildə izah olunur.</p>
+          <p>Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar paylaşılır. Burada qəbul edilmiş qərarların insanların həyatında hansı dəyişikliklərə səbəb olduğu sadə və aydın dildə izah olunur.</p>
 
-      <p><strong>Hər bir hekayə üç sadə suala cavab verir:</strong></p>
-      <p><strong>Problem nə idi?</strong></p>
-      <p><strong>Hansı addım atıldı?</strong></p>
-      <p><strong>İnsanların həyatında nə dəyişdi?</strong></p>
+          <div class="qa-box">
+            <p>Hər bir hekayə üç sadə suala cavab verir:</p>
+            <p>Problem nə idi?</p>
+            <p>Hansı addım atıldı?</p>
+            <p>İnsanların həyatında nə dəyişdi?</p>
+          </div>
 
-      <p>Məqsədimiz mürəkkəb hüquqi prosesləri sadə və aydın şəkildə izah etməkdir.</p>
-      <p><strong>Bir qayda dəyişəndə, bir həyat dəyişir.</strong></p>
-    </div>
-  </section>
+          <p style="margin-top:20px;">Məqsədimiz mürəkkəb hüquqi prosesləri sadə və aydın şəkildə izah etməkdir.</p>
+          <p><strong>Bir qayda dəyişəndə, bir həyat dəyişir.</strong></p>
+        </div>
 
-  <section id="about">
-    <div class="box">
-      <h2>Haqqında</h2>
-      <p>Bu platforma hüquqi qərarları insanlara daha sadə və anlaşıqlı şəkildə çatdırmaq, həmin qərarların insanların həyatına real təsirini göstərmək məqsədilə yaradılmışdır.</p>
-    </div>
-  </section>
+        <div class="lang lang-en hidden">
+          <h1>Ensuring the Right to Education</h1>
 
-  <section id="stories">
-    <div class="box">
-      <h2>Hekayələr</h2>
-      <h3>Davamiyyət tələbi və təhsil hüququnun təmin edilməsi</h3>
+          <p>“Touching Human Life” is a platform that presents legal decisions to people in a simpler language through stories.</p>
 
-      <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, tədris prosesindən tam kənarda qalmadı, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
+          <p>Under the Constitutional Law of the Republic of Azerbaijan on the Commissioner for Human Rights (Ombudsman), where a person’s rights are violated as a result of normative legal acts in force, the Ombudsman may apply to the Constitutional Court of the Republic of Azerbaijan with a request.</p>
 
-      <p>Semestrin sonunda isə universitet tərəfindən ona bildirildi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz. Qaydalar tələb edirdi ki, tələbə dərs yükünün müəyyən hissəsində iştirak etməlidir və bu həddin aşılması — yəni dərs saatlarının 25 faizindən çoxunun buraxılması — imtahanlara buraxılmamaq üçün əsas hesab olunurdu. Bu norma istisnasız tətbiq edilirdi və Sənanın xəstəliyi də nəzərə alınmadı.</p>
+          <p>Behind every case examined by the Constitutional Court on the basis of the Ombudsman’s request, there is a real human story.</p>
 
-      <p>Beləliklə, məsələ ondan ibarət oldu ki, davamiyyətlə bağlı bu cür qaydanın üzrlü səbəblər nəzərə alınmadan tətbiqi tələbənin təhsil hüququnun məhdudlaşdırılmasına səbəb olurmu. Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) bu məsələyə hüquqi qiymət verilməsi üçün Konstitusiya Məhkəməsinə müraciət etdi.</p>
+          <p>Through this platform, short story-based videos prepared on the basis of applications submitted by the Ombudsman to the Constitutional Court are shared. Here, the changes brought to people’s lives by the adopted decisions are explained in a simple and clear manner.</p>
 
-      <p>Konstitusiya Məhkəməsi işi araşdırarkən qeyd etdi ki, təhsil hüququ Konstitusiya ilə təmin olunan əsas hüquqlardandır və dövlət bu sahədə müəyyən qaydalar müəyyən etmək səlahiyyətinə malikdir. Lakin bu qaydalar tətbiq edilərkən onların ədalətli və proporsional olması təmin olunmalıdır. Hüququn məhdudlaşdırılması onun mahiyyətini aradan qaldırmamalıdır.</p>
+          <div class="qa-box">
+            <p>Each story answers three simple questions:</p>
+            <p>What was the problem?</p>
+            <p>What step was taken?</p>
+            <p>What changed in people’s lives?</p>
+          </div>
 
-      <p>Məhkəmə xüsusilə vurğuladı ki, üzrlü səbəblər, o cümlədən sağlamlıq vəziyyəti nəzərə alınmadan davamiyyət tələbinin avtomatik tətbiqi tələbənin təhsil hüququnun qeyri-proporsional məhdudlaşdırılmasına gətirib çıxara bilər. Buna görə də belə hallarda fərdi vəziyyətlər qiymətləndirilməli və qaydalar bu kontekstdə tətbiq olunmalıdır.</p>
-
-      <p>Nəticə etibarilə, bu yanaşma göstərdi ki, hüquqi normalar yalnız formal şəkildə deyil, insan hüquqlarının mahiyyətinə uyğun olaraq tətbiq edilməlidir. Təhsil hüququnun təmin edilməsi zamanı isə hər bir fərdin konkret vəziyyəti nəzərə alınmalıdır.</p>
-    </div>
-  </section>
-
-  <section id="videos">
-    <div class="box">
-      <h2>Videolar</h2>
-
-      <div class="card">
-        <iframe
-          src="https://www.youtube.com/embed/c_ly2NyXYOM"
-          title="Təhsil hüququnun təmini"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-
-        <div class="card-content">
-          <h3>Təhsil hüququnun təmini</h3>
-          <a class="detail-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank" rel="noopener noreferrer">Ətraflı məlumat</a>
+          <p style="margin-top:20px;">Our aim is to explain complex legal processes in a simple and understandable way.</p>
+          <p><strong>When one rule changes, one life changes.</strong></p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="about">
+      <div class="box">
+        <div class="lang lang-az">
+          <h2>Haqqında</h2>
+          <p>Bu platforma hüquqi qərarları insanlara daha sadə və anlaşıqlı şəkildə çatdırmaq, həmin qərarların insanların həyatına real təsirini göstərmək məqsədilə yaradılmışdır.</p>
+        </div>
+
+        <div class="lang lang-en hidden">
+          <h2>About</h2>
+          <p>This platform was created to present legal decisions in a simpler and more understandable way and to show their real impact on people’s lives.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stories">
+      <div class="box">
+        <div class="lang lang-az">
+          <h2>Hekayələr</h2>
+          <h3>Davamiyyət tələbi və təhsil hüququnun təmin edilməsi</h3>
+
+          <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, tədris prosesindən tam kənarda qalmadı, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
+
+          <p>Semestrin sonunda isə universitet tərəfindən ona bildirildi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz. Qaydalar tələb edirdi ki, tələbə dərs yükünün müəyyən hissəsində iştirak etməlidir və bu həddin aşılması — yəni dərs saatlarının 25 faizindən çoxunun buraxılması — imtahanlara buraxılmamaq üçün əsas hesab olunurdu. Bu norma istisnasız tətbiq edilirdi və Sənanın xəstəliyi də nəzərə alınmadı.</p>
+
+          <p>Beləliklə, məsələ ondan ibarət oldu ki, davamiyyətlə bağlı bu cür qaydanın üzrlü səbəblər nəzərə alınmadan tətbiqi tələbənin təhsil hüququnun məhdudlaşdırılmasına səbəb olurmu. Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) bu məsələyə hüquqi qiymət verilməsi üçün Konstitusiya Məhkəməsinə müraciət etdi.</p>
+
+          <p>Konstitusiya Məhkəməsi işi araşdırarkən qeyd etdi ki, təhsil hüququ Konstitusiya ilə təmin olunan əsas hüquqlardandır və dövlət bu sahədə müəyyən qaydalar müəyyən etmək səlahiyyətinə malikdir. Lakin bu qaydalar tətbiq edilərkən onların ədalətli və proporsional olması təmin olunmalıdır. Hüququn məhdudlaşdırılması onun mahiyyətini aradan qaldırmamalıdır.</p>
+
+          <p>Məhkəmə xüsusilə vurğuladı ki, üzrlü səbəblər, o cümlədən sağlamlıq vəziyyəti nəzərə alınmadan davamiyyət tələbinin avtomatik tətbiqi tələbənin təhsil hüququnun qeyri-proporsional məhdudlaşdırılmasına gətirib çıxara bilər. Buna görə də belə hallarda fərdi vəziyyətlər qiymətləndirilməli və qaydalar bu kontekstdə tətbiq olunmalıdır.</p>
+
+          <p>Nəticə etibarilə, bu yanaşma göstərdi ki, hüquqi normalar yalnız formal şəkildə deyil, insan hüquqlarının mahiyyətinə uyğun olaraq tətbiq edilməlidir. Təhsil hüququnun təmin edilməsi zamanı isə hər bir fərdin konkret vəziyyəti nəzərə alınmalıdır.</p>
+        </div>
+
+        <div class="lang lang-en hidden">
+          <h2>Stories</h2>
+          <h3>Attendance Requirement and Ensuring the Right to Education</h3>
+
+          <p>Sanan was studying at a higher education institution. During the semester, due to a serious illness, he was unable to attend classes for a long period. Nevertheless, he did not completely fall behind in the educational process, studied the subjects independently and prepared for the exams.</p>
+
+          <p>At the end of the semester, however, the university informed him that under the existing rules he could not be admitted to the exams because he had not attended classes sufficiently. The rules required a student to attend a certain portion of the course load, and exceeding that threshold — that is, missing more than 25 percent of class hours — was considered a ground for non-admission to the exams. This norm was applied without exception, and Sanan’s illness was not taken into account.</p>
+
+          <p>Thus, the issue was whether the application of such an attendance rule without considering valid reasons could lead to a restriction of the student’s right to education. The Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan applied to the Constitutional Court for a legal assessment of this matter.</p>
+
+          <p>When examining the case, the Constitutional Court noted that the right to education is one of the fundamental rights guaranteed by the Constitution, and that the State has the authority to establish certain rules in this field. However, when applying those rules, fairness and proportionality must be ensured. Restricting a right should not eliminate its essence.</p>
+
+          <p>The Court particularly emphasized that the automatic application of the attendance requirement without considering valid reasons, including health conditions, could lead to a disproportionate restriction of the student’s right to education. Therefore, individual circumstances should be assessed in such cases, and the rules should be applied in that context.</p>
+
+          <p>As a result, this approach demonstrated that legal norms should be applied not only formally, but also in accordance with the essence of human rights. In ensuring the right to education, the concrete situation of each individual must be taken into account.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos">
+      <div class="box">
+        <div class="lang lang-az">
+          <h2>Videolar</h2>
+          <div class="card">
+            <iframe
+              src="https://www.youtube.com/embed/c_ly2NyXYOM"
+              title="Təhsil hüququnun təmini"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+            <div class="card-content">
+              <h3>Təhsil hüququnun təmini</h3>
+              <a class="detail-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank" rel="noopener noreferrer">Ətraflı məlumat</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang lang-en hidden">
+          <h2>Videos</h2>
+          <div class="card">
+            <iframe
+              src="https://www.youtube.com/embed/c_ly2NyXYOM"
+              title="Ensuring the Right to Education"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+            <div class="card-content">
+              <h3>Ensuring the Right to Education</h3>
+              <a class="detail-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank" rel="noopener noreferrer">Detailed information</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const azBtn = document.getElementById('azBtn');
+    const enBtn = document.getElementById('enBtn');
+    const azBlocks = document.querySelectorAll('.lang-az');
+    const enBlocks = document.querySelectorAll('.lang-en');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    function setLanguage(lang) {
+      if (lang === 'en') {
+        azBlocks.forEach(el => el.classList.add('hidden'));
+        enBlocks.forEach(el => el.classList.remove('hidden'));
+        azBtn.classList.remove('active');
+        enBtn.classList.add('active');
+        document.documentElement.lang = 'en';
+      } else {
+        enBlocks.forEach(el => el.classList.add('hidden'));
+        azBlocks.forEach(el => el.classList.remove('hidden'));
+        enBtn.classList.remove('active');
+        azBtn.classList.add('active');
+        document.documentElement.lang = 'az';
+      }
+      localStorage.setItem('siteLang', lang);
+    }
+
+    azBtn.addEventListener('click', () => setLanguage('az'));
+    enBtn.addEventListener('click', () => setLanguage('en'));
+
+    const savedLang = localStorage.getItem('siteLang') || 'az';
+    setLanguage(savedLang);
+
+    window.addEventListener('scroll', () => {
+      let current = 'home';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 130;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
