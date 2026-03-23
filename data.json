@@ -1,72 +1,26 @@
 {
   "stories": [
     {
-      "categoryKey": "social-rights",
+      "categoryKey": "education-right",
       "category": {
-        "az": "Sosial hüquqlar",
-        "en": "Social rights"
+        "az": "Təhsil hüququ",
+        "en": "Right to education"
       },
       "title": {
-        "az": "Sosial müavinət məsələsi",
-        "en": "Social allowance issue"
+        "az": "Təhsil hüququnun həyata keçirilməsi",
+        "en": "Realization of the right to education"
       },
       "problem": {
-        "az": "Tək ata sosial müavinət almaqda çətinliklə üzləşmişdi.",
-        "en": "A single father faced difficulties in obtaining social allowance."
+        "az": "Bir gənc universitetə qəbul olunur, lakin mövcud qaydalar səbəbindən təhsil hüququnu tam şəkildə həyata keçirə bilmir. O, bütün səylərinə baxmayaraq, hüququnun məhdudlaşdırıldığını hiss edir və çıxış yolu tapa bilmir.",
+        "en": "A young person is admitted to a university, but due to existing rules cannot fully exercise the right to education. Despite all efforts, the person feels that the right is being restricted and cannot find a solution."
       },
       "step": {
-        "az": "Ombudsman məsələni araşdıraraq Konstitusiya Məhkəməsinə müraciət etmişdi.",
-        "en": "The Ombudsman examined the matter and applied to the Constitutional Court."
+        "az": "Məsələ Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkilinin diqqətinə çatdırılır. Ombudsman vəziyyəti araşdıraraq müəyyən edir ki, tətbiq olunan norma şəxsin təhsil hüququnun həyata keçirilməsinə maneə yaradır və bu səbəbdən Konstitusiya Məhkəməsinə sorğu ilə müraciət edir.",
+        "en": "The matter is brought to the attention of the Commissioner for Human Rights of the Republic of Azerbaijan. After examining the situation, the Ombudsman determines that the applicable norm creates an obstacle to the exercise of the person’s right to education and therefore applies to the Constitutional Court."
       },
       "result": {
-        "az": "Qərardan sonra hüquqi yanaşma dəqiqləşdi və hüquqların təmininə əlavə imkan yarandı.",
-        "en": "After the decision, the legal approach became clearer and additional safeguards for rights emerged."
-      }
-    },
-    {
-      "categoryKey": "child-rights",
-      "category": {
-        "az": "Uşaq hüquqları",
-        "en": "Child rights"
-      },
-      "title": {
-        "az": "Təhsilə çıxış məsələsi",
-        "en": "Access to education issue"
-      },
-      "problem": {
-        "az": "Bir uşağın təhsilə çıxışında hüquqi maneə yaranmışdı.",
-        "en": "A child faced a legal obstacle in access to education."
-      },
-      "step": {
-        "az": "Məsələ hüquqi müstəvidə qaldırıldı və aidiyyəti orqanlara təqdim olundu.",
-        "en": "The issue was raised in the legal framework and submitted to the relevant authorities."
-      },
-      "result": {
-        "az": "Uşağın təhsilə çıxış hüququnun müdafiəsi istiqamətində müsbət dəyişiklik baş verdi.",
-        "en": "A positive change took place in protecting the child’s right to education."
-      }
-    },
-    {
-      "categoryKey": "fair-trial",
-      "category": {
-        "az": "Ədalət mühakiməsi",
-        "en": "Fair trial"
-      },
-      "title": {
-        "az": "Məhkəməyə müraciət hüququ",
-        "en": "Right to apply to court"
-      },
-      "problem": {
-        "az": "Şəxsin müdafiə vasitələrindən effektiv istifadə imkanları məhdudlaşmışdı.",
-        "en": "The person’s ability to effectively use remedies had been restricted."
-      },
-      "step": {
-        "az": "Normativ hüquqi baza üzrə məsələ Konstitusiya nəzarətinə çıxarıldı.",
-        "en": "The issue was brought under constitutional review regarding the normative legal framework."
-      },
-      "result": {
-        "az": "Hüquqi təminatların tətbiqində daha aydın və ədalətli yanaşma formalaşdı.",
-        "en": "A clearer and fairer approach emerged in the application of legal safeguards."
+        "az": "Konstitusiya Məhkəməsi işi araşdıraraq qərara gəlir ki, həmin hüquqi məhdudiyyət Konstitusiyada təsbit olunmuş təhsil hüququ ilə uyğun deyil və bu hüququn daha effektiv təmin olunması üçün dəyişiklik zəruridir. Bu dəyişiklik yalnız bir nəfərin deyil, eyni vəziyyətlə üzləşən bir çox insanın həyatında yeni imkanların qapısını açır.",
+        "en": "The Constitutional Court examines the case and concludes that the legal restriction is not compatible with the right to education guaranteed by the Constitution and that change is necessary for a more effective protection of this right. This change opens the door to new opportunities not only for one person, but for many people facing the same situation."
       }
     }
   ],
@@ -74,13 +28,14 @@
     {
       "youtubeId": "c_ly2NyXYOM",
       "url": "https://youtu.be/c_ly2NyXYOM",
+      "moreInfo": "https://constcourt.gov.az/az/decision/1481",
       "title": {
-        "az": "Hekayə 1",
-        "en": "Story 1"
+        "az": "Education Is a Right, Not a Challenge",
+        "en": "Education Is a Right, Not a Challenge"
       },
       "description": {
-        "az": "Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış ilk hekayə əsaslı video.",
-        "en": "The first story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court."
+        "az": "Təhsil hüququ ilə bağlı hazırlanmış hekayə əsaslı video.",
+        "en": "A story-based video prepared on the right to education."
       }
     }
   ]
