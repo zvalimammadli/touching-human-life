@@ -18,7 +18,7 @@
         <a href="#home" id="nav-home">Ana səhifə</a>
         <a href="#about" id="nav-about">Haqqında</a>
         <a href="#stories" id="nav-stories">Hekayələr</a>
-        <a href="#videos" id="nav-videos">Videolar</a>
+        <a href="#stories" id="nav-videos">Videolar</a>
       </nav>
 
       <div class="header-actions">
@@ -121,7 +121,7 @@
 
           <div class="hero-buttons">
             <a href="#stories" class="primary-btn" id="heroStoriesBtn">Hekayələrə keç</a>
-            <a href="#videos" class="secondary-btn" id="heroVideosBtn">Videolara bax</a>
+            <a href="#stories" class="secondary-btn" id="heroVideosBtn">Videoya bax</a>
           </div>
         </div>
       </div>
@@ -165,63 +165,14 @@
 
     <section id="stories" class="content-section">
       <div class="container">
-        <div class="section-intro section-intro-row">
-          <div>
-            <span class="section-tag" id="storiesTag">Hekayələr arxivi</span>
-            <h2 id="stories-title">Hekayələr</h2>
-          </div>
-
-          <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Axtar..." />
-          </div>
+        <div class="section-intro">
+          <span class="section-tag" id="storiesTag">Hekayələr arxivi</span>
+          <h2 id="stories-title">Hekayələr və video</h2>
         </div>
 
         <div class="filters" id="filters"></div>
-        <div id="storiesContainer" class="stories-grid"></div>
-      </div>
-    </section>
 
-    <section id="videos" class="content-section">
-      <div class="container">
-        <div class="section-intro">
-          <span class="section-tag" id="videosTag">Video hekayələr</span>
-          <h2 id="videos-title">Videolar</h2>
-        </div>
-
-        <div id="videosContainer" class="video-grid"></div>
-      </div>
-    </section>
-
-    <section id="featured-video" class="content-section">
-      <div class="container featured-small-wrap">
-        <div class="section-intro">
-          <span class="section-tag" id="featuredTag">Seçilmiş video</span>
-          <h2 id="featuredTitle">Təhsil hüququ üzrə video</h2>
-        </div>
-
-        <div class="featured-video-card glass-card">
-          <div class="featured-video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/c_ly2NyXYOM"
-              title="Education Is a Right, Not a Challenge"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-
-          <div class="featured-video-body">
-            <h3 id="featuredVideoName">Education Is a Right, Not a Challenge</h3>
-            <p id="featuredVideoText">Təhsil hüququ ilə bağlı hazırlanmış hekayə əsaslı video.</p>
-            <p class="detail-link-line">
-              <span id="detailLabel">Daha ətraflı məlumat üçün:</span>
-              <a
-                href="https://constcourt.gov.az/az/decision/1481"
-                target="_blank"
-                rel="noopener noreferrer"
-              >https://constcourt.gov.az/az/decision/1481</a>
-            </p>
-          </div>
-        </div>
+        <div id="storyVideoContainer"></div>
       </div>
     </section>
   </main>
