@@ -6,9 +6,9 @@
   <title>İnsan həyatına toxunmaq</title>
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -17,73 +17,67 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: #ffffff;
+      color: #fff;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.78)),
-        url('background.jpg') center center / cover no-repeat fixed;
-      min-height: 100vh;
+        linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.78)),
+        url('background.jpg') center/cover no-repeat fixed;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    .site-header {
+    .header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0,0,0,0.45);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .header-inner {
-      max-width: 1200px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
+    }
+
+    .left-group {
+      display: flex;
+      align-items: center;
+      gap: 34px;
       flex-wrap: wrap;
     }
 
     .brand {
       font-size: 22px;
       font-weight: 700;
-      letter-spacing: 0.3px;
       white-space: nowrap;
     }
 
-    .right-side {
+    .nav {
       display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .main-nav {
-      display: flex;
-      align-items: center;
       gap: 22px;
       flex-wrap: wrap;
     }
 
-    .main-nav a {
+    .nav a {
       font-size: 15px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.92);
-      transition: 0.25s ease;
+      color: rgba(255,255,255,0.88);
+      transition: 0.2s;
     }
 
-    .main-nav a:hover,
-    .main-nav a.active {
-      color: #ffffff;
-      opacity: 1;
+    .nav a:hover,
+    .nav a.active {
+      color: #fff;
     }
 
     .lang-switch {
@@ -92,96 +86,95 @@
       gap: 8px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      flex-shrink: 0;
     }
 
     .lang-switch button {
       background: transparent;
       border: none;
-      color: rgba(255, 255, 255, 0.78);
+      color: rgba(255,255,255,0.75);
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
-      transition: 0.25s ease;
     }
 
     .lang-switch button.active {
-      color: #ffffff;
+      color: #fff;
     }
 
     main {
-      padding-top: 96px;
+      padding-top: 86px;
     }
 
     section {
-      padding: 48px 20px;
+      padding: 36px 18px;
     }
 
     .container {
-      max-width: 1150px;
+      max-width: 1180px;
       margin: 0 auto;
     }
 
     .panel {
-      background: rgba(8, 12, 20, 0.48);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(8, 12, 18, 0.46);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
-      padding: 42px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      padding: 40px;
+      box-shadow: 0 16px 50px rgba(0,0,0,0.25);
     }
 
     .hero {
-      min-height: calc(100vh - 96px);
+      min-height: 78vh;
       display: flex;
       align-items: center;
     }
 
     .eyebrow {
       display: inline-block;
-      font-size: 16px;
+      margin-bottom: 16px;
+      font-size: 15px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.84);
-      margin-bottom: 18px;
+      color: rgba(255,255,255,0.84);
     }
 
     h1 {
-      font-size: clamp(40px, 6vw, 74px);
+      font-size: clamp(40px, 6vw, 72px);
       line-height: 1.05;
-      margin-bottom: 22px;
-      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+      margin-bottom: 18px;
     }
 
     h2 {
-      font-size: clamp(30px, 4vw, 46px);
-      margin-bottom: 22px;
+      font-size: clamp(30px, 4vw, 44px);
       line-height: 1.15;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 18px;
-      line-height: 1.85;
-      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.8;
+      color: rgba(255,255,255,0.94);
       margin-bottom: 16px;
     }
 
     .lead {
       font-size: 22px;
-      max-width: 900px;
+      max-width: 880px;
     }
 
     .tagline {
+      margin-top: 10px;
       font-size: 22px;
       font-weight: 700;
-      margin-top: 8px;
     }
 
     .qa-box {
-      margin: 24px 0;
-      padding: 22px 24px;
+      margin: 22px 0;
+      padding: 20px 22px;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .qa-box p {
@@ -191,40 +184,39 @@
     .story-box {
       padding: 24px;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
-      margin-top: 10px;
     }
 
     .video-card {
       overflow: hidden;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.25s ease;
     }
 
     .video-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.28);
     }
 
     .video-frame {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16/9;
       border: 0;
       display: block;
       background: #000;
     }
 
     .video-content {
-      padding: 22px;
+      padding: 20px;
     }
 
     .video-title {
@@ -236,24 +228,23 @@
 
     .video-text {
       font-size: 16px;
-      line-height: 1.75;
-      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.7;
       margin-bottom: 16px;
+      color: rgba(255,255,255,0.9);
     }
 
     .video-link {
       display: inline-block;
       padding: 10px 16px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.08);
       font-size: 14px;
       font-weight: 700;
-      transition: 0.25s ease;
     }
 
     .video-link:hover {
-      background: rgba(255, 255, 255, 0.18);
+      background: rgba(255,255,255,0.18);
     }
 
     .hidden {
@@ -262,15 +253,12 @@
 
     @media (max-width: 900px) {
       .header-inner {
-        padding: 14px 16px;
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .right-side {
-        gap: 14px;
-      }
-
-      .main-nav {
-        gap: 14px;
+      .left-group {
+        gap: 16px;
       }
 
       .panel {
@@ -291,51 +279,41 @@
       }
     }
 
-    @media (max-width: 640px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .right-side {
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      .main-nav {
-        gap: 12px;
-      }
-
+    @media (max-width: 600px) {
       .brand {
         font-size: 20px;
       }
 
+      .nav {
+        gap: 12px;
+      }
+
       section {
-        padding: 34px 14px;
+        padding: 26px 12px;
       }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="header">
     <div class="header-inner">
-      <div class="brand" data-az="İnsan həyatına toxunmaq" data-en="Touching Human Life">
-        İnsan həyatına toxunmaq
-      </div>
+      <div class="left-group">
+        <div class="brand" data-az="İnsan həyatına toxunmaq" data-en="Touching Human Life">
+          İnsan həyatına toxunmaq
+        </div>
 
-      <div class="right-side">
-        <nav class="main-nav">
+        <nav class="nav">
           <a href="#home" class="nav-link active" data-az="Ana səhifə" data-en="Home">Ana səhifə</a>
           <a href="#about" class="nav-link" data-az="Haqqında" data-en="About">Haqqında</a>
           <a href="#stories" class="nav-link" data-az="Hekayələr" data-en="Stories">Hekayələr</a>
           <a href="#videos" class="nav-link" data-az="Videolar" data-en="Videos">Videolar</a>
         </nav>
+      </div>
 
-        <div class="lang-switch">
-          <button id="btnAz" class="active" type="button">AZ</button>
-          <span>/</span>
-          <button id="btnEn" type="button">ENG</button>
-        </div>
+      <div class="lang-switch">
+        <button id="btnAz" class="active" type="button">AZ</button>
+        <span>/</span>
+        <button id="btnEn" type="button">ENG</button>
       </div>
     </div>
   </header>
@@ -439,11 +417,10 @@
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
                 </iframe>
-
                 <div class="video-content">
                   <div class="video-title">Təhsil hüququnun təmin edilməsi</div>
                   <div class="video-text">Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</div>
-                  <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank" rel="noopener noreferrer">YouTube-da aç</a>
+                  <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank">YouTube-da aç</a>
                 </div>
               </div>
             </div>
@@ -460,11 +437,10 @@
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
                 </iframe>
-
                 <div class="video-content">
                   <div class="video-title">Ensuring the Right to Education</div>
                   <div class="video-text">A story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</div>
-                  <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+                  <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank">Open on YouTube</a>
                 </div>
               </div>
             </div>
@@ -475,53 +451,52 @@
   </main>
 
   <script>
-    const btnAz = document.getElementById("btnAz");
-    const btnEn = document.getElementById("btnEn");
-    const azBlocks = document.querySelectorAll(".lang-az");
-    const enBlocks = document.querySelectorAll(".lang-en");
-    const navLinks = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll("main section");
-    const translatable = document.querySelectorAll("[data-az][data-en]");
+    const btnAz = document.getElementById('btnAz');
+    const btnEn = document.getElementById('btnEn');
+    const azBlocks = document.querySelectorAll('.lang-az');
+    const enBlocks = document.querySelectorAll('.lang-en');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('main section');
+    const translateItems = document.querySelectorAll('[data-az][data-en]');
 
     function setLanguage(lang) {
-      if (lang === "en") {
-        azBlocks.forEach(el => el.classList.add("hidden"));
-        enBlocks.forEach(el => el.classList.remove("hidden"));
-        translatable.forEach(el => el.textContent = el.dataset.en);
-        btnAz.classList.remove("active");
-        btnEn.classList.add("active");
-        document.documentElement.lang = "en";
+      if (lang === 'en') {
+        azBlocks.forEach(el => el.classList.add('hidden'));
+        enBlocks.forEach(el => el.classList.remove('hidden'));
+        translateItems.forEach(el => el.textContent = el.dataset.en);
+        btnAz.classList.remove('active');
+        btnEn.classList.add('active');
+        document.documentElement.lang = 'en';
       } else {
-        enBlocks.forEach(el => el.classList.add("hidden"));
-        azBlocks.forEach(el => el.classList.remove("hidden"));
-        translatable.forEach(el => el.textContent = el.dataset.az);
-        btnEn.classList.remove("active");
-        btnAz.classList.add("active");
-        document.documentElement.lang = "az";
+        enBlocks.forEach(el => el.classList.add('hidden'));
+        azBlocks.forEach(el => el.classList.remove('hidden'));
+        translateItems.forEach(el => el.textContent = el.dataset.az);
+        btnEn.classList.remove('active');
+        btnAz.classList.add('active');
+        document.documentElement.lang = 'az';
       }
-      localStorage.setItem("siteLanguage", lang);
+      localStorage.setItem('siteLanguage', lang);
     }
 
-    btnAz.addEventListener("click", () => setLanguage("az"));
-    btnEn.addEventListener("click", () => setLanguage("en"));
+    btnAz.addEventListener('click', () => setLanguage('az'));
+    btnEn.addEventListener('click', () => setLanguage('en'));
 
-    const savedLanguage = localStorage.getItem("siteLanguage") || "az";
-    setLanguage(savedLanguage);
+    setLanguage(localStorage.getItem('siteLanguage') || 'az');
 
-    window.addEventListener("scroll", () => {
-      let current = "home";
+    window.addEventListener('scroll', () => {
+      let current = 'home';
 
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 130;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
+        const top = section.offsetTop - 120;
+        if (window.scrollY >= top) {
+          current = section.getAttribute('id');
         }
       });
 
       navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
         }
       });
     });
