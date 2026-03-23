@@ -1,86 +1,3 @@
-const siteData = {
-  az: {
-    nav: {
-      home: "Ana səhifə",
-      about: "Haqqında",
-      stories: "Hekayələr",
-      videos: "Videolar"
-    },
-    logo: "İnsan həyatına toxunmaq",
-    heroEyebrow: "Hüquqi hekayələr sadə dildə",
-    heroTitle: "İnsan həyatına toxunmaq",
-    heroStoriesBtn: "Hekayələrə keç",
-    heroVideosBtn: "Videolara bax",
-    featuredTag: "Seçilmiş video",
-    featuredTitle: "Təhsil hüququ üzrə video",
-    featuredVideoText: "Təhsil hüququ ilə bağlı hazırlanmış hekayə əsaslı video.",
-    detailLabel: "Daha ətraflı məlumat üçün:",
-    aboutTag: "Platforma haqqında",
-    aboutTitle: "Haqqında",
-    storiesTag: "Hekayələr arxivi",
-    storiesTitle: "Hekayələr",
-    videosTag: "Video hekayələr",
-    videosTitle: "Videolar",
-    searchPlaceholder: "Axtar...",
-    watchVideo: "Videoya bax",
-    playLabel: "YouTube video",
-    noStories: "Axtarışa uyğun hekayə tapılmadı.",
-    categories: {
-      all: "Hamısı",
-      education-right: "Təhsil hüququ",
-      child-rights: "Uşaq hüquqları",
-      disability-rights: "Əlilliyi olan şəxslərin hüquqları",
-      social-security: "Sosial təminat",
-      equality-rights: "Hüquq bərabərliyinin təmini"
-    },
-    labels: {
-      problem: "Problem:",
-      step: "Addım:",
-      result: "Nəticə:"
-    }
-  },
-  en: {
-    nav: {
-      home: "Home",
-      about: "About",
-      stories: "Stories",
-      videos: "Videos"
-    },
-    logo: "Touching Human Life",
-    heroEyebrow: "Legal stories in simple language",
-    heroTitle: "Touching Human Life",
-    heroStoriesBtn: "Go to stories",
-    heroVideosBtn: "Watch videos",
-    featuredTag: "Featured video",
-    featuredTitle: "Video on the right to education",
-    featuredVideoText: "A story-based video prepared on the right to education.",
-    detailLabel: "For more detailed information:",
-    aboutTag: "About the platform",
-    aboutTitle: "About",
-    storiesTag: "Story archive",
-    storiesTitle: "Stories",
-    videosTag: "Video stories",
-    videosTitle: "Videos",
-    searchPlaceholder: "Search...",
-    watchVideo: "Watch video",
-    playLabel: "YouTube video",
-    noStories: "No stories found for this search.",
-    categories: {
-      all: "All",
-      education-right: "Right to education",
-      child-rights: "Child rights",
-      disability-rights: "Rights of persons with disabilities",
-      social-security: "Social security",
-      equality-rights: "Ensuring equality of rights"
-    },
-    labels: {
-      problem: "Problem:",
-      step: "Step:",
-      result: "Result:"
-    }
-  }
-};
-
 let currentLang = localStorage.getItem("siteLang") || "az";
 let selectedCategory = "all";
 let stories = [];
@@ -88,255 +5,107 @@ let videos = [];
 
 const btnAz = document.getElementById("btn-az");
 const btnEn = document.getElementById("btn-en");
-const siteLogo = document.getElementById("siteLogo");
-const heroEyebrow = document.getElementById("heroEyebrow");
-const heroTitle = document.getElementById("hero-title");
-const heroStoriesBtn = document.getElementById("heroStoriesBtn");
-const heroVideosBtn = document.getElementById("heroVideosBtn");
-const featuredTag = document.getElementById("featuredTag");
-const featuredTitle = document.getElementById("featuredTitle");
-const featuredVideoText = document.getElementById("featuredVideoText");
-const detailLabel = document.getElementById("detailLabel");
-const aboutTag = document.getElementById("aboutTag");
-const aboutTitle = document.getElementById("about-title");
-const storiesTag = document.getElementById("storiesTag");
-const storiesTitle = document.getElementById("stories-title");
-const videosTag = document.getElementById("videosTag");
-const videosTitle = document.getElementById("videos-title");
-const searchInput = document.getElementById("searchInput");
-const filters = document.getElementById("filters");
-const storiesContainer = document.getElementById("storiesContainer");
-const videosContainer = document.getElementById("videosContainer");
-const navHome = document.getElementById("nav-home");
-const navAbout = document.getElementById("nav-about");
-const navStories = document.getElementById("nav-stories");
-const navVideos = document.getElementById("nav-videos");
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
 
-const homeTextAz = document.getElementById("home-text-az");
-const homeTextEn = document.getElementById("home-text-en");
-const aboutTextAz = document.getElementById("about-text-az");
-const aboutTextEn = document.getElementById("about-text-en");
-
-function setLanguage(lang) {
+function switchLang(lang) {
   currentLang = lang;
   localStorage.setItem("siteLang", lang);
 
-  const t = siteData[lang];
+  document.querySelectorAll(".lang-block").forEach(el => {
+    el.classList.add("hidden");
+  });
 
-  siteLogo.textContent = t.logo;
-  heroEyebrow.textContent = t.heroEyebrow;
-  heroTitle.textContent = t.heroTitle;
-  heroStoriesBtn.textContent = t.heroStoriesBtn;
-  heroVideosBtn.textContent = t.heroVideosBtn;
-  featuredTag.textContent = t.featuredTag;
-  featuredTitle.textContent = t.featuredTitle;
-  featuredVideoText.textContent = t.featuredVideoText;
-  detailLabel.textContent = t.detailLabel;
-  aboutTag.textContent = t.aboutTag;
-  aboutTitle.textContent = t.aboutTitle;
-  storiesTag.textContent = t.storiesTag;
-  storiesTitle.textContent = t.storiesTitle;
-  videosTag.textContent = t.videosTag;
-  videosTitle.textContent = t.videosTitle;
-
-  navHome.textContent = t.nav.home;
-  navAbout.textContent = t.nav.about;
-  navStories.textContent = t.nav.stories;
-  navVideos.textContent = t.nav.videos;
-
-  searchInput.placeholder = t.searchPlaceholder;
-
-  if (lang === "az") {
-    homeTextAz.classList.remove("hidden");
-    aboutTextAz.classList.remove("hidden");
-    homeTextEn.classList.add("hidden");
-    aboutTextEn.classList.add("hidden");
-    document.documentElement.lang = "az";
-  } else {
-    homeTextEn.classList.remove("hidden");
-    aboutTextEn.classList.remove("hidden");
-    homeTextAz.classList.add("hidden");
-    aboutTextAz.classList.add("hidden");
-    document.documentElement.lang = "en";
-  }
-
-  btnAz.classList.toggle("active", lang === "az");
-  btnEn.classList.toggle("active", lang === "en");
+  document.querySelectorAll(`#${lang}-text, #home-text-${lang}, #about-text-${lang}`).forEach(el => {
+    el.classList.remove("hidden");
+  });
 
   renderFilters();
   renderStories();
   renderVideos();
 }
 
-function getFilteredStories() {
-  const query = searchInput.value.trim().toLowerCase();
-
-  return stories.filter((story) => {
-    const category = story.category[currentLang].toLowerCase();
-    const title = story.title[currentLang].toLowerCase();
-    const problem = story.problem[currentLang].toLowerCase();
-    const step = story.step[currentLang].toLowerCase();
-    const result = story.result[currentLang].toLowerCase();
-
-    const matchesCategory =
-      selectedCategory === "all" || story.categoryKey === selectedCategory;
-
-    const matchesSearch =
-      !query ||
-      category.includes(query) ||
-      title.includes(query) ||
-      problem.includes(query) ||
-      step.includes(query) ||
-      result.includes(query);
-
-    return matchesCategory && matchesSearch;
-  });
-}
+btnAz.onclick = () => switchLang("az");
+btnEn.onclick = () => switchLang("en");
 
 function renderFilters() {
-  const t = siteData[currentLang];
-  const order = [
-    "all",
-    "education-right",
-    "child-rights",
-    "disability-rights",
-    "social-security",
-    "equality-rights"
-  ];
+  const filters = document.getElementById("filters");
+
+  const categories = {
+    "all": currentLang === "az" ? "Hamısı" : "All",
+    "education-right": currentLang === "az" ? "Təhsil hüququ" : "Right to education",
+    "child-rights": currentLang === "az" ? "Uşaq hüquqları" : "Child rights",
+    "disability-rights": currentLang === "az" ? "Əlilliyi olan şəxslərin hüquqları" : "Disability rights",
+    "social-security": currentLang === "az" ? "Sosial təminat" : "Social security",
+    "equality-rights": currentLang === "az" ? "Hüquq bərabərliyi" : "Equality"
+  };
 
   filters.innerHTML = "";
 
-  order.forEach((key) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `filter-btn ${selectedCategory === key ? "active" : ""}`;
-    button.textContent = t.categories[key];
-    button.addEventListener("click", () => {
+  Object.keys(categories).forEach(key => {
+    const btn = document.createElement("button");
+    btn.className = "filter-btn" + (selectedCategory === key ? " active" : "");
+    btn.innerText = categories[key];
+
+    btn.onclick = () => {
       selectedCategory = key;
       renderFilters();
       renderStories();
-    });
-    filters.appendChild(button);
+    };
+
+    filters.appendChild(btn);
   });
 }
 
 function renderStories() {
-  const t = siteData[currentLang];
-  const filteredStories = getFilteredStories();
+  const container = document.getElementById("storiesContainer");
+  container.innerHTML = "";
 
-  storiesContainer.innerHTML = "";
+  const filtered = stories.filter(s =>
+    selectedCategory === "all" || s.categoryKey === selectedCategory
+  );
 
-  if (!filteredStories.length) {
-    const empty = document.createElement("div");
-    empty.className = "empty-state";
-    empty.textContent = t.noStories;
-    storiesContainer.appendChild(empty);
-    return;
-  }
-
-  filteredStories.forEach((story) => {
-    const card = document.createElement("article");
-    card.className = "story-card";
-
-    card.innerHTML = `
-      <div class="story-body">
-        <div class="story-category">${story.category[currentLang]}</div>
-        <h3 class="story-title">${story.title[currentLang]}</h3>
-        <p class="story-line"><strong>${t.labels.problem}</strong> ${story.problem[currentLang]}</p>
-        <p class="story-line"><strong>${t.labels.step}</strong> ${story.step[currentLang]}</p>
-        <p class="story-line"><strong>${t.labels.result}</strong> ${story.result[currentLang]}</p>
+  filtered.forEach(story => {
+    container.innerHTML += `
+      <div class="story-card">
+        <div class="story-body">
+          <div class="story-category">${story.category[currentLang]}</div>
+          <h3 class="story-title">${story.title[currentLang]}</h3>
+          <p><strong>Problem:</strong> ${story.problem[currentLang]}</p>
+          <p><strong>${currentLang === "az" ? "Addım:" : "Step:"}</strong> ${story.step[currentLang]}</p>
+          <p><strong>${currentLang === "az" ? "Nəticə:" : "Result:"}</strong> ${story.result[currentLang]}</p>
+        </div>
       </div>
     `;
-
-    storiesContainer.appendChild(card);
   });
 }
 
 function renderVideos() {
-  const t = siteData[currentLang];
-  videosContainer.innerHTML = "";
+  const container = document.getElementById("videosContainer");
+  container.innerHTML = "";
 
-  if (!videos.length) {
-    const empty = document.createElement("div");
-    empty.className = "empty-state";
-    empty.textContent = t.noStories;
-    videosContainer.appendChild(empty);
-    return;
-  }
-
-  videos.forEach((video) => {
-    const card = document.createElement("article");
-    card.className = "video-card";
-
-    const thumbnail = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
-
-    card.innerHTML = `
-      <div class="video-thumb-wrap">
-        <img class="video-thumb" src="${thumbnail}" alt="${video.title[currentLang]}">
-        <div class="play-badge">${t.playLabel}</div>
-      </div>
-      <div class="video-body">
-        <h3 class="video-title">${video.title[currentLang]}</h3>
-        <p>${video.description[currentLang]}</p>
-        <p class="detail-link-line">
-          <span>${t.detailLabel}</span>
-          <a href="${video.moreInfo}" target="_blank" rel="noopener noreferrer">${video.moreInfo}</a>
-        </p>
-        <a class="video-link" href="${video.url}" target="_blank" rel="noopener noreferrer">${t.watchVideo}</a>
+  videos.forEach(video => {
+    container.innerHTML += `
+      <div class="video-card">
+        <img src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg" class="video-thumb"/>
+        <div class="video-body">
+          <h3>${video.title[currentLang]}</h3>
+          <p>${video.description[currentLang]}</p>
+          <p>
+            ${currentLang === "az" ? "Daha ətraflı məlumat üçün:" : "More info:"}
+            <a href="${video.moreInfo}" target="_blank">${video.moreInfo}</a>
+          </p>
+          <a href="${video.url}" target="_blank" class="video-link">
+            ${currentLang === "az" ? "Videoya bax" : "Watch video"}
+          </a>
+        </div>
       </div>
     `;
-
-    videosContainer.appendChild(card);
   });
 }
 
-async function loadData() {
-  try {
-    const response = await fetch("data.json");
-    const data = await response.json();
-    stories = Array.isArray(data.stories) ? data.stories : [];
-    videos = Array.isArray(data.videos) ? data.videos : [];
-    setLanguage(currentLang);
-  } catch (error) {
-    console.error("Data loading error:", error);
-  }
-}
-
-btnAz.addEventListener("click", () => setLanguage("az"));
-btnEn.addEventListener("click", () => setLanguage("en"));
-searchInput.addEventListener("input", renderStories);
-
-menuToggle.addEventListener("click", () => {
-  mainNav.classList.toggle("open");
-});
-
-document.querySelectorAll(".main-nav a").forEach((link) => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("open");
+fetch("data.json")
+  .then(res => res.json())
+  .then(data => {
+    stories = data.stories;
+    videos = data.videos;
+    switchLang(currentLang);
   });
-});
-
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".main-nav a");
-
-window.addEventListener("scroll", () => {
-  let current = "home";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 140;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
-
-loadData();
