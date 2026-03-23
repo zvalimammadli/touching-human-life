@@ -38,7 +38,7 @@
 
   <main>
     <section id="home" class="hero-section">
-      <div class="container hero-grid">
+      <div class="container hero-single">
         <div class="hero-content glass-card">
           <span class="eyebrow" id="heroEyebrow">Hüquqi hekayələr sadə dildə</span>
           <h1 id="hero-title">İnsan həyatına toxunmaq</h1>
@@ -124,21 +124,41 @@
             <a href="#videos" class="secondary-btn" id="heroVideosBtn">Videolara bax</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="hero-side glass-card">
-          <div class="hero-side-inner">
-            <div class="stat-card">
-              <span class="stat-label" id="stat1Label">Format</span>
-              <strong id="stat1Value">Sadə hekayələr</strong>
-            </div>
-            <div class="stat-card">
-              <span class="stat-label" id="stat2Label">Yanaşma</span>
-              <strong id="stat2Value">İnsan mərkəzli</strong>
-            </div>
-            <div class="stat-card">
-              <span class="stat-label" id="stat3Label">Məqsəd</span>
-              <strong id="stat3Value">Hüququ anlaşıqlı etmək</strong>
-            </div>
+    <section id="featured-video" class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-tag" id="featuredTag">Seçilmiş video</span>
+          <h2 id="featuredTitle">Təhsil hüququ üzrə video</h2>
+        </div>
+
+        <div class="featured-video-card glass-card">
+          <div class="featured-video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/c_ly2NyXYOM"
+              title="Education Is a Right, Not a Challenge"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="featured-video-body">
+            <h3 id="featuredVideoName">Education Is a Right, Not a Challenge</h3>
+            <p id="featuredVideoText">
+              Təhsil hüququ ilə bağlı hazırlanmış hekayə əsaslı video.
+            </p>
+            <p class="detail-link-line">
+              <span id="detailLabel">Daha ətraflı məlumat üçün:</span>
+              <a
+                href="https://constcourt.gov.az/az/decision/1481"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://constcourt.gov.az/az/decision/1481
+              </a>
+            </p>
           </div>
         </div>
       </div>
@@ -151,7 +171,7 @@
           <h2 id="about-title">Haqqında</h2>
         </div>
 
-        <div class="about-grid">
+        <div class="about-grid single-about">
           <div class="glass-card about-main">
             <div id="about-text-az" class="lang-block">
               <p>
@@ -174,21 +194,6 @@
                 Here, legal decisions are explained not only as normative texts but also as
                 changes that affect real human lives.
               </p>
-            </div>
-          </div>
-
-          <div class="glass-card about-points">
-            <div class="point-item">
-              <h3 id="point1Title">Sadə dil</h3>
-              <p id="point1Text">Mürəkkəb hüquqi məsələlər daha aydın formada təqdim olunur.</p>
-            </div>
-            <div class="point-item">
-              <h3 id="point2Title">Real hekayələr</h3>
-              <p id="point2Text">Hər qərarın arxasında dayanan insan hekayəsi görünən olur.</p>
-            </div>
-            <div class="point-item">
-              <h3 id="point3Title">Aydın nəticə</h3>
-              <p id="point3Text">Qərardan sonra həyatlarda nə dəyişdiyi izah edilir.</p>
             </div>
           </div>
         </div>
