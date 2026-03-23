@@ -207,6 +207,10 @@
       box-shadow: 0 16px 36px rgba(0,0,0,0.28);
     }
 
+    .video-card-link {
+      display: block;
+    }
+
     .video-frame {
       width: 100%;
       aspect-ratio: 16/9;
@@ -231,6 +235,12 @@
       line-height: 1.7;
       margin-bottom: 16px;
       color: rgba(255,255,255,0.9);
+    }
+
+    .video-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .video-link {
@@ -410,17 +420,23 @@
             <h2>Videolar</h2>
             <div class="video-grid">
               <div class="video-card">
-                <iframe
-                  class="video-frame"
-                  src="https://www.youtube.com/embed/c_ly2NyXYOM"
-                  title="Təhsil hüququnun təmin edilməsi"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen>
-                </iframe>
+                <a class="video-card-link" href="case.html">
+                  <iframe
+                    class="video-frame"
+                    src="https://www.youtube.com/embed/c_ly2NyXYOM"
+                    title="Təhsil hüququnun təmin edilməsi"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                  </iframe>
+                </a>
                 <div class="video-content">
                   <div class="video-title">Təhsil hüququnun təmin edilməsi</div>
                   <div class="video-text">Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</div>
-                  <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank">YouTube-da aç</a>
+                  <div class="video-actions">
+                    <a class="video-link" href="case.html">Ətraflı bax</a>
+                    <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank" rel="noopener noreferrer">YouTube-da aç</a>
+                    <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank" rel="noopener noreferrer">Qərara keçid</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -430,17 +446,23 @@
             <h2>Videos</h2>
             <div class="video-grid">
               <div class="video-card">
-                <iframe
-                  class="video-frame"
-                  src="https://www.youtube.com/embed/c_ly2NyXYOM"
-                  title="Ensuring the Right to Education"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen>
-                </iframe>
+                <a class="video-card-link" href="case.html">
+                  <iframe
+                    class="video-frame"
+                    src="https://www.youtube.com/embed/c_ly2NyXYOM"
+                    title="Ensuring the Right to Education"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                  </iframe>
+                </a>
                 <div class="video-content">
                   <div class="video-title">Ensuring the Right to Education</div>
                   <div class="video-text">A story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</div>
-                  <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank">Open on YouTube</a>
+                  <div class="video-actions">
+                    <a class="video-link" href="case.html">View details</a>
+                    <a class="video-link" href="https://youtu.be/c_ly2NyXYOM" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+                    <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank" rel="noopener noreferrer">Court decision</a>
+                  </div>
                 </div>
               </div>
             </div>
