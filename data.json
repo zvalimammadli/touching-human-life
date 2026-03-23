@@ -12,20 +12,21 @@
       },
       "problem": {
         "az": "Bir gənc universitetə qəbul olunur, lakin mövcud qaydalar səbəbindən təhsil hüququnu tam şəkildə həyata keçirə bilmir. O, bütün səylərinə baxmayaraq, hüququnun məhdudlaşdırıldığını hiss edir və çıxış yolu tapa bilmir.",
-        "en": "A young person is admitted to university but cannot fully exercise the right to education due to existing rules."
+        "en": "A young person is admitted to a university, but due to existing rules cannot fully exercise the right to education. Despite all efforts, the person feels that the right is being restricted and cannot find a solution."
       },
       "step": {
-        "az": "Məsələ Ombudsmanın diqqətinə çatdırılır və Konstitusiya Məhkəməsinə müraciət edilir.",
-        "en": "The issue is brought to the Ombudsman and referred to the Constitutional Court."
+        "az": "Məsələ Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkilinin diqqətinə çatdırılır. Ombudsman vəziyyəti araşdıraraq müəyyən edir ki, tətbiq olunan norma şəxsin təhsil hüququnun həyata keçirilməsinə maneə yaradır və bu səbəbdən Konstitusiya Məhkəməsinə sorğu ilə müraciət edir.",
+        "en": "The matter is brought to the attention of the Commissioner for Human Rights of the Republic of Azerbaijan. After examining the situation, the Ombudsman determines that the applicable norm creates an obstacle to the exercise of the person’s right to education and therefore applies to the Constitutional Court."
       },
       "result": {
-        "az": "Qərar nəticəsində təhsil hüququnun daha effektiv təmin olunması üçün dəyişiklik edilir və bir çox insan üçün yeni imkanlar yaranır.",
-        "en": "The decision leads to better protection of the right to education and opens new opportunities."
+        "az": "Konstitusiya Məhkəməsi işi araşdıraraq qərara gəlir ki, həmin hüquqi məhdudiyyət Konstitusiyada təsbit olunmuş təhsil hüququ ilə uyğun deyil və bu hüququn daha effektiv təmin olunması üçün dəyişiklik zəruridir. Bu dəyişiklik yalnız bir nəfərin deyil, eyni vəziyyətlə üzləşən bir çox insanın həyatında yeni imkanların qapısını açır.",
+        "en": "The Constitutional Court examines the case and concludes that the legal restriction is not compatible with the right to education guaranteed by the Constitution and that change is necessary for a more effective protection of this right. This change opens the door to new opportunities not only for one person, but for many people facing the same situation."
       }
     }
   ],
   "videos": [
     {
+      "categoryKey": "education-right",
       "youtubeId": "c_ly2NyXYOM",
       "url": "https://youtu.be/c_ly2NyXYOM",
       "moreInfo": "https://constcourt.gov.az/az/decision/1481",
@@ -34,8 +35,8 @@
         "en": "Equal education for everyone"
       },
       "description": {
-        "az": "Təhsil hüququ ilə bağlı video",
-        "en": "Video about the right to education"
+        "az": "Təhsil hüququ ilə bağlı hazırlanmış hekayə əsaslı video.",
+        "en": "A story-based video prepared on the right to education."
       }
     }
   ]
