@@ -9,16 +9,17 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: #fff;
+  color: white;
   background:
     linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
     url('background.jpg') center/cover no-repeat fixed;
 }
 
+/* HEADER */
 header {
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -32,20 +33,14 @@ nav a {
   font-weight: bold;
 }
 
-.lang button {
-  background: none;
-  border: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
+/* SECTION */
 section {
   padding: 100px 20px;
   max-width: 1000px;
   margin: auto;
 }
 
+/* VIDEO CARD */
 .card {
   background: rgba(255,255,255,0.08);
   border-radius: 15px;
@@ -81,69 +76,49 @@ iframe {
   <nav>
     <a href="#home">Ana səhifə</a>
     <a href="#about">Haqqında</a>
-    <a href="#stories">Hekayələr</a>
-    <a href="#videos">Videolar</a>
+    <a href="#stories">Hekayə</a>
+    <a href="#videos">Video</a>
   </nav>
-
-  <div class="lang">
-    <button onclick="setLang('az')">AZ</button>
-    <button onclick="setLang('en')">ENG</button>
-  </div>
 </header>
 
+<!-- ANA SƏHİFƏ -->
 <section id="home">
-  <div id="az">
-    <h1>İnsan həyatına toxunmaq</h1>
+  <h1>Təhsil hüququnun təmini</h1>
 
-    <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
+  <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
 
-    <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, şəxsin hüquqları pozulduqda Müvəkkil Konstitusiya Məhkəməsinə müraciət edə bilər.</p>
+  <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, şəxsin hüquqları pozulduqda Müvəkkil Konstitusiya Məhkəməsinə müraciət edə bilər.</p>
 
-    <p>Hər bir işin arxasında real insan hekayəsi dayanır.</p>
+  <p>Hər bir işin arxasında real insan hekayəsi dayanır.</p>
 
-    <p>Hər bir hekayə üç suala cavab verir:</p>
-    <p><b>Problem nə idi?</b></p>
-    <p><b>Hansı addım atıldı?</b></p>
-    <p><b>Nə dəyişdi?</b></p>
+  <p><b>Problem nə idi?</b></p>
+  <p><b>Hansı addım atıldı?</b></p>
+  <p><b>İnsanların həyatında nə dəyişdi?</b></p>
 
-    <p><b>Bir qayda dəyişəndə, bir həyat dəyişir.</b></p>
-  </div>
-
-  <div id="en" style="display:none;">
-    <h1>Touching Human Life</h1>
-
-    <p>This platform explains legal decisions in a simple storytelling format.</p>
-
-    <p>The Ombudsman may apply to the Constitutional Court if rights are violated.</p>
-
-    <p>Each case has a real human story behind it.</p>
-
-    <p><b>What was the problem?</b></p>
-    <p><b>What was done?</b></p>
-    <p><b>What changed?</b></p>
-
-    <p><b>When one rule changes, one life changes.</b></p>
-  </div>
+  <p><b>Bir qayda dəyişəndə, bir həyat dəyişir.</b></p>
 </section>
 
+<!-- HAQQINDA -->
 <section id="about">
   <h2>Haqqında</h2>
-  <p>Bu platforma hüquqi qərarları sadə və anlaşıqlı şəkildə təqdim edir.</p>
+  <p>Bu platforma hüquqi qərarları sadə və anlaşıqlı şəkildə izah edir və onların insanların həyatına təsirini göstərir.</p>
 </section>
 
+<!-- HEKAYƏ -->
 <section id="stories">
-  <h2>Hekayələr</h2>
-  <p>Bu bölmə gələcəkdə doldurulacaq.</p>
+  <h2>Hekayə</h2>
+  <p>Bu hekayə təhsil hüququnun təmin olunması ilə bağlıdır və Konstitusiya Məhkəməsinin qərarı əsasında hazırlanmışdır.</p>
 </section>
 
+<!-- VIDEO -->
 <section id="videos">
-  <h2>Videolar</h2>
+  <h2>Video</h2>
 
   <div class="card">
     <iframe src="https://www.youtube.com/embed/c_ly2NyXYOM"></iframe>
 
     <div class="card-content">
-      <h3>Sosial müavinət / tək ata məsələsi</h3>
+      <h3>Təhsil hüququnun təmini</h3>
 
       <a class="detail-link"
          href="https://constcourt.gov.az/az/decision/1481"
@@ -152,19 +127,8 @@ iframe {
       </a>
     </div>
   </div>
-</section>
 
-<script>
-function setLang(lang) {
-  if(lang === 'en'){
-    document.getElementById('az').style.display = 'none';
-    document.getElementById('en').style.display = 'block';
-  } else {
-    document.getElementById('az').style.display = 'block';
-    document.getElementById('en').style.display = 'none';
-  }
-}
-</script>
+</section>
 
 </body>
 </html>
