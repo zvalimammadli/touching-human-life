@@ -1,43 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <title>Story</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sosial müavinət / tək ata məsələsi</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.84)),
+        url('background.jpg') center/cover no-repeat fixed;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 980px;
+      background: rgba(10, 10, 10, 0.45);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .back-link,
+    .lang-switch button {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lang-switch button {
+      background: transparent;
+    }
+
+    .lang-switch button.active {
+      background: rgba(255,255,255,0.12);
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 28px 0 12px;
+      font-size: 24px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #f1f1f1;
+    }
+
+    .video-box {
+      margin: 26px 0 10px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    .section-box {
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <div class="container">
+      <div class="topbar">
+        <a href="index.html#videos" class="back-link">← Geri qayıt</a>
 
-<header style="padding:20px;">
-  <a href="index.html">← Back</a>
-</header>
+        <div class="lang-switch">
+          <button id="azBtn" class="active">AZ</button>
+          <button id="enBtn">ENG</button>
+        </div>
+      </div>
 
-<div style="max-width:800px;margin:auto;padding:20px;">
+      <div class="lang lang-az">
+        <h1>Sosial müavinət / tək ata məsələsi</h1>
 
-  <h1 id="title"></h1>
-  <p id="desc"></p>
+        <p>
+          Bu iş sosial təminat və ailə münasibətləri sahəsində hüquqi tənzimləmənin insanların gündəlik həyatına necə təsir etdiyini göstərən nümunələrdəndir.
+        </p>
 
-  <!-- VIDEO -->
-  <div style="margin:20px 0;">
-    <iframe id="video"
-      width="100%"
-      height="400"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
+        <div class="video-box">
+          <iframe
+            src="https://www.youtube.com/embed/c_ly2NyXYOM"
+            title="Sosial müavinət / tək ata məsələsi"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="section-box">
+          <h2>Problem nə idi?</h2>
+          <p>
+            Mövcud hüquqi tənzimləmə nəticəsində bəzi hallarda uşağı təkbaşına böyüdən ataların sosial təminat imkanlarına çıxışında çətinlik yaranırdı. Bu isə ailənin sosial müdafiəsinə və uşağın rifahına birbaşa təsir göstərirdi.
+          </p>
+        </div>
+
+        <div class="section-box">
+          <h2>Hansı addım atıldı?</h2>
+          <p>
+            Ombudsman məsələni insan hüquqları baxımından qiymətləndirərək Konstitusiya Məhkəməsinə sorğu ilə müraciət etdi. Məqsəd hüquqi tənzimləmənin Konstitusiyada təsbit olunmuş bərabərlik, sosial müdafiə və ədalət prinsiplərinə uyğunluğunu araşdırmaq idi.
+          </p>
+        </div>
+
+        <div class="section-box">
+          <h2>İnsanların həyatında nə dəyişdi?</h2>
+          <p>
+            Qərar nəticəsində mövcud qaydaların insanların həyatına təsiri daha aydın qiymətləndirildi və sosial təminat məsələlərində daha ədalətli yanaşmanın tətbiqinə hüquqi zəmin yarandı. Beləliklə, hüquqi dəyişikliklərin real insan həyatına necə toxunduğu daha görünən oldu.
+          </p>
+        </div>
+      </div>
+
+      <div class="lang lang-en hidden">
+        <h1>Social benefit / single father case</h1>
+
+        <p>
+          This case is an example of how legal regulation in the field of social protection and family relations can directly affect people’s daily lives.
+        </p>
+
+        <div class="video-box">
+          <iframe
+            src="https://www.youtube.com/embed/c_ly2NyXYOM"
+            title="Social benefit / single father case"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="section-box">
+          <h2>What was the problem?</h2>
+          <p>
+            Under the existing legal regulation, in some cases fathers raising children alone faced difficulties in accessing social protection opportunities. This directly affected the social protection of the family and the well-being of the child.
+          </p>
+        </div>
+
+        <div class="section-box">
+          <h2>What step was taken?</h2>
+          <p>
+            The Ombudsman assessed the matter from a human rights perspective and applied to the Constitutional Court. The aim was to examine whether the legal regulation was compatible with the constitutional principles of equality, social protection and justice.
+          </p>
+        </div>
+
+        <div class="section-box">
+          <h2>What changed in people’s lives?</h2>
+          <p>
+            As a result of the decision, the effect of the existing rules on people’s lives was assessed more clearly, and a stronger legal basis emerged for a fairer approach in matters of social protection. This made it more visible how a legal change can touch a real human life.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h3>Problem</h3>
-  <p id="problem"></p>
+  <script>
+    const azBtn = document.getElementById('azBtn');
+    const enBtn = document.getElementById('enBtn');
+    const azBlocks = document.querySelectorAll('.lang-az');
+    const enBlocks = document.querySelectorAll('.lang-en');
 
-  <h3>Action</h3>
-  <p id="action"></p>
+    function setLanguage(lang) {
+      if (lang === 'en') {
+        azBlocks.forEach(el => el.classList.add('hidden'));
+        enBlocks.forEach(el => el.classList.remove('hidden'));
+        azBtn.classList.remove('active');
+        enBtn.classList.add('active');
+        document.documentElement.lang = 'en';
+      } else {
+        enBlocks.forEach(el => el.classList.add('hidden'));
+        azBlocks.forEach(el => el.classList.remove('hidden'));
+        enBtn.classList.remove('active');
+        azBtn.classList.add('active');
+        document.documentElement.lang = 'az';
+      }
 
-  <h3>Result</h3>
-  <p id="result"></p>
+      localStorage.setItem('caseLang', lang);
+    }
 
-</div>
+    azBtn.addEventListener('click', () => setLanguage('az'));
+    enBtn.addEventListener('click', () => setLanguage('en'));
 
-<script src="case.js"></script>
-
+    const savedLang = localStorage.getItem('caseLang') || 'az';
+    setLanguage(savedLang);
+  </script>
 </body>
 </html>
