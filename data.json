@@ -1,26 +1,87 @@
-[
-  {
-    "title": "Sosial müavinət məsələsi",
-    "category": "Sosial hüquqlar",
-    "problem": "Tək ata sosial müavinət almaqda çətinliklə üzləşmişdi.",
-    "solution": "Ombudsman məsələni araşdıraraq Konstitusiya Məhkəməsinə müraciət etmişdi.",
-    "result": "Qərardan sonra hüquqi yanaşma dəqiqləşdi və hüquqların təmininə əlavə imkan yarandı.",
-    "link": ""
-  },
-  {
-    "title": "Təhsilə çıxış məsələsi",
-    "category": "Uşaq hüquqları",
-    "problem": "Bir uşağın təhsilə çıxışında hüquqi maneə yaranmışdı.",
-    "solution": "Məsələ hüquqi müstəvidə qaldırıldı və aidiyyəti orqanlara təqdim olundu.",
-    "result": "Uşağın təhsilə çıxış hüququnun müdafiəsi istiqamətində müsbət dəyişiklik baş verdi.",
-    "link": ""
-  },
-  {
-    "title": "Məhkəməyə müraciət hüququ",
-    "category": "Ədalət mühakiməsi",
-    "problem": "Şəxsin müdafiə vasitələrindən effektiv istifadə imkanları məhdudlaşmışdı.",
-    "solution": "Normativ hüquqi baza üzrə məsələ Konstitusiya nəzarətinə çıxarıldı.",
-    "result": "Hüquqi təminatların tətbiqində daha aydın yanaşma formalaşdı.",
-    "link": ""
-  }
-]
+{
+  "stories": [
+    {
+      "categoryKey": "social-rights",
+      "category": {
+        "az": "Sosial hüquqlar",
+        "en": "Social rights"
+      },
+      "title": {
+        "az": "Sosial müavinət məsələsi",
+        "en": "Social allowance issue"
+      },
+      "problem": {
+        "az": "Tək ata sosial müavinət almaqda çətinliklə üzləşmişdi.",
+        "en": "A single father faced difficulties in obtaining social allowance."
+      },
+      "step": {
+        "az": "Ombudsman məsələni araşdıraraq Konstitusiya Məhkəməsinə müraciət etmişdi.",
+        "en": "The Ombudsman examined the matter and applied to the Constitutional Court."
+      },
+      "result": {
+        "az": "Qərardan sonra hüquqi yanaşma dəqiqləşdi və hüquqların təmininə əlavə imkan yarandı.",
+        "en": "After the decision, the legal approach became clearer and additional safeguards for rights emerged."
+      }
+    },
+    {
+      "categoryKey": "child-rights",
+      "category": {
+        "az": "Uşaq hüquqları",
+        "en": "Child rights"
+      },
+      "title": {
+        "az": "Təhsilə çıxış məsələsi",
+        "en": "Access to education issue"
+      },
+      "problem": {
+        "az": "Bir uşağın təhsilə çıxışında hüquqi maneə yaranmışdı.",
+        "en": "A child faced a legal obstacle in access to education."
+      },
+      "step": {
+        "az": "Məsələ hüquqi müstəvidə qaldırıldı və aidiyyəti orqanlara təqdim olundu.",
+        "en": "The issue was raised in the legal framework and submitted to the relevant authorities."
+      },
+      "result": {
+        "az": "Uşağın təhsilə çıxış hüququnun müdafiəsi istiqamətində müsbət dəyişiklik baş verdi.",
+        "en": "A positive change took place in protecting the child’s right to education."
+      }
+    },
+    {
+      "categoryKey": "fair-trial",
+      "category": {
+        "az": "Ədalət mühakiməsi",
+        "en": "Fair trial"
+      },
+      "title": {
+        "az": "Məhkəməyə müraciət hüququ",
+        "en": "Right to apply to court"
+      },
+      "problem": {
+        "az": "Şəxsin müdafiə vasitələrindən effektiv istifadə imkanları məhdudlaşmışdı.",
+        "en": "The person’s ability to effectively use remedies had been restricted."
+      },
+      "step": {
+        "az": "Normativ hüquqi baza üzrə məsələ Konstitusiya nəzarətinə çıxarıldı.",
+        "en": "The issue was brought under constitutional review regarding the normative legal framework."
+      },
+      "result": {
+        "az": "Hüquqi təminatların tətbiqində daha aydın və ədalətli yanaşma formalaşdı.",
+        "en": "A clearer and fairer approach emerged in the application of legal safeguards."
+      }
+    }
+  ],
+  "videos": [
+    {
+      "youtubeId": "c_ly2NyXYOM",
+      "url": "https://youtu.be/c_ly2NyXYOM",
+      "title": {
+        "az": "Hekayə 1",
+        "en": "Story 1"
+      },
+      "description": {
+        "az": "Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış ilk hekayə əsaslı video.",
+        "en": "The first story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court."
+      }
+    }
+  ]
+}
