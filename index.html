@@ -1,33 +1,89 @@
-<section class="hero-text">
-  <h2>İnsan həyatına toxunmaq</h2>
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İnsan həyatına toxunmaq</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-badge">T</div>
+      <div>
+        <h1 class="brand-title">İnsan həyatına toxunmaq</h1>
+        <p class="brand-subtitle">Hüquqi hekayələr sadə dildə</p>
+      </div>
+    </div>
+  </header>
 
-  <p>
-    “İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə dildə, hekayələr vasitəsilə çatdıran bir platformadır.
-  </p>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Hüquqi qərarların insan həyatında yaratdığı dəyişikliklər</h2>
+        <p>
+          Bu platforma Ombudsmanın Konstitusiya Məhkəməsinə müraciətləri əsasında
+          baxılmış işləri sadə, aydın və hekayə formasında təqdim edir.
+        </p>
+        <div class="hero-pills">
+          <span>İnsan yönümlü</span>
+          <span>Sadə dil</span>
+          <span>Video hekayələr</span>
+        </div>
+      </div>
 
-  <p>
-    Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktlar nəticəsində şəxsin hüquqları pozulduqda Müvəkkil Azərbaycan Respublikasının Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.
-  </p>
+      <div class="hero-box">
+        <div class="mini-card">
+          <h3>Problem</h3>
+          <p>Hüquqi məsələ nə idi?</p>
+        </div>
+        <div class="mini-card">
+          <h3>Addım</h3>
+          <p>Hansı hüquqi addım atıldı?</p>
+        </div>
+        <div class="mini-card">
+          <h3>Nəticə</h3>
+          <p>İnsanların həyatında nə dəyişdi?</p>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    Müvəkkilin sorğusuna əsasən Konstitusiya Məhkəməsi tərəfindən baxılan hər bir işin arxasında real insan hekayəsi dayanır.
-  </p>
+    <section class="intro">
+      <h3>Platforma haqqında</h3>
+      <p>
+        “İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə dildə,
+        hekayələr vasitəsilə çatdıran platformadır.
+      </p>
+      <p>
+        Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman)
+        haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktlar
+        nəticəsində şəxsin hüquqları pozulduqda Müvəkkil Konstitusiya Məhkəməsinə
+        sorğu ilə müraciət edə bilər.
+      </p>
+      <p>
+        Müvəkkilin sorğusuna əsasən Konstitusiya Məhkəməsi tərəfindən baxılan hər
+        bir işin arxasında real insan hekayəsi dayanır.
+      </p>
+    </section>
 
-  <p>
-    Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar paylaşılır. Burada qəbul edilmiş qərarların insanların həyatında hansı dəyişikliklərə səbəb olduğu sadə və aydın dildə izah olunur.
-  </p>
+    <section class="stories-section">
+      <div class="section-top">
+        <h3>Hekayələr</h3>
+        <input type="text" id="searchInput" placeholder="Axtar...">
+      </div>
 
-  <p>Hər bir hekayə üç sadə suala cavab verir:</p>
+      <div class="filters">
+        <button class="filter-btn active" data-category="Hamısı">Hamısı</button>
+        <button class="filter-btn" data-category="Sosial hüquqlar">Sosial hüquqlar</button>
+        <button class="filter-btn" data-category="Ədalət mühakiməsi">Ədalət mühakiməsi</button>
+        <button class="filter-btn" data-category="Uşaq hüquqları">Uşaq hüquqları</button>
+      </div>
 
-  <ul>
-    <li>Problem nə idi?</li>
-    <li>Hansı addım atıldı?</li>
-    <li>İnsanların həyatında nə dəyişdi?</li>
-  </ul>
+      <div id="stories" class="stories-grid"></div>
+      <p id="emptyState" class="empty-state" style="display:none;">Uyğun nəticə tapılmadı.</p>
+    </section>
+  </main>
 
-  <p>
-    Məqsədimiz mürəkkəb hüquqi prosesləri sadə və aydın şəkildə izah etməkdir.
-  </p>
-
-  <p><strong>Bir qayda dəyişəndə, bir həyat dəyişir.</strong></p>
-</section>
+  <script src="./app.js"></script>
+</body>
+</html>
