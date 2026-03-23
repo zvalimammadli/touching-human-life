@@ -3,180 +3,444 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>İnsan həyatına toxunmaq</title>
-  <meta name="description" content="Hüquqi qərarların insan həyatına təsirini sadə dildə izah edən platforma." />
-  <link rel="stylesheet" href="style.css" />
+  <title>Touching Human Life</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.8)),
+        url('background.jpg') center/cover no-repeat fixed;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 36px;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a,
+    .lang-switch button {
+      color: #fff;
+      text-decoration: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      opacity: 0.9;
+      transition: 0.25s ease;
+    }
+
+    .main-nav a:hover,
+    .lang-switch button:hover,
+    .main-nav a.active,
+    .lang-switch button.active {
+      opacity: 1;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .divider {
+      opacity: 0.5;
+    }
+
+    main {
+      padding-top: 88px;
+    }
+
+    section {
+      padding: 70px 24px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .glass-box {
+      background: rgba(8, 8, 8, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.28);
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.08;
+      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #f2f2f2;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .qa-box {
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .qa-box p {
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-title {
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .card-text {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #ededed;
+    }
+
+    .story-note {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+      margin-top: 18px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        padding: 16px 18px;
+        align-items: flex-start;
+      }
+
+      .header-left {
+        gap: 16px;
+      }
+
+      .main-nav {
+        gap: 14px;
+      }
+
+      .main-nav a,
+      .lang-switch button {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 56px 16px;
+      }
+
+      .glass-box {
+        padding: 24px;
+        border-radius: 18px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="page-overlay"></div>
-
   <header class="site-header">
-    <div class="header-inner">
-      <a href="#home" class="brand" id="siteLogo">İnsan həyatına toxunmaq</a>
+    <div class="header-left">
+      <a href="#home" class="logo">Touching Human Life</a>
 
-      <nav class="main-nav" id="mainNav">
-        <a href="#home" id="nav-home">Ana səhifə</a>
-        <a href="#about" id="nav-about">Haqqında</a>
-        <a href="#stories" id="nav-stories">Hekayələr</a>
-        <a href="#stories" id="nav-videos">Videolar</a>
+      <nav class="main-nav">
+        <a href="#home" class="nav-link active" data-az="Ana səhifə" data-en="Home">Ana səhifə</a>
+        <a href="#about" class="nav-link" data-az="Haqqında" data-en="About">Haqqında</a>
+        <a href="#stories" class="nav-link" data-az="Hekayələr" data-en="Stories">Hekayələr</a>
+        <a href="#videos" class="nav-link" data-az="Videolar" data-en="Videos">Videolar</a>
       </nav>
+    </div>
 
-      <div class="header-actions">
-        <div class="lang-switch">
-          <button id="btn-az" class="active" type="button">AZ</button>
-          <button id="btn-en" type="button">ENG</button>
-        </div>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Menu" type="button">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+    <div class="lang-switch">
+      <button id="azBtn" class="active">AZ</button>
+      <span class="divider">/</span>
+      <button id="enBtn">ENG</button>
     </div>
   </header>
 
   <main>
-    <section id="home" class="hero-section">
-      <div class="container hero-single">
-        <div class="hero-content glass-card">
-          <span class="eyebrow" id="heroEyebrow">Hüquqi hekayələr sadə dildə</span>
-          <h1 id="hero-title">İnsan həyatına toxunmaq</h1>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="glass-box">
+          <div class="lang lang-az">
+            <h1>İnsan həyatına toxunmaq</h1>
+            <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
+            <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktlar nəticəsində şəxsin hüquqları pozulduqda Müvəkkil Azərbaycan Respublikasının Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.</p>
+            <p>Müvəkkilin sorğusuna əsasən Konstitusiya Məhkəməsi tərəfindən baxılan hər bir işin arxasında real insan hekayəsi dayanır.</p>
+            <p>Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar paylaşılır. Burada qəbul edilmiş qərarların insanların həyatında hansı dəyişikliklərə səbəb olduğu sadə və aydın dildə izah olunur.</p>
 
-          <div id="home-text-az" class="lang-block">
-            <p>
-              “İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə dildə,
-              hekayələr vasitəsilə çatdıran bir platformadır.
-            </p>
-
-            <p>
-              Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman)
-              haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktlar
-              nəticəsində şəxsin hüquqları pozulduqda Müvəkkil Azərbaycan Respublikasının
-              Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.
-            </p>
-
-            <p>
-              Müvəkkilin sorğusuna əsasən Konstitusiya Məhkəməsi tərəfindən baxılan hər bir
-              işin arxasında real insan hekayəsi dayanır.
-            </p>
-
-            <p>
-              Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim
-              edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar paylaşılır.
-              Burada qəbul edilmiş qərarların insanların həyatında hansı dəyişikliklərə səbəb
-              olduğu sadə və aydın dildə izah olunur.
-            </p>
-
-            <div class="question-box">
+            <div class="qa-box">
               <p>Hər bir hekayə üç sadə suala cavab verir:</p>
-              <ul>
-                <li>Problem nə idi?</li>
-                <li>Hansı addım atıldı?</li>
-                <li>İnsanların həyatında nə dəyişdi?</li>
-              </ul>
+              <p>Problem nə idi?</p>
+              <p>Hansı addım atıldı?</p>
+              <p>İnsanların həyatında nə dəyişdi?</p>
             </div>
 
-            <p>Məqsədimiz mürəkkəb hüquqi prosesləri sadə və aydın şəkildə izah etməkdir.</p>
-            <p class="final-line">Bir qayda dəyişəndə, bir həyat dəyişir.</p>
+            <p style="margin-top:22px;">Məqsədimiz mürəkkəb hüquqi prosesləri sadə və aydın şəkildə izah etməkdir.</p>
+            <p><strong>Bir qayda dəyişəndə, bir həyat dəyişir.</strong></p>
           </div>
 
-          <div id="home-text-en" class="lang-block hidden">
-            <p>
-              “Touching Human Life” is a platform that presents legal decisions to people
-              in simpler language through stories.
-            </p>
+          <div class="lang lang-en hidden">
+            <h1>Touching Human Life</h1>
+            <p>“Touching Human Life” is a platform that presents legal decisions to people in simpler language through stories.</p>
+            <p>Under the Constitutional Law of the Republic of Azerbaijan on the Commissioner for Human Rights (Ombudsman), where a person’s rights are violated as a result of normative legal acts in force, the Ombudsman may apply to the Constitutional Court of the Republic of Azerbaijan with a request.</p>
+            <p>Behind every case examined by the Constitutional Court on the basis of the Ombudsman’s request, there is a real human story.</p>
+            <p>Through this platform, short story-based videos prepared on the basis of applications submitted by the Ombudsman to the Constitutional Court are shared. Here, the changes brought to people’s lives by the adopted decisions are explained in a simple and clear manner.</p>
 
-            <p>
-              Under the Constitutional Law of the Republic of Azerbaijan on the Commissioner
-              for Human Rights (Ombudsman), where a person’s rights are violated as a result
-              of normative legal acts in force, the Ombudsman may apply to the Constitutional
-              Court of the Republic of Azerbaijan with a request.
-            </p>
-
-            <p>
-              Behind every case examined by the Constitutional Court on the basis of the
-              Ombudsman’s request, there is a real human story.
-            </p>
-
-            <p>
-              Through this platform, short story-based videos prepared on the basis of
-              applications submitted by the Ombudsman to the Constitutional Court are shared.
-              Here, the changes brought to people’s lives by the adopted decisions are
-              explained in a simple and clear manner.
-            </p>
-
-            <div class="question-box">
+            <div class="qa-box">
               <p>Each story answers three simple questions:</p>
-              <ul>
-                <li>What was the problem?</li>
-                <li>What step was taken?</li>
-                <li>What changed in people’s lives?</li>
-              </ul>
+              <p>What was the problem?</p>
+              <p>What step was taken?</p>
+              <p>What changed in people’s lives?</p>
             </div>
 
-            <p>Our aim is to explain complex legal processes in a simple and understandable way.</p>
-            <p class="final-line">When one rule changes, one life changes.</p>
-          </div>
-
-          <div class="hero-buttons">
-            <a href="#stories" class="primary-btn" id="heroStoriesBtn">Hekayələrə keç</a>
-            <a href="#stories" class="secondary-btn" id="heroVideosBtn">Videoya bax</a>
+            <p style="margin-top:22px;">Our aim is to explain complex legal processes in a simple and understandable way.</p>
+            <p><strong>When one rule changes, one life changes.</strong></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="content-section">
+    <section id="about">
       <div class="container">
-        <div class="section-intro">
-          <span class="section-tag" id="aboutTag">Platforma haqqında</span>
-          <h2 id="about-title">Haqqında</h2>
+        <div class="glass-box">
+          <div class="lang lang-az">
+            <h2>Haqqında</h2>
+            <p>Bu platforma Ombudsmanın Konstitusiya Məhkəməsinə etdiyi müraciətlər əsasında baxılmış işləri daha sadə və anlaşıqlı formada təqdim etmək üçün yaradılmışdır.</p>
+            <p>Burada hüquqi qərarlar yalnız normativ mətn kimi deyil, insanların real həyatına təsir edən dəyişikliklər kimi izah olunur.</p>
+          </div>
+
+          <div class="lang lang-en hidden">
+            <h2>About</h2>
+            <p>This platform was created to present, in a simpler and more understandable form, cases reviewed on the basis of applications submitted by the Ombudsman to the Constitutional Court.</p>
+            <p>Here, legal decisions are explained not only as normative texts but also as changes that affect real human lives.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="about-grid single-about">
-          <div class="glass-card about-main">
-            <div id="about-text-az" class="lang-block">
-              <p>
-                Bu platforma Ombudsmanın Konstitusiya Məhkəməsinə etdiyi müraciətlər əsasında
-                baxılmış işləri daha sadə və anlaşıqlı formada təqdim etmək üçün yaradılmışdır.
-              </p>
-              <p>
-                Burada hüquqi qərarlar yalnız normativ mətn kimi deyil, insanların real həyatına
-                təsir edən dəyişikliklər kimi izah olunur.
-              </p>
+    <section id="stories">
+      <div class="container">
+        <div class="glass-box">
+          <div class="lang lang-az">
+            <h2>Hekayələr</h2>
+            <div class="story-note">
+              <p>Bu bölmədə hər bir hüquqi iş sadə və anlaşıqlı hekayə formatında təqdim olunacaq.</p>
+              <p>Hazırda ilk material video bölməsində yerləşdirilib.</p>
             </div>
+          </div>
 
-            <div id="about-text-en" class="lang-block hidden">
-              <p>
-                This platform was created to present, in a simpler and more understandable form,
-                cases reviewed on the basis of applications submitted by the Ombudsman to the
-                Constitutional Court.
-              </p>
-              <p>
-                Here, legal decisions are explained not only as normative texts but also as
-                changes that affect real human lives.
-              </p>
+          <div class="lang lang-en hidden">
+            <h2>Stories</h2>
+            <div class="story-note">
+              <p>In this section, each legal case will be presented in a simple and understandable story format.</p>
+              <p>At present, the first material is available in the videos section.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="stories" class="content-section">
+    <section id="videos">
       <div class="container">
-        <div class="section-intro">
-          <span class="section-tag" id="storiesTag">Hekayələr arxivi</span>
-          <h2 id="stories-title">Hekayələr və video</h2>
+        <div class="glass-box">
+          <div class="lang lang-az">
+            <h2>Videolar</h2>
+            <div class="cards">
+              <div class="card">
+                <iframe
+                  class="video-thumb"
+                  src="https://www.youtube.com/embed/c_ly2NyXYOM"
+                  title="Hekayə video 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+                <div class="card-content">
+                  <h3 class="card-title">Hekayə 1</h3>
+                  <p class="card-text">Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış ilk hekayə əsaslı video.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lang lang-en hidden">
+            <h2>Videos</h2>
+            <div class="cards">
+              <div class="card">
+                <iframe
+                  class="video-thumb"
+                  src="https://www.youtube.com/embed/c_ly2NyXYOM"
+                  title="Story video 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+                <div class="card-content">
+                  <h3 class="card-title">Story 1</h3>
+                  <p class="card-text">The first story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="filters" id="filters"></div>
-
-        <div id="storyVideoContainer"></div>
       </div>
     </section>
   </main>
 
-  <script src="app.js"></script>
+  <script>
+    const azBtn = document.getElementById('azBtn');
+    const enBtn = document.getElementById('enBtn');
+    const azBlocks = document.querySelectorAll('.lang-az');
+    const enBlocks = document.querySelectorAll('.lang-en');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    function setLanguage(lang) {
+      if (lang === 'en') {
+        azBlocks.forEach(el => el.classList.add('hidden'));
+        enBlocks.forEach(el => el.classList.remove('hidden'));
+        azBtn.classList.remove('active');
+        enBtn.classList.add('active');
+        document.documentElement.lang = 'en';
+      } else {
+        enBlocks.forEach(el => el.classList.add('hidden'));
+        azBlocks.forEach(el => el.classList.remove('hidden'));
+        enBtn.classList.remove('active');
+        azBtn.classList.add('active');
+        document.documentElement.lang = 'az';
+      }
+
+      localStorage.setItem('siteLang', lang);
+    }
+
+    azBtn.addEventListener('click', () => setLanguage('az'));
+    enBtn.addEventListener('click', () => setLanguage('en'));
+
+    const savedLang = localStorage.getItem('siteLang') || 'az';
+    setLanguage(savedLang);
+
+    window.addEventListener('scroll', () => {
+      let current = 'home';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 130;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
