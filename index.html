@@ -23,7 +23,13 @@
     html {
       scroll-behavior: smooth;
     }
-
+<script>
+window.onload = function () {
+  if (window.location.hash) {
+    window.scrollTo(0, 0);
+  }
+};
+</script>
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: #ffffff;
