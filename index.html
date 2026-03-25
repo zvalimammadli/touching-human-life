@@ -334,6 +334,7 @@
           <a href="#about" class="nav-link" data-az="Haqqında" data-en="About">Haqqında</a>
           <a href="#stories" class="nav-link" data-az="Hekayələr" data-en="Stories">Hekayələr</a>
           <a href="#videos" class="nav-link" data-az="Videolar" data-en="Videos">Videolar</a>
+          <a href="#contact" class="nav-link" data-az="Əlaqə" data-en="Contact">Əlaqə</a>
         </nav>
 
         <div class="lang-switch">
@@ -344,7 +345,37 @@
       </div>
     </div>
   </header>
+<section id="contact">
+  <div class="container">
+    <div class="panel">
 
+      <div class="lang lang-az">
+        <h2>Əlaqə</h2>
+        <p>Fikir və təkliflərinizi bizə göndərə bilərsiniz.</p>
+
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form">
+          <input type="text" name="name" placeholder="Ad və soyad" required>
+          <input type="email" name="email" placeholder="E-mail ünvanınız" required>
+          <textarea name="message" placeholder="Mesajınız" required></textarea>
+          <button type="submit">Göndər</button>
+        </form>
+      </div>
+
+      <div class="lang lang-en hidden">
+        <h2>Contact</h2>
+        <p>You can send your feedback.</p>
+
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form">
+          <input type="text" name="name" placeholder="Full name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" placeholder="Your message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
   <main>
     <section id="home" class="hero">
       <div class="container">
