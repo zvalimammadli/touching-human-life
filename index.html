@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RPMDBQE01Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RPMDBQE01Y');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>İnsan həyatına toxunmaq</title>
@@ -262,6 +253,37 @@
       background: rgba(255, 255, 255, 0.18);
     }
 
+    .contact-form {
+      margin-top: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
     .hidden {
       display: none;
     }
@@ -319,29 +341,6 @@
         width: 100%;
       }
     }
-    .contact-form {
-  margin-top: 20px;
-  display: grid;
-  gap: 12px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.05);
-  color: #fff;
-}
-
-.contact-form button {
-  padding: 10px 16px;
-  border-radius: 10px;
-  border: none;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  cursor: pointer;
-}
   </style>
 </head>
 <body>
@@ -368,39 +367,7 @@
       </div>
     </div>
   </header>
-<section id="contact">
-  <div class="container">
-    <div class="panel">
 
-      <div class="lang lang-az">
-        <h2>Əlaqə</h2>
-        <p>Fikir və təkliflərinizi bizə göndərə bilərsiniz.</p>
-
-        <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
-  <input type="hidden" name="_next" value="https://www.touchinghumanlife.com/">
-  <input type="text" name="name" placeholder="Ad və soyad" required>
-  <input type="email" name="email" placeholder="E-mail ünvanınız" required>
-  <textarea name="message" placeholder="Mesajınız" required></textarea>
-  <button type="submit">Göndər</button>
-        </form>
-      </div>
-
-      <div class="lang lang-en hidden">
-        <h2>Contact</h2>
-        <p>You can send your feedback.</p>
-
-        <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
-       <input type="hidden" name="_next" value="https://www.touchinghumanlife.com/">
-  <input type="text" name="name" placeholder="Full name" required>
-  <input type="email" name="email" placeholder="Your email" required>
-  <textarea name="message" placeholder="Your message" required></textarea>
-  <button type="submit">Send</button>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</section>
   <main>
     <section id="home" class="hero">
       <div class="container">
@@ -517,7 +484,7 @@
               <div class="video-card">
                 <iframe
                   class="video-frame"
-                  src="https://www.youtube.com/embed/c_ly2NyXYOM"
+                  src="https://www.youtube.com/embed/u8c7HKVgCLI"
                   title="Təhsil hüququnun təmin olunması"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
@@ -537,7 +504,7 @@
               <div class="video-card">
                 <iframe
                   class="video-frame"
-                  src="https://www.youtube.com/embed/c_ly2NyXYOM"
+                  src="https://www.youtube.com/embed/u8c7HKVgCLI"
                   title="Ensuring the Right to Education"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
@@ -549,6 +516,38 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="panel">
+          <div class="lang lang-az">
+            <h2>Əlaqə</h2>
+            <p>Fikir və təkliflərinizi bizə göndərə bilərsiniz.</p>
+
+            <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+              <input type="hidden" name="_next" value="https://www.touchinghumanlife.com/">
+              <input type="text" name="name" placeholder="Ad və soyad" required>
+              <input type="email" name="email" placeholder="E-mail ünvanınız" required>
+              <textarea name="message" placeholder="Mesajınız" required></textarea>
+              <button type="submit">Göndər</button>
+            </form>
+          </div>
+
+          <div class="lang lang-en hidden">
+            <h2>Contact</h2>
+            <p>You can send your feedback.</p>
+
+            <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+              <input type="hidden" name="_next" value="https://www.touchinghumanlife.com/">
+              <input type="text" name="name" placeholder="Full name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea name="message" placeholder="Your message" required></textarea>
+              <button type="submit">Send</button>
+            </form>
           </div>
         </div>
       </div>
@@ -612,19 +611,5 @@
       });
     });
   </script>
-  <script>
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  window.addEventListener('load', function () {
-    window.scrollTo(0, 0);
-  });
-
-  window.addEventListener('pageshow', function () {
-    window.scrollTo(0, 0);
-  });
-</script>
- 
 </body>
 </html>
