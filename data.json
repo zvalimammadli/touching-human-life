@@ -25,19 +25,18 @@
     }
   ],
   "videos": [
-    {
-      "categoryKey": "education-right",
-      "youtubeId": "c_ly2NyXYOM",
-      "url": "https://youtu.be/c_ly2NyXYOM",
-      "moreInfo": "https://constcourt.gov.az/az/decision/1481",
-      "title": {
-        "az": "Hər kəs üçün bərabər təhsil",
-        "en": "Equal education for everyone"
-      },
-      "description": {
-        "az": "Təhsil hüququ ilə bağlı hazırlanmış hekayə əsaslı video.",
-        "en": "A story-based video prepared on the right to education."
-      }
+  {
+    "categoryKey": "education-right",
+    "youtubeId": "c_ly2NyXYOM",
+    "url": "https://www.youtube.com/embed/c_ly2NyXYOM",
+    "moreInfo": "https://constcourt.gov.az/az/decision/1481",
+    "title": {
+      "az": "Hər kəs üçün bərabər təhsil",
+      "en": "Equal education for everyone"
+    },
+    "description": {
+      "az": "Təhsil hüququ ilə bağlı hazırlanmış hekayə əsaslı video.",
+      "en": "A story-based video prepared on the right to education."
     }
-  ]
-}
+  }
+]
