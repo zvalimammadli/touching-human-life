@@ -1,157 +1,833 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>İnsan həyatına toxunmaq</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İnsan həyatına toxunmaq</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #fff;
-  background:
-    linear-gradient(rgba(6,14,28,0.6), rgba(4,10,20,0.8)),
-    url("background.jpg") center/cover no-repeat fixed;
-}
+  <style>
+    :root {
+      --text-main: #ffffff;
+      --text-soft: rgba(255, 255, 255, 0.88);
+      --text-muted: rgba(255, 255, 255, 0.68);
+      --line-soft: rgba(255, 255, 255, 0.10);
+      --glass: rgba(10, 18, 30, 0.58);
+      --glass-strong: rgba(7, 14, 24, 0.76);
+      --shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max-width: 1180px;
+    }
 
-/* HEADER */
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(0,0,0,0.4);
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(8px);
-}
+    * {
+      box-sizing: border-box;
+    }
 
-nav a {
-  margin-left: 20px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* SECTIONS */
-section {
-  padding: 120px 20px 60px;
-  max-width: 1000px;
-  margin: auto;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text-main);
+      background:
+        linear-gradient(rgba(6, 14, 28, 0.55), rgba(4, 10, 20, 0.78)),
+        url("background.jpg") center center / cover no-repeat fixed;
+      min-height: 100vh;
+      position: relative;
+    }
 
-/* HERO */
-.hero {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.06), transparent 28%),
+        radial-gradient(circle at left center, rgba(120,170,255,0.06), transparent 24%);
+      z-index: 0;
+    }
 
-/* CARDS */
-.card {
-  background: rgba(0,0,0,0.5);
-  padding: 25px;
-  border-radius: 15px;
-  margin-bottom: 20px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* VIDEO */
-.video iframe {
-  width: 100%;
-  border-radius: 10px;
-}
+    .hidden {
+      display: none !important;
+    }
 
-/* CONTACT */
-.contact input,
-.contact textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 8px;
-  border: none;
-}
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
-.contact button {
-  margin-top: 15px;
-  padding: 12px;
-  width: 200px;
-  background: #fff;
-  color: #000;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: rgba(5, 10, 18, 0.48);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  opacity: 0.8;
-}
-</style>
+    .header-inner {
+      width: min(1280px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-left: auto;
+    }
+
+    .main-nav a {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-soft);
+      position: relative;
+      transition: 0.2s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: #fff;
+    }
+
+    .main-nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      border-radius: 999px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: 18px;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      padding: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .lang-switch button {
+      border: none;
+      background: transparent;
+      color: var(--text-soft);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .lang-switch button.active {
+      background: rgba(255,255,255,0.95);
+      color: #10161d;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      border-radius: 14px;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #fff;
+      margin: 5px auto;
+      border-radius: 999px;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-section {
+      min-height: 95vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 46px;
+    }
+
+    .hero-card,
+    .content-card,
+    .story-card,
+    .video-card,
+    .contact-card {
+      background: var(--glass);
+      border: 1px solid var(--line-soft);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .hero-card {
+      padding: 42px;
+      max-width: 980px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-soft);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      font-size: 20px;
+      line-height: 1.8;
+      color: var(--text-soft);
+      margin: 0 0 18px;
+      max-width: 900px;
+    }
+
+    .final-line {
+      font-size: 24px;
+      font-weight: 800;
+      margin-top: 6px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .video-link,
+    .contact-form button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: rgba(255,255,255,0.95);
+      color: #10161d;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .contact-form button:hover,
+    .video-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .content-section {
+      padding: 30px 0 80px;
+    }
+
+    .section-intro {
+      margin-bottom: 20px;
+      max-width: 980px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .content-card,
+    .contact-card,
+    .story-card,
+    .video-card {
+      padding: 32px;
+      max-width: 980px;
+    }
+
+    .content-card p,
+    .story-card p,
+    .video-card p,
+    .contact-note,
+    .empty-state {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text-soft);
+      margin: 0 0 16px;
+    }
+
+    .question-box {
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .question-box p {
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .question-box ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .question-box li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+      color: var(--text-soft);
+    }
+
+    .story-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .story-card h3,
+    .video-card h3 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .story-meta {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    .video-frame-wrap {
+      width: 100%;
+      max-width: 560px;
+      overflow: hidden;
+      border-radius: 18px;
+      margin-bottom: 16px;
+    }
+
+    .video-frame-wrap iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+
+    .video-link {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      outline: none;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.60);
+    }
+
+    .contact-form textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      width: 180px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.94);
+      color: #0f141a;
+      cursor: pointer;
+    }
+
+    .form-status {
+      margin-top: 12px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .form-success {
+      color: #c7ffd8;
+    }
+
+    .form-error {
+      color: #ffd4d4;
+    }
+
+    .main-footer {
+      padding: 24px 0 40px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .main-footer p {
+      margin: 0 0 8px;
+    }
+
+    @media (max-width: 980px) {
+      .main-nav {
+        position: fixed;
+        top: 78px;
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        background: rgba(8, 14, 23, 0.96);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 20px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .main-nav.open {
+        display: flex;
+      }
+
+      .main-nav a.active::after {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-block;
+      }
+
+      .brand {
+        font-size: 20px;
+        max-width: 54vw;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        min-height: 72px;
+      }
+
+      .hero-section {
+        padding: 106px 0 28px;
+      }
+
+      .hero-card,
+      .content-card,
+      .story-card,
+      .video-card,
+      .contact-card {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .lead,
+      .content-card p,
+      .story-card p,
+      .video-card p,
+      .contact-note,
+      .empty-state {
+        font-size: 15px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary,
+      .contact-form button {
+        width: 100%;
+      }
+
+      .lang-switch button {
+        padding: 8px 12px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand" id="brandText">İnsan həyatına toxunmaq</div>
 
-<header>
-  <div><b>İnsan həyatına toxunmaq</b></div>
-  <nav>
-    <a href="#">Ana səhifə</a>
-    <a href="#about">Haqqında</a>
-    <a href="#videos">Videolar</a>
-    <a href="#contact">Əlaqə</a>
-  </nav>
-</header>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" class="nav-link active" data-az="Ana səhifə" data-en="Home">Ana səhifə</a>
+        <a href="#about" class="nav-link" data-az="Haqqında" data-en="About">Haqqında</a>
+        <a href="#stories" class="nav-link" data-az="Hekayələr" data-en="Stories">Hekayələr</a>
+        <a href="#videos" class="nav-link" data-az="Videolar" data-en="Videos">Videolar</a>
+        <a href="#contact" class="nav-link" data-az="Əlaqə" data-en="Contact">Əlaqə</a>
+      </nav>
 
-<section>
-  <div class="hero">İnsan həyatına toxunmaq</div>
-  <div class="card">
-    Hüquqi qərarların insanlara daha sadə və anlaşıqlı dildə çatdırıldığı platforma.
-  </div>
-</section>
+      <div class="header-actions">
+        <div class="lang-switch">
+          <button id="btnAz" class="active">AZ</button>
+          <button id="btnEn">ENG</button>
+        </div>
 
-<section id="about">
-  <h2>Haqqında</h2>
-  <div class="card">
-    Bu platforma Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış hekayələri təqdim edir.
+        <button class="menu-toggle" id="menuToggle" aria-label="menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <ul>
-      <li>Problem nə idi?</li>
-      <li>Hansı addım atıldı?</li>
-      <li>Nə dəyişdi?</li>
-    </ul>
-  </div>
-</section>
+  <main>
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-card">
+          <div class="lang lang-az">
+            <span class="eyebrow">Hüquqi hekayələr sadə dildə</span>
+            <h1>İnsan həyatına toxunmaq</h1>
+            <p class="lead">“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə və anlaşıqlı dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
+            <p class="final-line">Bir qayda dəyişəndə, bir həyat dəyişir.</p>
 
-<section id="videos">
-  <h2>Videolar</h2>
-  <div class="card video">
-    <iframe src="https://www.youtube.com/embed/2hEShAKlh1s" frameborder="0" allowfullscreen></iframe>
-    <p>Təhsil hüququnun təmin olunması</p>
-  </div>
-</section>
+            <div class="hero-buttons">
+              <a href="#stories" class="btn-primary">Hekayələrə bax</a>
+              <a href="#videos" class="btn-secondary">Videoya keç</a>
+            </div>
+          </div>
 
-<section id="contact">
-  <h2>Əlaqə</h2>
-  <div class="card contact">
-    <p>Fikir və təkliflərinizi bizə göndərin</p>
+          <div class="lang lang-en hidden">
+            <span class="eyebrow">Legal stories in simple language</span>
+            <h1>Touching Human Life</h1>
+            <p class="lead">“Touching Human Life” is a platform that presents legal decisions to people in a simpler and more understandable way through stories.</p>
+            <p class="final-line">When one rule changes, one life changes.</p>
 
-    <form action="https://formspree.io/f/YOUR_ID" method="POST">
-      <input type="text" placeholder="Ad və soyad" required>
-      <input type="email" placeholder="E-mail" required>
-      <textarea placeholder="Mesaj"></textarea>
-      <button>Göndər</button>
-    </form>
+            <div class="hero-buttons">
+              <a href="#stories" class="btn-primary">View stories</a>
+              <a href="#videos" class="btn-secondary">Go to video</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  </div>
-</section>
+    <section id="about" class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-tag">About</span>
+          <h2 class="lang lang-az">Haqqında</h2>
+          <h2 class="lang lang-en hidden">About</h2>
+        </div>
 
-<footer>
-  © 2026 Bütün hüquqlar qorunur
-</footer>
+        <div class="content-card">
+          <div class="lang lang-az">
+            <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə və anlaşıqlı dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
+            <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktların tətbiqi nəticəsində şəxsin hüquqları pozulduqda, Müvəkkil Azərbaycan Respublikasının Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.</p>
+            <p>Müvəkkilin müraciətləri əsasında Konstitusiya Məhkəməsi tərəfindən baxılan hər bir işin arxasında real insan hekayəsi dayanır.</p>
+            <p>Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar təqdim olunur. Bu videolarda qəbul edilmiş qərarların insanların həyatında yaratdığı dəyişikliklər sadə və aydın şəkildə izah edilir.</p>
 
+            <div class="question-box">
+              <p>Hər bir hekayə üç əsas suala cavab verir:</p>
+              <ul>
+                <li>Problem nə idi?</li>
+                <li>Hansı addım atıldı?</li>
+                <li>İnsanların həyatında nə dəyişdi?</li>
+              </ul>
+            </div>
+
+            <p class="final-line">Məqsədimiz mürəkkəb hüquqi prosesləri sadə və anlaşıqlı formada izah etməkdir.</p>
+          </div>
+
+          <div class="lang lang-en hidden">
+            <p>“Touching Human Life” is a platform that explains legal decisions in a simpler and more understandable way through stories.</p>
+            <p>Under the Constitutional Law on the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan, when a person’s rights are violated as a result of the application of normative legal acts, the Ombudsman may apply to the Constitutional Court.</p>
+            <p>Behind every case examined by the Constitutional Court on the basis of the Ombudsman’s application, there is a real human story.</p>
+            <p>Through this platform, short story-based videos prepared on the basis of applications submitted by the Ombudsman to the Constitutional Court are presented. These videos explain, in a simple and clear manner, how the adopted decisions affect people’s lives.</p>
+
+            <div class="question-box">
+              <p>Each story answers three main questions:</p>
+              <ul>
+                <li>What was the problem?</li>
+                <li>What action was taken?</li>
+                <li>What changed in people’s lives?</li>
+              </ul>
+            </div>
+
+            <p class="final-line">Our aim is to explain complex legal processes in a simple and accessible way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stories" class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-tag">Stories</span>
+          <h2 class="lang lang-az">Hekayələr</h2>
+          <h2 class="lang lang-en hidden">Stories</h2>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-card">
+            <div class="lang lang-az">
+              <span class="story-meta">Təhsil hüququ</span>
+              <h3>Davamiyyət tələbi və təhsil hüququnun təmin edilməsi</h3>
+              <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
+              <p>Semestrin sonunda universitet ona bildirdi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz.</p>
+              <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) bu məsələyə hüquqi qiymət verilməsi üçün Konstitusiya Məhkəməsinə müraciət etdi.</p>
+              <p>Konstitusiya Məhkəməsi qeyd etdi ki, təhsil hüququnun təmin edilməsi zamanı hər bir fərdin konkret vəziyyəti nəzərə alınmalıdır.</p>
+            </div>
+
+            <div class="lang lang-en hidden">
+              <span class="story-meta">Right to education</span>
+              <h3>Attendance requirement and protection of the right to education</h3>
+              <p>Sanan was studying at a higher education institution. During the semester, he could not attend classes for a long period due to a serious illness. Despite this, he continued learning independently and prepared for exams.</p>
+              <p>At the end of the semester, the university informed him that under the existing rules he could not be admitted to exams because of insufficient attendance.</p>
+              <p>The Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan applied to the Constitutional Court for a legal assessment of the matter.</p>
+              <p>The Constitutional Court emphasized that each individual situation must be taken into account when ensuring the right to education.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-tag">Video</span>
+          <h2 class="lang lang-az">Videolar</h2>
+          <h2 class="lang lang-en hidden">Videos</h2>
+        </div>
+
+        <div class="video-card">
+          <div class="lang lang-az">
+            <h3>Təhsil hüququnun təmin olunması</h3>
+            <div class="video-frame-wrap">
+              <iframe src="https://www.youtube.com/embed/u8c7HKVgCLI" allowfullscreen></iframe>
+            </div>
+            <p>Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</p>
+            <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">Ətraflı məlumat</a>
+          </div>
+
+          <div class="lang lang-en hidden">
+            <h3>Ensuring the right to education</h3>
+            <div class="video-frame-wrap">
+              <iframe src="https://www.youtube.com/embed/u8c7HKVgCLI" allowfullscreen></iframe>
+            </div>
+            <p>A story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</p>
+            <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">More details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-tag">Contact</span>
+          <h2 class="lang lang-az">Əlaqə</h2>
+          <h2 class="lang lang-en hidden">Contact</h2>
+        </div>
+
+        <div class="contact-card">
+          <div class="lang lang-az">
+            <p class="contact-note">Sayt, videolar və layihə ilə bağlı fikir, rəy və təkliflərinizi bizə göndərə bilərsiniz. Göndərdiyiniz mesaj birbaşa admin tərəfindən qəbul olunacaq.</p>
+
+            <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+              <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
+              <input type="text" name="name" placeholder="Ad və soyad" required>
+              <input type="email" name="email" placeholder="E-mail ünvanınız" required>
+              <textarea name="message" placeholder="Mesajınızı yazın" required></textarea>
+              <button type="submit">Göndər</button>
+            </form>
+
+            <div class="form-status">
+              <div class="form-success hidden" id="successAz">Mesajınız üçün təşəkkür edirik.</div>
+              <div class="form-error hidden" id="errorAz">Mesaj göndərilərkən xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.</div>
+            </div>
+          </div>
+
+          <div class="lang lang-en hidden">
+            <p class="contact-note">You may send your comments, feedback and suggestions regarding the website, videos and the project. Your message will be received directly by the admin.</p>
+
+            <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+              <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
+              <input type="text" name="name" placeholder="Full name" required>
+              <input type="email" name="email" placeholder="Your email address" required>
+              <textarea name="message" placeholder="Write your message" required></textarea>
+              <button type="submit">Send</button>
+            </form>
+
+            <div class="form-status">
+              <div class="form-success hidden" id="successEn">Thank you for your message.</div>
+              <div class="form-error hidden" id="errorEn">An error occurred while sending the message. Please try again.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="container">
+        <p class="lang lang-az">Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkilinin (Ombudsman) rəsmi internet səhifəsi</p>
+        <p class="lang lang-en hidden">Official website of the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan</p>
+        <p><a href="https://www.ombudsman.az" target="_blank">www.ombudsman.az</a></p>
+        <p>© 2026</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const btnAz = document.getElementById("btnAz");
+    const btnEn = document.getElementById("btnEn");
+    const langAz = document.querySelectorAll(".lang-az");
+    const langEn = document.querySelectorAll(".lang-en");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    const brandText = document.getElementById("brandText");
+    const sections = document.querySelectorAll("main section[id]");
+
+    function setLanguage(lang) {
+      if (lang === "az") {
+        langAz.forEach(el => el.classList.remove("hidden"));
+        langEn.forEach(el => el.classList.add("hidden"));
+        btnAz.classList.add("active");
+        btnEn.classList.remove("active");
+        brandText.textContent = "İnsan həyatına toxunmaq";
+      } else {
+        langAz.forEach(el => el.classList.add("hidden"));
+        langEn.forEach(el => el.classList.remove("hidden"));
+        btnAz.classList.remove("active");
+        btnEn.classList.add("active");
+        brandText.textContent = "Touching Human Life";
+      }
+
+      navLinks.forEach(link => {
+        link.textContent = lang === "az" ? link.dataset.az : link.dataset.en;
+      });
+
+      localStorage.setItem("siteLanguage", lang);
+    }
+
+    btnAz.addEventListener("click", () => setLanguage("az"));
+    btnEn.addEventListener("click", () => setLanguage("en"));
+
+    const savedLanguage = localStorage.getItem("siteLanguage") || "az";
+    setLanguage(savedLanguage);
+
+    menuToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("open");
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      let current = "home";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 130;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
