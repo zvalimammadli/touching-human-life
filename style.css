@@ -28,19 +28,11 @@ html {
 /* 🔥 CINEMATIC BACKGROUND */
 body {
   margin: 0;
-  color: var(--text-main);
   font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
 
-  /* əsas effekt burada */
-  background:
-    linear-gradient(
-      rgba(10, 25, 50, 0.55),   /* üst qat – tünd göy */
-      rgba(5, 15, 35, 0.75)     /* aşağı qat – daha dərin */
-    ),
-    url("background.jpg") center center / cover no-repeat fixed;
-
-  min-height: 100vh;
-  position: relative;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* ✨ LIGHT EFFECT */
