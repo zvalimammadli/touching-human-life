@@ -27,15 +27,20 @@ html {
 
 /* 🔥 CINEMATIC BACKGROUND */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   color: var(--text-main);
+  font-family: Arial, Helvetica, sans-serif;
 
+  /* əsas effekt burada */
   background:
-    radial-gradient(circle at 20% 30%, rgba(80, 140, 255, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(0, 180, 255, 0.12), transparent 40%),
-    linear-gradient(135deg, #061326, #0a1f3d, #102b52);
+    linear-gradient(
+      rgba(10, 25, 50, 0.55),   /* üst qat – tünd göy */
+      rgba(5, 15, 35, 0.75)     /* aşağı qat – daha dərin */
+    ),
+    url("background.jpg") center center / cover no-repeat fixed;
 
   min-height: 100vh;
+  position: relative;
 }
 
 /* ✨ LIGHT EFFECT */
