@@ -25,7 +25,7 @@ body {
   color: var(--text-main);
   font-family: Arial, Helvetica, sans-serif;
   background:
-    linear-gradient(rgba(10, 25, 47, 0.78), rgba(2, 12, 27, 0.9)),
+    linear-gradient(rgba(17, 34, 64, 0.4), rgba(10, 25, 47, 0.6))
     url("background.jpg") center center / cover no-repeat fixed;
   min-height: 100vh;
   position: relative;
