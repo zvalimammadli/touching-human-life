@@ -9,15 +9,15 @@
     :root {
       --text-main: #ffffff;
       --text-soft: rgba(255, 255, 255, 0.88);
-      --text-muted: rgba(255, 255, 255, 0.68);
+      --text-muted: rgba(255, 255, 255, 0.70);
       --line-soft: rgba(255, 255, 255, 0.10);
-      --glass: rgba(10, 18, 30, 0.58);
-      --glass-strong: rgba(7, 14, 24, 0.76);
-      --shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+      --glass: rgba(8, 16, 28, 0.56);
+      --glass-strong: rgba(7, 14, 24, 0.72);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
       --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --max-width: 1180px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --maxw: 1180px;
     }
 
     * {
@@ -33,7 +33,7 @@
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text-main);
       background:
-        linear-gradient(rgba(6, 14, 28, 0.55), rgba(4, 10, 20, 0.78)),
+        linear-gradient(rgba(6, 14, 28, 0.54), rgba(4, 10, 20, 0.74)),
         url("background.jpg") center center / cover no-repeat fixed;
       min-height: 100vh;
       position: relative;
@@ -46,8 +46,13 @@
       pointer-events: none;
       background:
         radial-gradient(circle at top right, rgba(255,255,255,0.06), transparent 28%),
-        radial-gradient(circle at left center, rgba(120,170,255,0.06), transparent 24%);
+        radial-gradient(circle at left center, rgba(120,170,255,0.05), transparent 26%);
       z-index: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
     }
 
     a {
@@ -60,7 +65,7 @@
     }
 
     .container {
-      width: min(var(--max-width), calc(100% - 32px));
+      width: min(var(--maxw), calc(100% - 32px));
       margin: 0 auto;
       position: relative;
       z-index: 1;
@@ -98,6 +103,7 @@
       align-items: center;
       gap: 24px;
       margin-left: auto;
+      margin-right: 18px;
     }
 
     .main-nav a {
@@ -128,7 +134,6 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-left: 18px;
     }
 
     .lang-switch {
@@ -150,7 +155,6 @@
       font-size: 13px;
       font-weight: 800;
       cursor: pointer;
-      transition: 0.2s ease;
     }
 
     .lang-switch button.active {
@@ -184,10 +188,10 @@
     }
 
     .hero-section {
-      min-height: 95vh;
+      min-height: 94vh;
       display: flex;
       align-items: center;
-      padding: 120px 0 46px;
+      padding: 120px 0 40px;
     }
 
     .hero-card,
@@ -201,11 +205,16 @@
       border-radius: var(--radius-xl);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+      max-width: 980px;
     }
 
     .hero-card {
       padding: 42px;
-      max-width: 980px;
+    }
+
+    .section-card-wrap {
+      display: flex;
+      justify-content: center;
     }
 
     .eyebrow {
@@ -230,16 +239,17 @@
 
     .lead {
       font-size: 20px;
-      line-height: 1.8;
+      line-height: 1.85;
       color: var(--text-soft);
       margin: 0 0 18px;
-      max-width: 900px;
+      max-width: 860px;
     }
 
     .final-line {
       font-size: 24px;
       font-weight: 800;
       margin-top: 6px;
+      color: #ffffff;
     }
 
     .hero-buttons {
@@ -272,32 +282,23 @@
     .btn-secondary {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.10);
+      color: #fff;
     }
 
     .btn-primary:hover,
     .btn-secondary:hover,
-    .contact-form button:hover,
-    .video-link:hover {
+    .video-link:hover,
+    .contact-form button:hover {
       transform: translateY(-2px);
     }
 
     .content-section {
-      padding: 30px 0 80px;
+      padding: 24px 0 74px;
     }
 
     .section-intro {
-      margin-bottom: 20px;
       max-width: 980px;
-    }
-
-    .section-tag {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 10px;
+      margin: 0 auto 18px auto;
     }
 
     h2 {
@@ -308,18 +309,16 @@
     }
 
     .content-card,
-    .contact-card,
     .story-card,
-    .video-card {
-      padding: 32px;
-      max-width: 980px;
+    .video-card,
+    .contact-card {
+      padding: 30px;
     }
 
     .content-card p,
     .story-card p,
     .video-card p,
-    .contact-note,
-    .empty-state {
+    .contact-note {
       font-size: 17px;
       line-height: 1.9;
       color: var(--text-soft);
@@ -351,18 +350,6 @@
       color: var(--text-soft);
     }
 
-    .story-grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .story-card h3,
-    .video-card h3 {
-      margin: 0 0 14px;
-      font-size: 30px;
-      line-height: 1.2;
-    }
-
     .story-meta {
       display: inline-flex;
       align-items: center;
@@ -375,6 +362,13 @@
       font-weight: 800;
       color: var(--text-soft);
       margin-bottom: 16px;
+    }
+
+    .story-card h3,
+    .video-card h3 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      line-height: 1.2;
     }
 
     .video-frame-wrap {
@@ -395,6 +389,7 @@
     .video-link {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.10);
+      color: #fff;
     }
 
     .contact-form {
@@ -449,7 +444,7 @@
     }
 
     .main-footer {
-      padding: 24px 0 40px;
+      padding: 28px 0 40px;
       color: var(--text-muted);
       font-size: 14px;
     }
@@ -473,6 +468,7 @@
         border-radius: 20px;
         padding: 18px;
         box-shadow: var(--shadow);
+        margin: 0;
       }
 
       .main-nav.open {
@@ -516,8 +512,7 @@
       .content-card p,
       .story-card p,
       .video-card p,
-      .contact-note,
-      .empty-state {
+      .contact-note {
         font-size: 15px;
       }
 
@@ -567,7 +562,7 @@
 
   <main>
     <section id="home" class="hero-section">
-      <div class="container">
+      <div class="container section-card-wrap">
         <div class="hero-card">
           <div class="lang lang-az">
             <span class="eyebrow">Hüquqi hekayələr sadə dildə</span>
@@ -599,46 +594,47 @@
     <section id="about" class="content-section">
       <div class="container">
         <div class="section-intro">
-          <span class="section-tag">About</span>
           <h2 class="lang lang-az">Haqqında</h2>
           <h2 class="lang lang-en hidden">About</h2>
         </div>
 
-        <div class="content-card">
-          <div class="lang lang-az">
-            <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə və anlaşıqlı dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
-            <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktların tətbiqi nəticəsində şəxsin hüquqları pozulduqda, Müvəkkil Azərbaycan Respublikasının Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.</p>
-            <p>Müvəkkilin müraciətləri əsasında Konstitusiya Məhkəməsi tərəfindən baxılan hər bir işin arxasında real insan hekayəsi dayanır.</p>
-            <p>Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar təqdim olunur. Bu videolarda qəbul edilmiş qərarların insanların həyatında yaratdığı dəyişikliklər sadə və aydın şəkildə izah edilir.</p>
+        <div class="section-card-wrap">
+          <div class="content-card">
+            <div class="lang lang-az">
+              <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə və anlaşıqlı dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
+              <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktların tətbiqi nəticəsində şəxsin hüquqları pozulduqda, Müvəkkil Azərbaycan Respublikasının Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.</p>
+              <p>Müvəkkilin müraciətləri əsasında Konstitusiya Məhkəməsi tərəfindən baxılan hər bir işin arxasında real insan hekayəsi dayanır.</p>
+              <p>Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar təqdim olunur. Bu videolarda qəbul edilmiş qərarların insanların həyatında yaratdığı dəyişikliklər sadə və aydın şəkildə izah edilir.</p>
 
-            <div class="question-box">
-              <p>Hər bir hekayə üç əsas suala cavab verir:</p>
-              <ul>
-                <li>Problem nə idi?</li>
-                <li>Hansı addım atıldı?</li>
-                <li>İnsanların həyatında nə dəyişdi?</li>
-              </ul>
+              <div class="question-box">
+                <p>Hər bir hekayə üç əsas suala cavab verir:</p>
+                <ul>
+                  <li>Problem nə idi?</li>
+                  <li>Hansı addım atıldı?</li>
+                  <li>İnsanların həyatında nə dəyişdi?</li>
+                </ul>
+              </div>
+
+              <p class="final-line">Məqsədimiz mürəkkəb hüquqi prosesləri sadə və anlaşıqlı formada izah etməkdir.</p>
             </div>
 
-            <p class="final-line">Məqsədimiz mürəkkəb hüquqi prosesləri sadə və anlaşıqlı formada izah etməkdir.</p>
-          </div>
+            <div class="lang lang-en hidden">
+              <p>“Touching Human Life” is a platform that explains legal decisions in a simpler and more understandable way through stories.</p>
+              <p>Under the Constitutional Law on the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan, when a person’s rights are violated as a result of the application of normative legal acts, the Ombudsman may apply to the Constitutional Court.</p>
+              <p>Behind every case examined by the Constitutional Court on the basis of the Ombudsman’s application, there is a real human story.</p>
+              <p>Through this platform, short story-based videos prepared on the basis of applications submitted by the Ombudsman to the Constitutional Court are presented. These videos explain, in a simple and clear manner, how the adopted decisions affect people’s lives.</p>
 
-          <div class="lang lang-en hidden">
-            <p>“Touching Human Life” is a platform that explains legal decisions in a simpler and more understandable way through stories.</p>
-            <p>Under the Constitutional Law on the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan, when a person’s rights are violated as a result of the application of normative legal acts, the Ombudsman may apply to the Constitutional Court.</p>
-            <p>Behind every case examined by the Constitutional Court on the basis of the Ombudsman’s application, there is a real human story.</p>
-            <p>Through this platform, short story-based videos prepared on the basis of applications submitted by the Ombudsman to the Constitutional Court are presented. These videos explain, in a simple and clear manner, how the adopted decisions affect people’s lives.</p>
+              <div class="question-box">
+                <p>Each story answers three main questions:</p>
+                <ul>
+                  <li>What was the problem?</li>
+                  <li>What action was taken?</li>
+                  <li>What changed in people’s lives?</li>
+                </ul>
+              </div>
 
-            <div class="question-box">
-              <p>Each story answers three main questions:</p>
-              <ul>
-                <li>What was the problem?</li>
-                <li>What action was taken?</li>
-                <li>What changed in people’s lives?</li>
-              </ul>
+              <p class="final-line">Our aim is to explain complex legal processes in a simple and accessible way.</p>
             </div>
-
-            <p class="final-line">Our aim is to explain complex legal processes in a simple and accessible way.</p>
           </div>
         </div>
       </div>
@@ -647,20 +643,21 @@
     <section id="stories" class="content-section">
       <div class="container">
         <div class="section-intro">
-          <span class="section-tag">Stories</span>
           <h2 class="lang lang-az">Hekayələr</h2>
           <h2 class="lang lang-en hidden">Stories</h2>
         </div>
 
-        <div class="story-grid">
+        <div class="section-card-wrap">
           <div class="story-card">
             <div class="lang lang-az">
               <span class="story-meta">Təhsil hüququ</span>
               <h3>Davamiyyət tələbi və təhsil hüququnun təmin edilməsi</h3>
-              <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
-              <p>Semestrin sonunda universitet ona bildirdi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz.</p>
-              <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) bu məsələyə hüquqi qiymət verilməsi üçün Konstitusiya Məhkəməsinə müraciət etdi.</p>
-              <p>Konstitusiya Məhkəməsi qeyd etdi ki, təhsil hüququnun təmin edilməsi zamanı hər bir fərdin konkret vəziyyəti nəzərə alınmalıdır.</p>
+              <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, tədris prosesindən tam kənarda qalmadı, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
+              <p>Semestrin sonunda isə universitet tərəfindən ona bildirildi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz. Qaydalar tələb edirdi ki, tələbə dərs yükünün müəyyən hissəsində iştirak etməlidir və bu həddin aşılması — yəni dərs saatlarının 25 faizindən çoxunun buraxılması — imtahanlara buraxılmamaq üçün əsas hesab olunurdu. Bu norma istisnasız tətbiq edilirdi və Sənanın xəstəliyi də nəzərə alınmadı.</p>
+              <p>Beləliklə, məsələ ondan ibarət oldu ki, davamiyyətlə bağlı bu cür qaydanın üzrlü səbəblər nəzərə alınmadan tətbiqi tələbənin təhsil hüququnun məhdudlaşdırılmasına səbəb olurmu. Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) bu məsələyə hüquqi qiymət verilməsi üçün Konstitusiya Məhkəməsinə müraciət etdi.</p>
+              <p>Konstitusiya Məhkəməsi işi araşdırarkən qeyd etdi ki, təhsil hüququ Konstitusiya ilə təmin olunan əsas hüquqlardandır və dövlət bu sahədə müəyyən qaydalar müəyyən etmək səlahiyyətinə malikdir. Lakin bu qaydalar tətbiq edilərkən onların ədalətli və proporsional olması təmin olunmalıdır. Hüququn məhdudlaşdırılması onun mahiyyətini aradan qaldırmamalıdır.</p>
+              <p>Məhkəmə xüsusilə vurğuladı ki, üzrlü səbəblər, o cümlədən sağlamlıq vəziyyəti nəzərə alınmadan davamiyyət tələbinin avtomatik tətbiqi tələbənin təhsil hüququnun qeyri-proporsional məhdudlaşdırılmasına gətirib çıxara bilər. Buna görə də belə hallarda fərdi vəziyyətlər qiymətləndirilməli və qaydalar bu kontekstdə tətbiq olunmalıdır.</p>
+              <p>Nəticə etibarilə, bu yanaşma göstərdi ki, hüquqi normalar yalnız formal şəkildə deyil, insan hüquqlarının mahiyyətinə uyğun olaraq tətbiq edilməlidir. Təhsil hüququnun təmin edilməsi zamanı isə hər bir fərdin konkret vəziyyəti nəzərə alınmalıdır.</p>
             </div>
 
             <div class="lang lang-en hidden">
@@ -679,28 +676,29 @@
     <section id="videos" class="content-section">
       <div class="container">
         <div class="section-intro">
-          <span class="section-tag">Video</span>
           <h2 class="lang lang-az">Videolar</h2>
           <h2 class="lang lang-en hidden">Videos</h2>
         </div>
 
-        <div class="video-card">
-          <div class="lang lang-az">
-            <h3>Təhsil hüququnun təmin olunması</h3>
-            <div class="video-frame-wrap">
-              <iframe src="https://www.youtube.com/embed/u8c7HKVgCLI" allowfullscreen></iframe>
+        <div class="section-card-wrap">
+          <div class="video-card">
+            <div class="lang lang-az">
+              <h3>Təhsil hüququnun təmin olunması</h3>
+              <div class="video-frame-wrap">
+                <iframe src="https://www.youtube.com/embed/u8c7HKVgCLI" allowfullscreen></iframe>
+              </div>
+              <p>Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</p>
+              <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">Ətraflı məlumat</a>
             </div>
-            <p>Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</p>
-            <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">Ətraflı məlumat</a>
-          </div>
 
-          <div class="lang lang-en hidden">
-            <h3>Ensuring the right to education</h3>
-            <div class="video-frame-wrap">
-              <iframe src="https://www.youtube.com/embed/u8c7HKVgCLI" allowfullscreen></iframe>
+            <div class="lang lang-en hidden">
+              <h3>Ensuring the right to education</h3>
+              <div class="video-frame-wrap">
+                <iframe src="https://www.youtube.com/embed/u8c7HKVgCLI" allowfullscreen></iframe>
+              </div>
+              <p>A story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</p>
+              <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">More details</a>
             </div>
-            <p>A story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</p>
-            <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">More details</a>
           </div>
         </div>
       </div>
@@ -709,43 +707,44 @@
     <section id="contact" class="content-section">
       <div class="container">
         <div class="section-intro">
-          <span class="section-tag">Contact</span>
           <h2 class="lang lang-az">Əlaqə</h2>
           <h2 class="lang lang-en hidden">Contact</h2>
         </div>
 
-        <div class="contact-card">
-          <div class="lang lang-az">
-            <p class="contact-note">Sayt, videolar və layihə ilə bağlı fikir, rəy və təkliflərinizi bizə göndərə bilərsiniz. Göndərdiyiniz mesaj birbaşa admin tərəfindən qəbul olunacaq.</p>
+        <div class="section-card-wrap">
+          <div class="contact-card">
+            <div class="lang lang-az">
+              <p class="contact-note">Sayt, videolar və layihə ilə bağlı fikir, rəy və təkliflərinizi bizə göndərə bilərsiniz. Göndərdiyiniz mesaj birbaşa admin tərəfindən qəbul olunacaq.</p>
 
-            <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
-              <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
-              <input type="text" name="name" placeholder="Ad və soyad" required>
-              <input type="email" name="email" placeholder="E-mail ünvanınız" required>
-              <textarea name="message" placeholder="Mesajınızı yazın" required></textarea>
-              <button type="submit">Göndər</button>
-            </form>
+              <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+                <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
+                <input type="text" name="name" placeholder="Ad və soyad" required>
+                <input type="email" name="email" placeholder="E-mail ünvanınız" required>
+                <textarea name="message" placeholder="Mesajınızı yazın" required></textarea>
+                <button type="submit">Göndər</button>
+              </form>
 
-            <div class="form-status">
-              <div class="form-success hidden" id="successAz">Mesajınız üçün təşəkkür edirik.</div>
-              <div class="form-error hidden" id="errorAz">Mesaj göndərilərkən xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.</div>
+              <div class="form-status">
+                <div class="form-success hidden">Mesajınız üçün təşəkkür edirik.</div>
+                <div class="form-error hidden">Mesaj göndərilərkən xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.</div>
+              </div>
             </div>
-          </div>
 
-          <div class="lang lang-en hidden">
-            <p class="contact-note">You may send your comments, feedback and suggestions regarding the website, videos and the project. Your message will be received directly by the admin.</p>
+            <div class="lang lang-en hidden">
+              <p class="contact-note">You may send your comments, feedback and suggestions regarding the website, videos and the project. Your message will be received directly by the admin.</p>
 
-            <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
-              <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
-              <input type="text" name="name" placeholder="Full name" required>
-              <input type="email" name="email" placeholder="Your email address" required>
-              <textarea name="message" placeholder="Write your message" required></textarea>
-              <button type="submit">Send</button>
-            </form>
+              <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+                <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
+                <input type="text" name="name" placeholder="Full name" required>
+                <input type="email" name="email" placeholder="Your email address" required>
+                <textarea name="message" placeholder="Write your message" required></textarea>
+                <button type="submit">Send</button>
+              </form>
 
-            <div class="form-status">
-              <div class="form-success hidden" id="successEn">Thank you for your message.</div>
-              <div class="form-error hidden" id="errorEn">An error occurred while sending the message. Please try again.</div>
+              <div class="form-status">
+                <div class="form-success hidden">Thank you for your message.</div>
+                <div class="form-error hidden">An error occurred while sending the message. Please try again.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -757,7 +756,7 @@
         <p class="lang lang-az">Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkilinin (Ombudsman) rəsmi internet səhifəsi</p>
         <p class="lang lang-en hidden">Official website of the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan</p>
         <p><a href="https://www.ombudsman.az" target="_blank">www.ombudsman.az</a></p>
-        <p>© 2026</p>
+        <p>© 2026 Bütün hüquqlar qorunur</p>
       </div>
     </footer>
   </main>
