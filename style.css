@@ -50,8 +50,8 @@ body {
   pointer-events: none;
 
   background:
-    radial-gradient(circle at top right, rgba(120,170,255,0.08), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(0,150,255,0.06), transparent 30%);
+    radial-gradient(circle at top right, rgba(120,180,255,0.08), transparent 30%),
+    radial-gradient(circle at left center, rgba(80,140,255,0.06), transparent 28%);
 
   z-index: 0;
 }
