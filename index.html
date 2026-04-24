@@ -22,6 +22,8 @@
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -29,8 +31,8 @@
     }
 
     body {
-     margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color: var(--text-main);
       background:
         linear-gradient(rgba(6, 14, 28, 0.54), rgba(4, 10, 20, 0.74)),
@@ -48,11 +50,6 @@
         radial-gradient(circle at top right, rgba(255,255,255,0.06), transparent 28%),
         radial-gradient(circle at left center, rgba(120,170,255,0.05), transparent 26%);
       z-index: 0;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
     }
 
     a {
@@ -155,6 +152,7 @@
       font-size: 13px;
       font-weight: 800;
       cursor: pointer;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .lang-switch button.active {
@@ -315,6 +313,11 @@
       padding: 30px;
     }
 
+    .story-card + .story-card,
+    .video-card + .video-card {
+      margin-top: 28px;
+    }
+
     .content-card p,
     .story-card p,
     .video-card p,
@@ -407,7 +410,7 @@
       background: rgba(255,255,255,0.05);
       color: #fff;
       font-size: 15px;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       outline: none;
     }
 
@@ -427,6 +430,7 @@
       background: rgba(255,255,255,0.94);
       color: #0f141a;
       cursor: pointer;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .form-status {
@@ -532,6 +536,7 @@
     }
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <div class="header-inner">
@@ -568,7 +573,7 @@
             <span class="eyebrow">Hüquqi hekayələr sadə dildə</span>
             <h1>İnsan həyatına toxunmaq</h1>
             <p class="lead">“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə və anlaşıqlı dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
-            <p class="final-line">Bir qayda dəyişəndə, bir həyat dəyişir.</p>
+            <p class="final-line">Sadəcə bir qərar həyatları dəyişir.</p>
 
             <div class="hero-buttons">
               <a href="#stories" class="btn-primary">Hekayələrə bax</a>
@@ -580,7 +585,7 @@
             <span class="eyebrow">Legal stories in simple language</span>
             <h1>Touching Human Life</h1>
             <p class="lead">“Touching Human Life” is a platform that presents legal decisions to people in a simpler and more understandable way through stories.</p>
-            <p class="final-line">When one rule changes, one life changes.</p>
+            <p class="final-line">Just one decision can change lives.</p>
 
             <div class="hero-buttons">
               <a href="#stories" class="btn-primary">View stories</a>
@@ -648,25 +653,51 @@
         </div>
 
         <div class="section-card-wrap">
-          <div class="story-card">
-            <div class="lang lang-az">
-              <span class="story-meta">Təhsil hüququ</span>
-              <h3>Davamiyyət tələbi və təhsil hüququnun təmin edilməsi</h3>
-              <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, tədris prosesindən tam kənarda qalmadı, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
-              <p>Semestrin sonunda isə universitet tərəfindən ona bildirildi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz. Qaydalar tələb edirdi ki, tələbə dərs yükünün müəyyən hissəsində iştirak etməlidir və bu həddin aşılması — yəni dərs saatlarının 25 faizindən çoxunun buraxılması — imtahanlara buraxılmamaq üçün əsas hesab olunurdu. Bu norma istisnasız tətbiq edilirdi və Sənanın xəstəliyi də nəzərə alınmadı.</p>
-              <p>Beləliklə, məsələ ondan ibarət oldu ki, davamiyyətlə bağlı bu cür qaydanın üzrlü səbəblər nəzərə alınmadan tətbiqi tələbənin təhsil hüququnun məhdudlaşdırılmasına səbəb olurmu. Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) bu məsələyə hüquqi qiymət verilməsi üçün Konstitusiya Məhkəməsinə müraciət etdi.</p>
-              <p>Konstitusiya Məhkəməsi işi araşdırarkən qeyd etdi ki, təhsil hüququ Konstitusiya ilə təmin olunan əsas hüquqlardandır və dövlət bu sahədə müəyyən qaydalar müəyyən etmək səlahiyyətinə malikdir. Lakin bu qaydalar tətbiq edilərkən onların ədalətli və proporsional olması təmin olunmalıdır. Hüququn məhdudlaşdırılması onun mahiyyətini aradan qaldırmamalıdır.</p>
-              <p>Məhkəmə xüsusilə vurğuladı ki, üzrlü səbəblər, o cümlədən sağlamlıq vəziyyəti nəzərə alınmadan davamiyyət tələbinin avtomatik tətbiqi tələbənin təhsil hüququnun qeyri-proporsional məhdudlaşdırılmasına gətirib çıxara bilər. Buna görə də belə hallarda fərdi vəziyyətlər qiymətləndirilməli və qaydalar bu kontekstdə tətbiq olunmalıdır.</p>
-              <p>Nəticə etibarilə, bu yanaşma göstərdi ki, hüquqi normalar yalnız formal şəkildə deyil, insan hüquqlarının mahiyyətinə uyğun olaraq tətbiq edilməlidir. Təhsil hüququnun təmin edilməsi zamanı isə hər bir fərdin konkret vəziyyəti nəzərə alınmalıdır.</p>
+          <div>
+            <div class="story-card">
+              <div class="lang lang-az">
+                <span class="story-meta">Təhsil hüququ</span>
+                <h3>Davamiyyət tələbi və təhsil hüququnun təmin edilməsi</h3>
+                <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, tədris prosesindən tam kənarda qalmadı, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
+                <p>Semestrin sonunda isə universitet tərəfindən ona bildirildi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz. Qaydalar tələb edirdi ki, tələbə dərs yükünün müəyyən hissəsində iştirak etməlidir və bu həddin aşılması — yəni dərs saatlarının 25 faizindən çoxunun buraxılması — imtahanlara buraxılmamaq üçün əsas hesab olunurdu. Bu norma istisnasız tətbiq edilirdi və Sənanın xəstəliyi də nəzərə alınmadı.</p>
+                <p>Beləliklə, məsələ ondan ibarət oldu ki, davamiyyətlə bağlı bu cür qaydanın üzrlü səbəblər nəzərə alınmadan tətbiqi tələbənin təhsil hüququnun məhdudlaşdırılmasına səbəb olurmu. Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) bu məsələyə hüquqi qiymət verilməsi üçün Konstitusiya Məhkəməsinə müraciət etdi.</p>
+                <p>Konstitusiya Məhkəməsi işi araşdırarkən qeyd etdi ki, təhsil hüququ Konstitusiya ilə təmin olunan əsas hüquqlardandır və dövlət bu sahədə müəyyən qaydalar müəyyən etmək səlahiyyətinə malikdir. Lakin bu qaydalar tətbiq edilərkən onların ədalətli və proporsional olması təmin olunmalıdır. Hüququn məhdudlaşdırılması onun mahiyyətini aradan qaldırmamalıdır.</p>
+                <p>Məhkəmə xüsusilə vurğuladı ki, üzrlü səbəblər, o cümlədən sağlamlıq vəziyyəti nəzərə alınmadan davamiyyət tələbinin avtomatik tətbiqi tələbənin təhsil hüququnun qeyri-proporsional məhdudlaşdırılmasına gətirib çıxara bilər. Buna görə də belə hallarda fərdi vəziyyətlər qiymətləndirilməli və qaydalar bu kontekstdə tətbiq olunmalıdır.</p>
+                <p>Nəticə etibarilə, bu yanaşma göstərdi ki, hüquqi normalar yalnız formal şəkildə deyil, insan hüquqlarının mahiyyətinə uyğun olaraq tətbiq edilməlidir. Təhsil hüququnun təmin edilməsi zamanı isə hər bir fərdin konkret vəziyyəti nəzərə alınmalıdır.</p>
+              </div>
+
+              <div class="lang lang-en hidden">
+                <span class="story-meta">Right to education</span>
+                <h3>Attendance requirement and protection of the right to education</h3>
+                <p>Sanan was studying at a higher education institution. During the semester, he could not attend classes for a long period due to a serious illness. Despite this, he continued learning independently and prepared for exams.</p>
+                <p>At the end of the semester, the university informed him that under the existing rules he could not be admitted to exams because of insufficient attendance.</p>
+                <p>The Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan applied to the Constitutional Court for a legal assessment of the matter.</p>
+                <p>The Constitutional Court emphasized that each individual situation must be taken into account when ensuring the right to education.</p>
+              </div>
             </div>
 
-            <div class="lang lang-en hidden">
-              <span class="story-meta">Right to education</span>
-              <h3>Attendance requirement and protection of the right to education</h3>
-              <p>Sanan was studying at a higher education institution. During the semester, he could not attend classes for a long period due to a serious illness. Despite this, he continued learning independently and prepared for exams.</p>
-              <p>At the end of the semester, the university informed him that under the existing rules he could not be admitted to exams because of insufficient attendance.</p>
-              <p>The Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan applied to the Constitutional Court for a legal assessment of the matter.</p>
-              <p>The Constitutional Court emphasized that each individual situation must be taken into account when ensuring the right to education.</p>
+            <div class="story-card">
+              <div class="lang lang-az">
+                <span class="story-meta">Sosial hüquqlar</span>
+                <h3>Səlimin hekayəsi</h3>
+                <p>Səlim beş övladını tək böyüdən bir atadır. Həyat onun qarşısına çətin seçimlər qoymayıb — sadəcə məsuliyyətlər qoyub. O, həm ata, həm də ailənin bütün yükünü daşıyan yeganə dayaqdır.</p>
+                <p>Maddi çətinliklər səbəbindən Səlim sosial müavinət üçün müraciət edir. Lakin qüvvədə olan qanunvericiliyə əsasən, bu müavinət yalnız beşdən çox uşağı olan analara şamil edilirdi. Eyni vəziyyətdə olsa da, o bu hüquqdan istifadə edə bilmir.</p>
+                <p>Bu məsələ Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili tərəfindən araşdırılır və Konstitusiya Məhkəməsinə sorğu təqdim olunur.</p>
+                <p>Konstitusiya Məhkəməsi müəyyən edir ki, mövcud norma Konstitusiyaya zidd deyil. Lakin eyni zamanda qeyd olunur ki, hüquqi tənzimləmədə boşluq mövcuddur.</p>
+                <p>Bu səbəbdən, uşaqları təkbaşına böyüdən ataların da nəzərə alınması məqsədilə qanunvericiliyin təkmilləşdirilməsi tövsiyə edilir.</p>
+                <p>Bu hekayə göstərir ki, bəzən qanun pozulmur, lakin həyatın reallıqları hüquqi yanaşmanın yenidən düşünülməsini tələb edir.</p>
+              </div>
+
+              <div class="lang lang-en hidden">
+                <span class="story-meta">Social rights</span>
+                <h3>Salim’s story</h3>
+                <p>Salim is a father raising five children on his own. Life did not place difficult choices before him — it placed responsibilities. He is both the father and the only support carrying the full burden of the family.</p>
+                <p>Due to financial difficulties, Salim applies for social assistance. However, under the legislation in force, this assistance applied only to mothers with more than five children. Although he was in a similar situation, he could not benefit from this right.</p>
+                <p>The matter was examined by the Commissioner for Human Rights of the Republic of Azerbaijan and an application was submitted to the Constitutional Court.</p>
+                <p>The Constitutional Court found that the existing norm was not contrary to the Constitution. At the same time, it noted that there was a gap in legal regulation.</p>
+                <p>Therefore, it was recommended that the legislation be improved in order to also take into account fathers raising children alone.</p>
+                <p>This story shows that sometimes the law is not violated, but the realities of life require legal approaches to be reconsidered.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -681,23 +712,43 @@
         </div>
 
         <div class="section-card-wrap">
-          <div class="video-card">
-            <div class="lang lang-az">
-              <h3>Təhsil hüququnun təmin olunması</h3>
-              <div class="video-frame-wrap">
-                <iframe src="https://www.youtube.com/embed/DD0kGq2tl10" allowfullscreen></iframe>
+          <div>
+            <div class="video-card">
+              <div class="lang lang-az">
+                <h3>Təhsil hüququnun təmin olunması</h3>
+                <div class="video-frame-wrap">
+                  <iframe src="https://www.youtube.com/embed/DD0kGq2tl10" allowfullscreen></iframe>
+                </div>
+                <p>Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</p>
+                <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">Ətraflı məlumat</a>
               </div>
-              <p>Ombudsmanın Konstitusiya Məhkəməsinə müraciəti əsasında hazırlanmış hekayə əsaslı video.</p>
-              <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">Ətraflı məlumat</a>
+
+              <div class="lang lang-en hidden">
+                <h3>Ensuring the right to education</h3>
+                <div class="video-frame-wrap">
+                  <iframe src="https://www.youtube.com/embed/DD0kGq2tl10" allowfullscreen></iframe>
+                </div>
+                <p>A story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</p>
+                <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">More details</a>
+              </div>
             </div>
 
-            <div class="lang lang-en hidden">
-              <h3>Ensuring the right to education</h3>
-              <div class="video-frame-wrap">
-                <iframe src="https://www.youtube.com/embed/DD0kGq2tl10" allowfullscreen></iframe>
+            <div class="video-card">
+              <div class="lang lang-az">
+                <h3>Səlimin hekayəsi</h3>
+                <div class="video-frame-wrap">
+                  <iframe src="https://www.youtube.com/embed/LdNYusYFLKU" allowfullscreen></iframe>
+                </div>
+                <p>Sosial hüquqlar və hüquqi tənzimləmədə boşluq məsələsinə dair hekayə əsaslı video.</p>
               </div>
-              <p>A story-based video prepared on the basis of the Ombudsman’s application to the Constitutional Court.</p>
-              <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">More details</a>
+
+              <div class="lang lang-en hidden">
+                <h3>Salim’s story</h3>
+                <div class="video-frame-wrap">
+                  <iframe src="https://www.youtube.com/embed/LdNYusYFLKU" allowfullscreen></iframe>
+                </div>
+                <p>A story-based video on social rights and a gap in legal regulation.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -723,11 +774,6 @@
                 <textarea name="message" placeholder="Mesajınızı yazın" required></textarea>
                 <button type="submit">Göndər</button>
               </form>
-
-              <div class="form-status">
-                <div class="form-success hidden">Mesajınız üçün təşəkkür edirik.</div>
-                <div class="form-error hidden">Mesaj göndərilərkən xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.</div>
-              </div>
             </div>
 
             <div class="lang lang-en hidden">
@@ -740,11 +786,6 @@
                 <textarea name="message" placeholder="Write your message" required></textarea>
                 <button type="submit">Send</button>
               </form>
-
-              <div class="form-status">
-                <div class="form-success hidden">Thank you for your message.</div>
-                <div class="form-error hidden">An error occurred while sending the message. Please try again.</div>
-              </div>
             </div>
           </div>
         </div>
