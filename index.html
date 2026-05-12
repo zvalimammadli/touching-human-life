@@ -19,7 +19,6 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -106,11 +105,7 @@
       border-radius: 999px;
     }
 
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
 
     .lang-switch {
       display: flex;
@@ -178,14 +173,9 @@
     }
 
     .hero-card { padding: 42px; }
+    .section-card-wrap { display: flex; justify-content: center; }
 
-    .section-card-wrap {
-      display: flex;
-      justify-content: center;
-    }
-
-    .eyebrow,
-    .story-meta {
+    .eyebrow, .story-meta {
       display: inline-flex;
       align-items: center;
       font-size: 13px;
@@ -246,10 +236,7 @@
       margin-top: 28px;
     }
 
-    .btn-primary,
-    .btn-secondary,
-    .video-link,
-    .contact-form button {
+    .btn-primary, .btn-secondary, .video-link, .contact-form button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -266,32 +253,24 @@
       color: #10161d;
     }
 
-    .btn-secondary,
-    .video-link {
+    .btn-secondary, .video-link {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.10);
       color: #fff;
     }
 
-    .btn-primary:hover,
-    .btn-secondary:hover,
-    .video-link:hover,
-    .contact-form button:hover {
+    .btn-primary:hover, .btn-secondary:hover, .video-link:hover, .contact-form button:hover {
       transform: translateY(-2px);
     }
 
-    .content-section {
-      padding: 24px 0 74px;
-    }
+    .content-section { padding: 24px 0 74px; }
 
     .section-intro {
       max-width: 980px;
       margin: 0 auto 18px auto;
     }
 
-    .story-card + .story-card {
-      margin-top: 32px;
-    }
+    .story-card + .story-card { margin-top: 32px; }
 
     .question-box {
       margin-top: 20px;
@@ -306,6 +285,37 @@
       color: #fff;
       margin-bottom: 12px;
     }
+
+    .institution-list {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 28px;
+    }
+
+    .institution-btn {
+      width: 100%;
+      text-align: left;
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 800;
+      font-family: inherit;
+      transition: 0.2s ease;
+    }
+
+    .institution-btn:hover,
+    .institution-btn.active {
+      background: rgba(255,255,255,0.94);
+      color: #10161d;
+      transform: translateY(-2px);
+    }
+
+    .story-group { display: none; }
+    .story-group.active { display: block; }
 
     .story-video {
       margin-top: 24px;
@@ -433,22 +443,10 @@
     @media (max-width: 720px) {
       .header-inner { min-height: 72px; }
       .hero-section { padding: 106px 0 28px; }
-
-      .card {
-        padding: 22px;
-        border-radius: 22px;
-      }
-
+      .card { padding: 22px; border-radius: 22px; }
       .lead, p, li { font-size: 15px; }
-
       .hero-buttons { flex-direction: column; }
-
-      .btn-primary,
-      .btn-secondary,
-      .contact-form button {
-        width: 100%;
-      }
-
+      .btn-primary, .btn-secondary, .contact-form button { width: 100%; }
       .lang-switch button { padding: 8px 12px; }
     }
   </style>
@@ -524,7 +522,6 @@
               <p>Platforma Ombudsman təsisatlarını və milli insan hüquqları institutlarını öz uğur hekayələrini sadə, insan mərkəzli və anlaşıqlı formada paylaşmağa dəvət edir.</p>
               <p>Məqsədimiz hüquqi qərarları, institusional fəaliyyətləri və insan hüquqları sahəsində nailiyyətləri yalnız rəsmi sənəd kimi deyil, insanların həyatında yaratdığı dəyişikliklər vasitəsilə təqdim etməkdir.</p>
               <p>Platforma həmçinin rəqəmsal texnologiyaların və süni intellektin insan hüquqlarının daha əlçatan, anlaşıqlı və təsirli şəkildə təqdim olunmasına necə xidmət edə biləcəyini nümayiş etdirir.</p>
-
               <div class="question-box">
                 <p>Hər hekayə beş əsas suala cavab verir:</p>
                 <ul>
@@ -535,8 +532,6 @@
                   <li>Bu təcrübə digər qurumlar üçün niyə faydalı ola bilər?</li>
                 </ul>
               </div>
-
-              <p>Platforma pilot mərhələdə müxtəlif ölkələrdən uğur hekayələrini toplayaraq beynəlxalq əməkdaşlıq, maarifləndirmə və insan hüquqlarının daha anlaşıqlı təqdimatı üçün ortaq məkan yaratmağı hədəfləyir.</p>
             </div>
 
             <div class="lang lang-en hidden">
@@ -544,7 +539,6 @@
               <p>The platform invites Ombudsman institutions and National Human Rights Institutions to share their success stories in a simple, human-centered and accessible format.</p>
               <p>Our aim is to present legal decisions, institutional actions and human rights achievements not only as formal documents, but through the changes they create in people’s lives.</p>
               <p>The platform also demonstrates how digital technologies and artificial intelligence can help make human rights more accessible, understandable and impactful.</p>
-
               <div class="question-box">
                 <p>Each story answers five key questions:</p>
                 <ul>
@@ -555,8 +549,6 @@
                   <li>Why can this practice inspire others?</li>
                 </ul>
               </div>
-
-              <p>In its pilot phase, the platform aims to collect stories from different countries and create a shared space for international cooperation, awareness-raising and accessible human rights communication.</p>
             </div>
           </div>
         </div>
@@ -571,78 +563,84 @@
         </div>
 
         <div class="section-card-wrap">
-          <div>
-            <div class="card story-card">
-              <div class="lang lang-az">
-                <span class="story-meta">Azərbaycan • Təhsil hüququ</span>
-                <h3>Davamiyyət tələbi və təhsil hüququnun təmin edilməsi</h3>
-                <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, tədris prosesindən tam kənarda qalmadı, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
-                <p>Semestrin sonunda isə universitet tərəfindən ona bildirildi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz. Qaydalar tələb edirdi ki, tələbə dərs yükünün müəyyən hissəsində iştirak etməlidir və bu həddin aşılması — yəni dərs saatlarının 25 faizindən çoxunun buraxılması — imtahanlara buraxılmamaq üçün əsas hesab olunurdu. Bu norma istisnasız tətbiq edilirdi və Sənanın xəstəliyi də nəzərə alınmadı.</p>
-                <p>Beləliklə, məsələ ondan ibarət oldu ki, davamiyyətlə bağlı bu cür qaydanın üzrlü səbəblər nəzərə alınmadan tətbiqi tələbənin təhsil hüququnun məhdudlaşdırılmasına səbəb olurmu. Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) bu məsələyə hüquqi qiymət verilməsi üçün Konstitusiya Məhkəməsinə müraciət etdi.</p>
-                <p>Konstitusiya Məhkəməsi işi araşdırarkən qeyd etdi ki, təhsil hüququ Konstitusiya ilə təmin olunan əsas hüquqlardandır və dövlət bu sahədə müəyyən qaydalar müəyyən etmək səlahiyyətinə malikdir. Lakin bu qaydalar tətbiq edilərkən onların ədalətli və proporsional olması təmin olunmalıdır. Hüququn məhdudlaşdırılması onun mahiyyətini aradan qaldırmamalıdır.</p>
-                <p>Məhkəmə xüsusilə vurğuladı ki, üzrlü səbəblər, o cümlədən sağlamlıq vəziyyəti nəzərə alınmadan davamiyyət tələbinin avtomatik tətbiqi tələbənin təhsil hüququnun qeyri-proporsional məhdudlaşdırılmasına gətirib çıxara bilər. Buna görə də belə hallarda fərdi vəziyyətlər qiymətləndirilməli və qaydalar bu kontekstdə tətbiq olunmalıdır.</p>
-                <p>Nəticə etibarilə, bu yanaşma göstərdi ki, hüquqi normalar yalnız formal şəkildə deyil, insan hüquqlarının mahiyyətinə uyğun olaraq tətbiq edilməlidir. Təhsil hüququnun təmin edilməsi zamanı isə hər bir fərdin konkret vəziyyəti nəzərə alınmalıdır.</p>
-
-                <div class="story-video">
-                  <div class="story-video-title">Video</div>
-                  <div class="video-frame-wrap">
-                    <iframe src="https://www.youtube.com/embed/DD0kGq2tl10" allowfullscreen></iframe>
-                  </div>
-                  <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">Ətraflı məlumat</a>
-                </div>
-              </div>
-
-              <div class="lang lang-en hidden">
-                <span class="story-meta">Azerbaijan • Right to education</span>
-                <h3>Attendance requirement and protection of the right to education</h3>
-                <p>Sanan was studying at a higher education institution. During the semester, he could not attend classes for a long period due to a serious illness. Nevertheless, he continued learning independently and prepared for exams.</p>
-                <p>At the end of the semester, the university informed him that under the existing rules he could not be admitted to exams because of insufficient attendance.</p>
-                <p>The Ombudsman submitted the matter to the Constitutional Court. The Court emphasized that individual circumstances must be taken into account when ensuring the right to education.</p>
-
-                <div class="story-video">
-                  <div class="story-video-title">Video</div>
-                  <div class="video-frame-wrap">
-                    <iframe src="https://www.youtube.com/embed/DD0kGq2tl10" allowfullscreen></iframe>
-                  </div>
-                  <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">More details</a>
-                </div>
-              </div>
+          <div class="card">
+            <div class="lang lang-az">
+              <p>Hekayələri göndərən qurumun adına klik etməklə həmin qurumun paylaşdığı story və video materiallarına baxa bilərsiniz.</p>
+            </div>
+            <div class="lang lang-en hidden">
+              <p>Click on the name of the submitting institution to view its stories and related videos.</p>
             </div>
 
-            <div class="card story-card">
-              <div class="lang lang-az">
-                <span class="story-meta">Azərbaycan • Sosial hüquqlar</span>
-                <h3>Səlimin hekayəsi</h3>
-                <p>Səlim beş övladını tək böyüdən bir atadır. Həyat onun qarşısına çətin seçimlər qoymayıb — sadəcə məsuliyyətlər qoyub. O, həm ata, həm də ailənin bütün yükünü daşıyan yeganə dayaqdır.</p>
-                <p>Maddi çətinliklər səbəbindən Səlim sosial müavinət üçün müraciət edir. Lakin qüvvədə olan qanunvericiliyə əsasən, bu müavinət yalnız beşdən çox uşağı olan analara şamil edilirdi. Eyni vəziyyətdə olsa da, o bu hüquqdan istifadə edə bilmir.</p>
-                <p>Bu məsələ Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili tərəfindən araşdırılır və Konstitusiya Məhkəməsinə sorğu təqdim olunur.</p>
-                <p>Konstitusiya Məhkəməsi müəyyən edir ki, mövcud norma Konstitusiyaya zidd deyil. Lakin eyni zamanda qeyd olunur ki, hüquqi tənzimləmədə boşluq mövcuddur.</p>
-                <p>Bu səbəbdən, uşaqları təkbaşına böyüdən ataların da nəzərə alınması məqsədilə qanunvericiliyin təkmilləşdirilməsi tövsiyə edilir.</p>
-                <p>Bu hekayə göstərir ki, bəzən qanun pozulmur, lakin həyatın reallıqları hüquqi yanaşmanın yenidən düşünülməsini tələb edir.</p>
+            <div class="institution-list">
+              <button class="institution-btn active" data-target="az-ombudsman">
+                Azerbaijan Ombudsman Institution
+              </button>
+            </div>
 
-                <div class="story-video">
-                  <div class="story-video-title">Video</div>
-                  <div class="video-frame-wrap">
-                    <iframe src="https://www.youtube.com/embed/LdNYusYFLKU" allowfullscreen></iframe>
+            <div id="az-ombudsman" class="story-group active">
+              <div class="story-card">
+                <div class="lang lang-az">
+                  <span class="story-meta">Azərbaycan • Təhsil hüququ</span>
+                  <h3>Davamiyyət tələbi və təhsil hüququnun təmin edilməsi</h3>
+                  <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, tədris prosesindən tam kənarda qalmadı, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
+                  <p>Semestrin sonunda isə universitet tərəfindən ona bildirildi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz.</p>
+                  <p>Ombudsman məsələni Konstitusiya Məhkəməsinə təqdim etdi. Məhkəmə vurğuladı ki, təhsil hüququnun təmin edilməsi zamanı fərdin konkret vəziyyəti nəzərə alınmalıdır.</p>
+                  <div class="story-video">
+                    <div class="story-video-title">Video</div>
+                    <div class="video-frame-wrap">
+                      <iframe src="https://www.youtube.com/embed/DD0kGq2tl10" allowfullscreen></iframe>
+                    </div>
+                    <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">Ətraflı məlumat</a>
                   </div>
-                  <a class="video-link" href="https://constcourt.gov.az/ru/decision/1325" target="_blank">Ətraflı məlumat</a>
+                </div>
+
+                <div class="lang lang-en hidden">
+                  <span class="story-meta">Azerbaijan • Right to education</span>
+                  <h3>Attendance requirement and protection of the right to education</h3>
+                  <p>Sanan was studying at a higher education institution. During the semester, he could not attend classes for a long period due to a serious illness. Nevertheless, he continued learning independently and prepared for exams.</p>
+                  <p>At the end of the semester, the university informed him that under the existing rules he could not be admitted to exams because of insufficient attendance.</p>
+                  <p>The Ombudsman submitted the matter to the Constitutional Court. The Court emphasized that individual circumstances must be taken into account when ensuring the right to education.</p>
+                  <div class="story-video">
+                    <div class="story-video-title">Video</div>
+                    <div class="video-frame-wrap">
+                      <iframe src="https://www.youtube.com/embed/DD0kGq2tl10" allowfullscreen></iframe>
+                    </div>
+                    <a class="video-link" href="https://constcourt.gov.az/az/decision/1481" target="_blank">More details</a>
+                  </div>
                 </div>
               </div>
 
-              <div class="lang lang-en hidden">
-                <span class="story-meta">Azerbaijan • Social rights</span>
-                <h3>Salim’s story</h3>
-                <p>Salim is a father raising five children on his own. Life did not place difficult choices before him — it placed responsibilities. He is both the father and the only support carrying the full burden of the family.</p>
-                <p>Due to financial difficulties, Salim applied for social assistance. However, under the legislation in force, this assistance applied only to mothers with more than five children.</p>
-                <p>The matter was examined by the Ombudsman and submitted to the Constitutional Court. The Court found that the norm was not unconstitutional, but noted a gap in legal regulation.</p>
-                <p>This story shows that sometimes the law is not violated, but the realities of life require legal approaches to be reconsidered.</p>
-
-                <div class="story-video">
-                  <div class="story-video-title">Video</div>
-                  <div class="video-frame-wrap">
-                    <iframe src="https://www.youtube.com/embed/LdNYusYFLKU" allowfullscreen></iframe>
+              <div class="story-card">
+                <div class="lang lang-az">
+                  <span class="story-meta">Azərbaycan • Sosial hüquqlar</span>
+                  <h3>Səlimin hekayəsi</h3>
+                  <p>Səlim beş övladını tək böyüdən bir atadır. Həyat onun qarşısına çətin seçimlər qoymayıb — sadəcə məsuliyyətlər qoyub. O, həm ata, həm də ailənin bütün yükünü daşıyan yeganə dayaqdır.</p>
+                  <p>Maddi çətinliklər səbəbindən Səlim sosial müavinət üçün müraciət edir. Lakin qüvvədə olan qanunvericiliyə əsasən, bu müavinət yalnız beşdən çox uşağı olan analara şamil edilirdi.</p>
+                  <p>Bu məsələ Ombudsman tərəfindən araşdırıldı və Konstitusiya Məhkəməsinə sorğu təqdim olundu. Məhkəmə normanın Konstitusiyaya zidd olmadığını, lakin hüquqi tənzimləmədə boşluq olduğunu qeyd etdi.</p>
+                  <p>Bu hekayə göstərir ki, bəzən qanun pozulmur, lakin həyatın reallıqları hüquqi yanaşmanın yenidən düşünülməsini tələb edir.</p>
+                  <div class="story-video">
+                    <div class="story-video-title">Video</div>
+                    <div class="video-frame-wrap">
+                      <iframe src="https://www.youtube.com/embed/LdNYusYFLKU" allowfullscreen></iframe>
+                    </div>
+                    <a class="video-link" href="https://constcourt.gov.az/ru/decision/1325" target="_blank">Ətraflı məlumat</a>
                   </div>
-                  <a class="video-link" href="https://constcourt.gov.az/ru/decision/1325" target="_blank">More details</a>
+                </div>
+
+                <div class="lang lang-en hidden">
+                  <span class="story-meta">Azerbaijan • Social rights</span>
+                  <h3>Salim’s story</h3>
+                  <p>Salim is a father raising five children on his own. Life did not place difficult choices before him — it placed responsibilities. He is both the father and the only support carrying the full burden of the family.</p>
+                  <p>Due to financial difficulties, Salim applied for social assistance. However, under the legislation in force, this assistance applied only to mothers with more than five children.</p>
+                  <p>The matter was examined by the Ombudsman and submitted to the Constitutional Court. The Court found that the norm was not unconstitutional, but noted a gap in legal regulation.</p>
+                  <p>This story shows that sometimes the law is not violated, but the realities of life require legal approaches to be reconsidered.</p>
+                  <div class="story-video">
+                    <div class="story-video-title">Video</div>
+                    <div class="video-frame-wrap">
+                      <iframe src="https://www.youtube.com/embed/LdNYusYFLKU" allowfullscreen></iframe>
+                    </div>
+                    <a class="video-link" href="https://constcourt.gov.az/ru/decision/1325" target="_blank">More details</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -663,7 +661,6 @@
           <div class="card">
             <div class="lang lang-az">
               <p>Bu bölmə müxtəlif ölkələrin Ombudsman təsisatları və milli insan hüquqları institutlarının paylaşdığı hekayələri bir araya gətirmək üçün nəzərdə tutulub.</p>
-              <p>Pilot mərhələdə platforma tərəfdaş qurumların uğur hekayələrini vahid formatda təqdim edəcək.</p>
               <div class="institution-grid">
                 <div class="institution-item">Azerbaijan Ombudsman Institution</div>
                 <div class="institution-item">Future partner NHRI</div>
@@ -673,7 +670,6 @@
 
             <div class="lang lang-en hidden">
               <p>This section is designed to bring together stories shared by Ombudsman institutions and National Human Rights Institutions from different countries.</p>
-              <p>During the pilot phase, the platform will present success stories of partner institutions in a common format.</p>
               <div class="institution-grid">
                 <div class="institution-item">Azerbaijan Ombudsman Institution</div>
                 <div class="institution-item">Future partner NHRI</div>
@@ -781,6 +777,8 @@
     const mainNav = document.getElementById("mainNav");
     const brandText = document.getElementById("brandText");
     const sections = document.querySelectorAll("main section[id]");
+    const institutionButtons = document.querySelectorAll(".institution-btn");
+    const storyGroups = document.querySelectorAll(".story-group");
 
     function setLanguage(lang) {
       if (lang === "az") {
@@ -816,6 +814,16 @@
     navLinks.forEach(link => {
       link.addEventListener("click", () => {
         mainNav.classList.remove("open");
+      });
+    });
+
+    institutionButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        institutionButtons.forEach(btn => btn.classList.remove("active"));
+        storyGroups.forEach(group => group.classList.remove("active"));
+
+        button.classList.add("active");
+        document.getElementById(button.dataset.target).classList.add("active");
       });
     });
 
