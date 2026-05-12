@@ -3,42 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>İnsan həyatına toxunmaq</title>
+  <title>Touching Human Life</title>
 
   <style>
     :root {
       --text-main: #ffffff;
-      --text-soft: rgba(255, 255, 255, 0.88);
-      --text-muted: rgba(255, 255, 255, 0.70);
-      --line-soft: rgba(255, 255, 255, 0.10);
-      --glass: rgba(8, 16, 28, 0.56);
-      --glass-strong: rgba(7, 14, 24, 0.72);
-      --shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
+      --text-soft: rgba(255,255,255,0.88);
+      --text-muted: rgba(255,255,255,0.70);
+      --line-soft: rgba(255,255,255,0.10);
+      --glass: rgba(8,16,28,0.56);
+      --shadow: 0 18px 60px rgba(0,0,0,0.34);
       --radius-xl: 28px;
-      --radius-lg: 22px;
       --radius-md: 16px;
       --maxw: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color: var(--text-main);
       background:
-        linear-gradient(rgba(6, 14, 28, 0.54), rgba(4, 10, 20, 0.74)),
+        linear-gradient(rgba(6,14,28,0.54), rgba(4,10,20,0.74)),
         url("background.jpg") center center / cover no-repeat fixed;
       min-height: 100vh;
-      position: relative;
     }
 
     body::before {
@@ -52,14 +42,8 @@
       z-index: 0;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .hidden {
-      display: none !important;
-    }
+    a { color: inherit; text-decoration: none; }
+    .hidden { display: none !important; }
 
     .container {
       width: min(var(--maxw), calc(100% - 32px));
@@ -72,10 +56,9 @@
       position: fixed;
       inset: 0 0 auto 0;
       z-index: 1000;
-      background: rgba(5, 10, 18, 0.48);
+      background: rgba(5,10,18,0.48);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
     }
 
     .header-inner {
@@ -89,7 +72,7 @@
     }
 
     .brand {
-      font-size: 24px;
+      font-size: 23px;
       font-weight: 800;
       white-space: nowrap;
     }
@@ -97,23 +80,20 @@
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 18px;
       margin-left: auto;
       margin-right: 18px;
     }
 
     .main-nav a {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--text-soft);
       position: relative;
-      transition: 0.2s ease;
     }
 
     .main-nav a:hover,
-    .main-nav a.active {
-      color: #fff;
-    }
+    .main-nav a.active { color: #fff; }
 
     .main-nav a.active::after {
       content: "";
@@ -166,7 +146,6 @@
       background: rgba(255,255,255,0.05);
       border-radius: 14px;
       cursor: pointer;
-      padding: 0;
     }
 
     .menu-toggle span {
@@ -178,10 +157,7 @@
       border-radius: 999px;
     }
 
-    main {
-      position: relative;
-      z-index: 1;
-    }
+    main { position: relative; z-index: 1; }
 
     .hero-section {
       min-height: 94vh;
@@ -190,23 +166,18 @@
       padding: 120px 0 40px;
     }
 
-    .hero-card,
-    .content-card,
-    .story-card,
-    .contact-card {
+    .card {
       background: var(--glass);
       border: 1px solid var(--line-soft);
       box-shadow: var(--shadow);
       border-radius: var(--radius-xl);
       backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       max-width: 980px;
       width: 100%;
+      padding: 32px;
     }
 
-    .hero-card {
-      padding: 42px;
-    }
+    .hero-card { padding: 42px; }
 
     .section-card-wrap {
       display: flex;
@@ -235,10 +206,9 @@
     }
 
     h2 {
-      margin: 0 0 16px;
+      margin: 0 0 18px;
       font-size: clamp(34px, 4vw, 50px);
       line-height: 1.08;
-      letter-spacing: -0.02em;
     }
 
     h3 {
@@ -247,11 +217,18 @@
       line-height: 1.2;
     }
 
+    p, li {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    ul { padding-left: 22px; }
+
     .lead {
       font-size: 20px;
       line-height: 1.85;
-      color: var(--text-soft);
-      margin: 0 0 18px;
       max-width: 860px;
     }
 
@@ -259,7 +236,7 @@
       font-size: 24px;
       font-weight: 800;
       margin-top: 6px;
-      color: #ffffff;
+      color: #fff;
     }
 
     .hero-buttons {
@@ -312,23 +289,8 @@
       margin: 0 auto 18px auto;
     }
 
-    .content-card,
-    .story-card,
-    .contact-card {
-      padding: 30px;
-    }
-
     .story-card + .story-card {
       margin-top: 32px;
-    }
-
-    .content-card p,
-    .story-card p,
-    .contact-note {
-      font-size: 17px;
-      line-height: 1.9;
-      color: var(--text-soft);
-      margin: 0 0 16px;
     }
 
     .question-box {
@@ -343,17 +305,6 @@
       font-weight: 800;
       color: #fff;
       margin-bottom: 12px;
-    }
-
-    .question-box ul {
-      margin: 0;
-      padding-left: 22px;
-    }
-
-    .question-box li {
-      margin-bottom: 10px;
-      line-height: 1.8;
-      color: var(--text-soft);
     }
 
     .story-video {
@@ -383,6 +334,22 @@
       width: 100%;
       aspect-ratio: 16 / 9;
       border: 0;
+    }
+
+    .institution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .institution-item {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text-soft);
+      font-weight: 700;
     }
 
     .contact-form {
@@ -415,7 +382,7 @@
     }
 
     .contact-form button {
-      width: 180px;
+      width: 190px;
       border: 1px solid rgba(255,255,255,0.10);
       background: rgba(255,255,255,0.94);
       color: #0f141a;
@@ -431,6 +398,7 @@
 
     .main-footer p {
       margin: 0 0 8px;
+      font-size: 14px;
     }
 
     @media (max-width: 980px) {
@@ -443,7 +411,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 14px;
-        background: rgba(8, 14, 23, 0.96);
+        background: rgba(8,14,23,0.96);
         border: 1px solid rgba(255,255,255,0.08);
         border-radius: 20px;
         padding: 18px;
@@ -451,17 +419,9 @@
         margin: 0;
       }
 
-      .main-nav.open {
-        display: flex;
-      }
-
-      .main-nav a.active::after {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: inline-block;
-      }
+      .main-nav.open { display: flex; }
+      .main-nav a.active::after { display: none; }
+      .menu-toggle { display: inline-block; }
 
       .brand {
         font-size: 20px;
@@ -471,32 +431,17 @@
     }
 
     @media (max-width: 720px) {
-      .header-inner {
-        min-height: 72px;
-      }
+      .header-inner { min-height: 72px; }
+      .hero-section { padding: 106px 0 28px; }
 
-      .hero-section {
-        padding: 106px 0 28px;
-      }
-
-      .hero-card,
-      .content-card,
-      .story-card,
-      .contact-card {
+      .card {
         padding: 22px;
         border-radius: 22px;
       }
 
-      .lead,
-      .content-card p,
-      .story-card p,
-      .contact-note {
-        font-size: 15px;
-      }
+      .lead, p, li { font-size: 15px; }
 
-      .hero-buttons {
-        flex-direction: column;
-      }
+      .hero-buttons { flex-direction: column; }
 
       .btn-primary,
       .btn-secondary,
@@ -504,9 +449,7 @@
         width: 100%;
       }
 
-      .lang-switch button {
-        padding: 8px 12px;
-      }
+      .lang-switch button { padding: 8px 12px; }
     }
   </style>
 </head>
@@ -514,12 +457,14 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <div class="brand" id="brandText">İnsan həyatına toxunmaq</div>
+      <div class="brand" id="brandText">Touching Human Life</div>
 
       <nav class="main-nav" id="mainNav">
         <a href="#home" class="nav-link active" data-az="Ana səhifə" data-en="Home">Ana səhifə</a>
         <a href="#about" class="nav-link" data-az="Haqqında" data-en="About">Haqqında</a>
         <a href="#stories" class="nav-link" data-az="Hekayələr" data-en="Stories">Hekayələr</a>
+        <a href="#institutions" class="nav-link" data-az="Qurumlar" data-en="Institutions">Qurumlar</a>
+        <a href="#submit" class="nav-link" data-az="Hekayə göndər" data-en="Submit">Hekayə göndər</a>
         <a href="#contact" class="nav-link" data-az="Əlaqə" data-en="Contact">Əlaqə</a>
       </nav>
 
@@ -530,9 +475,7 @@
         </div>
 
         <button class="menu-toggle" id="menuToggle" aria-label="menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
     </div>
@@ -541,26 +484,26 @@
   <main>
     <section id="home" class="hero-section">
       <div class="container section-card-wrap">
-        <div class="hero-card">
+        <div class="card hero-card">
           <div class="lang lang-az">
-            <span class="eyebrow">Hüquqi hekayələr sadə dildə</span>
-            <h1>İnsan həyatına toxunmaq</h1>
-            <p class="lead">“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə və anlaşıqlı dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
+            <span class="eyebrow">Qlobal NHRI hekayə platforması</span>
+            <h1>Touching Human Life</h1>
+            <p class="lead">Ombudsman və milli insan hüquqları institutlarının real insan həyatına təsir edən uğur hekayələrini paylaşdığı beynəlxalq platforma.</p>
             <p class="final-line">Sadəcə bir qərar həyatları dəyişir.</p>
-
             <div class="hero-buttons">
               <a href="#stories" class="btn-primary">Hekayələrə bax</a>
+              <a href="#submit" class="btn-secondary">Hekayə göndər</a>
             </div>
           </div>
 
           <div class="lang lang-en hidden">
-            <span class="eyebrow">Legal stories in simple language</span>
+            <span class="eyebrow">Global NHRI storytelling platform</span>
             <h1>Touching Human Life</h1>
-            <p class="lead">“Touching Human Life” is a platform that presents legal decisions to people in a simpler and more understandable way through stories.</p>
+            <p class="lead">An international platform where Ombudsman institutions and National Human Rights Institutions share real stories showing how their work changes people’s lives.</p>
             <p class="final-line">Just one decision can change lives.</p>
-
             <div class="hero-buttons">
               <a href="#stories" class="btn-primary">View stories</a>
+              <a href="#submit" class="btn-secondary">Submit a story</a>
             </div>
           </div>
         </div>
@@ -575,41 +518,45 @@
         </div>
 
         <div class="section-card-wrap">
-          <div class="content-card">
+          <div class="card">
             <div class="lang lang-az">
-              <p>“İnsan həyatına toxunmaq” hüquqi qərarları insanlara daha sadə və anlaşıqlı dildə, hekayələr vasitəsilə çatdıran bir platformadır.</p>
-              <p>Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) haqqında Konstitusiya Qanununa əsasən, qüvvədə olan normativ hüquqi aktların tətbiqi nəticəsində şəxsin hüquqları pozulduqda, Müvəkkil Azərbaycan Respublikasının Konstitusiya Məhkəməsinə sorğu ilə müraciət edə bilər.</p>
-              <p>Müvəkkilin müraciətləri əsasında Konstitusiya Məhkəməsi tərəfindən baxılan hər bir işin arxasında real insan hekayəsi dayanır.</p>
-              <p>Bu platforma vasitəsilə Ombudsman tərəfindən Konstitusiya Məhkəməsinə təqdim edilmiş müraciətlər əsasında hazırlanmış qısa, hekayə əsaslı videolar təqdim olunur. Bu videolarda qəbul edilmiş qərarların insanların həyatında yaratdığı dəyişikliklər sadə və aydın şəkildə izah edilir.</p>
+              <p><strong>Touching Human Life</strong> insan hüquqları sahəsində görülən işlərin real insan həyatına təsirini hekayələr vasitəsilə göstərən qlobal təşəbbüsdür.</p>
+              <p>Platforma Ombudsman təsisatlarını və milli insan hüquqları institutlarını öz uğur hekayələrini sadə, insan mərkəzli və anlaşıqlı formada paylaşmağa dəvət edir.</p>
+              <p>Məqsədimiz hüquqi qərarları, institusional fəaliyyətləri və insan hüquqları sahəsində nailiyyətləri yalnız rəsmi sənəd kimi deyil, insanların həyatında yaratdığı dəyişikliklər vasitəsilə təqdim etməkdir.</p>
+              <p>Platforma həmçinin rəqəmsal texnologiyaların və süni intellektin insan hüquqlarının daha əlçatan, anlaşıqlı və təsirli şəkildə təqdim olunmasına necə xidmət edə biləcəyini nümayiş etdirir.</p>
 
               <div class="question-box">
-                <p>Hər bir hekayə üç əsas suala cavab verir:</p>
+                <p>Hər hekayə beş əsas suala cavab verir:</p>
                 <ul>
                   <li>Problem nə idi?</li>
-                  <li>Hansı addım atıldı?</li>
-                  <li>İnsanların həyatında nə dəyişdi?</li>
+                  <li>Kim təsirlənmişdi?</li>
+                  <li>Ombudsman və ya NHRI hansı addımı atdı?</li>
+                  <li>Nə dəyişdi?</li>
+                  <li>Bu təcrübə digər qurumlar üçün niyə faydalı ola bilər?</li>
                 </ul>
               </div>
 
-              <p class="final-line">Məqsədimiz mürəkkəb hüquqi prosesləri sadə və anlaşıqlı formada izah etməkdir.</p>
+              <p>Platforma pilot mərhələdə müxtəlif ölkələrdən uğur hekayələrini toplayaraq beynəlxalq əməkdaşlıq, maarifləndirmə və insan hüquqlarının daha anlaşıqlı təqdimatı üçün ortaq məkan yaratmağı hədəfləyir.</p>
             </div>
 
             <div class="lang lang-en hidden">
-              <p>“Touching Human Life” is a platform that explains legal decisions in a simpler and more understandable way through stories.</p>
-              <p>Under the Constitutional Law on the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan, when a person’s rights are violated as a result of the application of normative legal acts, the Ombudsman may apply to the Constitutional Court.</p>
-              <p>Behind every case examined by the Constitutional Court on the basis of the Ombudsman’s application, there is a real human story.</p>
-              <p>Through this platform, short story-based videos prepared on the basis of applications submitted by the Ombudsman to the Constitutional Court are presented. These videos explain, in a simple and clear manner, how the adopted decisions affect people’s lives.</p>
+              <p><strong>Touching Human Life</strong> is a global initiative that presents the real-life impact of human rights work through stories.</p>
+              <p>The platform invites Ombudsman institutions and National Human Rights Institutions to share their success stories in a simple, human-centered and accessible format.</p>
+              <p>Our aim is to present legal decisions, institutional actions and human rights achievements not only as formal documents, but through the changes they create in people’s lives.</p>
+              <p>The platform also demonstrates how digital technologies and artificial intelligence can help make human rights more accessible, understandable and impactful.</p>
 
               <div class="question-box">
-                <p>Each story answers three main questions:</p>
+                <p>Each story answers five key questions:</p>
                 <ul>
                   <li>What was the problem?</li>
-                  <li>What action was taken?</li>
-                  <li>What changed in people’s lives?</li>
+                  <li>Who was affected?</li>
+                  <li>What did the Ombudsman or NHRI do?</li>
+                  <li>What changed?</li>
+                  <li>Why can this practice inspire others?</li>
                 </ul>
               </div>
 
-              <p class="final-line">Our aim is to explain complex legal processes in a simple and accessible way.</p>
+              <p>In its pilot phase, the platform aims to collect stories from different countries and create a shared space for international cooperation, awareness-raising and accessible human rights communication.</p>
             </div>
           </div>
         </div>
@@ -625,57 +572,9 @@
 
         <div class="section-card-wrap">
           <div>
-            <div class="story-card">
+            <div class="card story-card">
               <div class="lang lang-az">
-                <span class="story-meta">Əmək hüququ</span>
-                <h3>Əlavə məzuniyyətə görə kompensasiyanın verilməməsi: hüquqi qiymətləndirmə</h3>
-                <p>Kənan uzun illər eyni müəssisədə çalışmışdı. İşinə məsuliyyətlə yanaşır, ailəsinin rifahı üçün yorulmadan əmək sərf edirdi. İş şəraitinə uyğun olaraq, qanunvericiliyə əsasən o, əlavə məzuniyyət hüququ da əldə etmişdi.</p>
-                <p>Lakin həyat gözlənilmədən dəyişdi.</p>
-                <p>Müəssisədə aparılan ixtisarlar nəticəsində Kənanın əmək müqaviləsinə xitam verildi. O, işdən ayrılarkən istifadə etmədiyi məzuniyyət günlərinə görə kompensasiya alacağını düşünürdü. Əsas məzuniyyətə görə ödəniş edilsə də, əlavə məzuniyyətlərə görə ona heç bir kompensasiya verilmədi.</p>
-                <p>Kənan üçün bu, sadəcə hüquqi məsələ deyildi. Bu, onun zəhmətinin qarşılığının verilməməsi demək idi.</p>
-                <p>O, hüquqlarını bərpa etmək üçün məhkəməyə müraciət etdi. Lakin mövcud qanunvericiliyə görə əlavə məzuniyyətlərə görə kompensasiya nəzərdə tutulmadığından, onun tələbi təmin olunmadı.</p>
-                <p>Bu vəziyyət Kənanı düşündürdü: eyni şəraitdə çalışan işçilərdən bəziləri kompensasiya alır, digərləri isə almırdı. Bu, ədalətlidirmi?</p>
-                <p>Məsələ Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkili (Ombudsman) tərəfindən araşdırıldı. Aparılmış hüquqi təhlil nəticəsində bu məhdudiyyətin insan hüquqları, xüsusilə də bərabərlik prinsipi baxımından problemli olduğu müəyyən edildi.</p>
-                <p>Ombudsmanın sorğusu əsasında məsələ Konstitusiya Məhkəməsinə təqdim olundu.</p>
-                <p>Konstitusiya Məhkəməsi öz qərarında qeyd etdi ki, əlavə məzuniyyətlərə görə kompensasiyanın verilməməsi işçinin hüquqlarını qeyri-mütənasib şəkildə məhdudlaşdırır və Konstitusiyanın bərabərlik prinsipinə uyğun deyil.</p>
-                <p>Nəticədə, bu məhdudiyyətin tətbiqi dayandırıldı və qanunvericiliyin Konstitusiyanın tələblərinə uyğunlaşdırılması tələb olundu.</p>
-
-                <div class="story-video">
-                  <div class="story-video-title">Video</div>
-                  <div class="video-frame-wrap">
-                    <iframe src="https://www.youtube.com/embed/3seg2iknpHc" allowfullscreen></iframe>
-                  </div>
-                  <a class="video-link" href="https://constcourt.gov.az/az/decision/1493" target="_blank">Ətraflı məlumat</a>
-                </div>
-              </div>
-
-              <div class="lang lang-en hidden">
-                <span class="story-meta">Labour rights</span>
-                <h3>Non-payment of compensation for additional leave: constitutional legal assessment</h3>
-                <p>Kenan had worked for many years at the same enterprise. He approached his work responsibly and worked tirelessly for the well-being of his family. In accordance with the legislation and the conditions of his work, he had also acquired the right to additional leave.</p>
-                <p>But life changed unexpectedly.</p>
-                <p>As a result of staff reductions at the enterprise, Kenan’s employment contract was terminated. When leaving his job, he expected to receive compensation for the leave days he had not used. Although payment was made for his basic leave, no compensation was provided for his additional leave.</p>
-                <p>For Kenan, this was not merely a legal issue. It meant that the value of his work was not fully recognized.</p>
-                <p>He applied to the court to restore his rights. However, since the existing legislation did not provide compensation for additional leave, his claim was not satisfied.</p>
-                <p>This situation made Kenan ask an important question: some workers in similar circumstances received compensation, while others did not. Was this fair?</p>
-                <p>The matter was examined by the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan. As a result of the legal analysis, it was determined that this restriction raised concerns from the perspective of human rights, especially the principle of equality.</p>
-                <p>On the basis of the Ombudsman’s request, the matter was submitted to the Constitutional Court.</p>
-                <p>In its decision, the Constitutional Court stated that the non-payment of compensation for additional leave disproportionately restricted the employee’s rights and was not in line with the constitutional principle of equality.</p>
-                <p>As a result, the application of this restriction was suspended and the legislation was required to be brought into conformity with the requirements of the Constitution.</p>
-
-                <div class="story-video">
-                  <div class="story-video-title">Video</div>
-                  <div class="video-frame-wrap">
-                    <iframe src="https://www.youtube.com/embed/3seg2iknpHc" allowfullscreen></iframe>
-                  </div>
-                  <a class="video-link" href="https://constcourt.gov.az/az/decision/1493" target="_blank">More details</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="story-card">
-              <div class="lang lang-az">
-                <span class="story-meta">Təhsil hüququ</span>
+                <span class="story-meta">Azərbaycan • Təhsil hüququ</span>
                 <h3>Davamiyyət tələbi və təhsil hüququnun təmin edilməsi</h3>
                 <p>Sənan ali təhsil müəssisəsində təhsil alırdı. Semestr ərzində o, ciddi xəstəlik səbəbindən uzun müddət dərslərdə iştirak edə bilmədi. Buna baxmayaraq, o, tədris prosesindən tam kənarda qalmadı, mövzuları müstəqil şəkildə öyrəndi və imtahanlara hazırlaşdı.</p>
                 <p>Semestrin sonunda isə universitet tərəfindən ona bildirildi ki, mövcud qaydalara əsasən dərslərdə kifayət qədər iştirak etmədiyinə görə imtahanlara buraxıla bilməz. Qaydalar tələb edirdi ki, tələbə dərs yükünün müəyyən hissəsində iştirak etməlidir və bu həddin aşılması — yəni dərs saatlarının 25 faizindən çoxunun buraxılması — imtahanlara buraxılmamaq üçün əsas hesab olunurdu. Bu norma istisnasız tətbiq edilirdi və Sənanın xəstəliyi də nəzərə alınmadı.</p>
@@ -694,12 +593,11 @@
               </div>
 
               <div class="lang lang-en hidden">
-                <span class="story-meta">Right to education</span>
+                <span class="story-meta">Azerbaijan • Right to education</span>
                 <h3>Attendance requirement and protection of the right to education</h3>
-                <p>Sanan was studying at a higher education institution. During the semester, he could not attend classes for a long period due to a serious illness. Despite this, he continued learning independently and prepared for exams.</p>
+                <p>Sanan was studying at a higher education institution. During the semester, he could not attend classes for a long period due to a serious illness. Nevertheless, he continued learning independently and prepared for exams.</p>
                 <p>At the end of the semester, the university informed him that under the existing rules he could not be admitted to exams because of insufficient attendance.</p>
-                <p>The Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan applied to the Constitutional Court for a legal assessment of the matter.</p>
-                <p>The Constitutional Court emphasized that each individual situation must be taken into account when ensuring the right to education.</p>
+                <p>The Ombudsman submitted the matter to the Constitutional Court. The Court emphasized that individual circumstances must be taken into account when ensuring the right to education.</p>
 
                 <div class="story-video">
                   <div class="story-video-title">Video</div>
@@ -711,9 +609,9 @@
               </div>
             </div>
 
-            <div class="story-card">
+            <div class="card story-card">
               <div class="lang lang-az">
-                <span class="story-meta">Sosial hüquqlar</span>
+                <span class="story-meta">Azərbaycan • Sosial hüquqlar</span>
                 <h3>Səlimin hekayəsi</h3>
                 <p>Səlim beş övladını tək böyüdən bir atadır. Həyat onun qarşısına çətin seçimlər qoymayıb — sadəcə məsuliyyətlər qoyub. O, həm ata, həm də ailənin bütün yükünü daşıyan yeganə dayaqdır.</p>
                 <p>Maddi çətinliklər səbəbindən Səlim sosial müavinət üçün müraciət edir. Lakin qüvvədə olan qanunvericiliyə əsasən, bu müavinət yalnız beşdən çox uşağı olan analara şamil edilirdi. Eyni vəziyyətdə olsa da, o bu hüquqdan istifadə edə bilmir.</p>
@@ -725,82 +623,153 @@
                 <div class="story-video">
                   <div class="story-video-title">Video</div>
                   <div class="video-frame-wrap">
-                    <iframe src="https://www.youtube.com/embed/nykLRQoW0rY" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/LdNYusYFLKU" allowfullscreen></iframe>
                   </div>
                   <a class="video-link" href="https://constcourt.gov.az/ru/decision/1325" target="_blank">Ətraflı məlumat</a>
                 </div>
               </div>
 
               <div class="lang lang-en hidden">
-                <span class="story-meta">Social rights</span>
+                <span class="story-meta">Azerbaijan • Social rights</span>
                 <h3>Salim’s story</h3>
                 <p>Salim is a father raising five children on his own. Life did not place difficult choices before him — it placed responsibilities. He is both the father and the only support carrying the full burden of the family.</p>
-                <p>Due to financial difficulties, Salim applies for social assistance. However, under the legislation in force, this assistance applied only to mothers with more than five children. Although he was in a similar situation, he could not benefit from this right.</p>
-                <p>The matter was examined by the Commissioner for Human Rights of the Republic of Azerbaijan and an application was submitted to the Constitutional Court.</p>
-                <p>The Constitutional Court found that the existing norm was not contrary to the Constitution. At the same time, it noted that there was a gap in legal regulation.</p>
-                <p>Therefore, it was recommended that the legislation be improved in order to also take into account fathers raising children alone.</p>
+                <p>Due to financial difficulties, Salim applied for social assistance. However, under the legislation in force, this assistance applied only to mothers with more than five children.</p>
+                <p>The matter was examined by the Ombudsman and submitted to the Constitutional Court. The Court found that the norm was not unconstitutional, but noted a gap in legal regulation.</p>
                 <p>This story shows that sometimes the law is not violated, but the realities of life require legal approaches to be reconsidered.</p>
 
                 <div class="story-video">
                   <div class="story-video-title">Video</div>
                   <div class="video-frame-wrap">
-                    <iframe src="https://www.youtube.com/embed/nykLRQoW0rY" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/LdNYusYFLKU" allowfullscreen></iframe>
                   </div>
                   <a class="video-link" href="https://constcourt.gov.az/ru/decision/1325" target="_blank">More details</a>
                 </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="institutions" class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="lang lang-az">Qurumlar</h2>
+          <h2 class="lang lang-en hidden">Institutions</h2>
+        </div>
+
+        <div class="section-card-wrap">
+          <div class="card">
+            <div class="lang lang-az">
+              <p>Bu bölmə müxtəlif ölkələrin Ombudsman təsisatları və milli insan hüquqları institutlarının paylaşdığı hekayələri bir araya gətirmək üçün nəzərdə tutulub.</p>
+              <p>Pilot mərhələdə platforma tərəfdaş qurumların uğur hekayələrini vahid formatda təqdim edəcək.</p>
+              <div class="institution-grid">
+                <div class="institution-item">Azerbaijan Ombudsman Institution</div>
+                <div class="institution-item">Future partner NHRI</div>
+                <div class="institution-item">Future partner Ombudsman</div>
+              </div>
+            </div>
+
+            <div class="lang lang-en hidden">
+              <p>This section is designed to bring together stories shared by Ombudsman institutions and National Human Rights Institutions from different countries.</p>
+              <p>During the pilot phase, the platform will present success stories of partner institutions in a common format.</p>
+              <div class="institution-grid">
+                <div class="institution-item">Azerbaijan Ombudsman Institution</div>
+                <div class="institution-item">Future partner NHRI</div>
+                <div class="institution-item">Future partner Ombudsman</div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <section id="contact" class="content-section">
-    <div class="container">
-      <div class="section-intro">
-        <h2 class="lang lang-az">Əlaqə</h2>
-        <h2 class="lang lang-en hidden">Contact</h2>
-      </div>
+    <section id="submit" class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="lang lang-az">Hekayə göndər</h2>
+          <h2 class="lang lang-en hidden">Submit a Story</h2>
+        </div>
 
-      <div class="section-card-wrap">
-        <div class="contact-card">
-          <div class="lang lang-az">
-            <p class="contact-note">Sayt, videolar və layihə ilə bağlı fikir, rəy və təkliflərinizi bizə göndərə bilərsiniz. Göndərdiyiniz mesaj birbaşa admin tərəfindən qəbul olunacaq.</p>
+        <div class="section-card-wrap">
+          <div class="card">
+            <div class="lang lang-az">
+              <p>Ombudsman təsisatları və milli insan hüquqları institutları öz uğur hekayələrini bu forma vasitəsilə göndərə bilərlər.</p>
+              <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+                <input type="hidden" name="_subject" value="New NHRI Story Submission">
+                <input type="text" name="institution" placeholder="Qurumun adı" required>
+                <input type="text" name="country" placeholder="Ölkə" required>
+                <input type="email" name="email" placeholder="Əlaqə e-maili" required>
+                <input type="text" name="title" placeholder="Hekayənin adı" required>
+                <textarea name="story" placeholder="Problem, təsirlənən şəxslər, görülən iş, dəyişiklik və nəticə" required></textarea>
+                <button type="submit">Göndər</button>
+              </form>
+            </div>
 
-            <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
-              <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
-              <input type="text" name="name" placeholder="Ad və soyad" required>
-              <input type="email" name="email" placeholder="E-mail ünvanınız" required>
-              <textarea name="message" placeholder="Mesajınızı yazın" required></textarea>
-              <button type="submit">Göndər</button>
-            </form>
-          </div>
-
-          <div class="lang lang-en hidden">
-            <p class="contact-note">You may send your comments, feedback and suggestions regarding the website, videos and the project. Your message will be received directly by the admin.</p>
-
-            <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
-              <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
-              <input type="text" name="name" placeholder="Full name" required>
-              <input type="email" name="email" placeholder="Your email address" required>
-              <textarea name="message" placeholder="Write your message" required></textarea>
-              <button type="submit">Send</button>
-            </form>
+            <div class="lang lang-en hidden">
+              <p>Ombudsman institutions and National Human Rights Institutions may submit their success stories through this form.</p>
+              <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+                <input type="hidden" name="_subject" value="New NHRI Story Submission">
+                <input type="text" name="institution" placeholder="Institution name" required>
+                <input type="text" name="country" placeholder="Country" required>
+                <input type="email" name="email" placeholder="Contact email" required>
+                <input type="text" name="title" placeholder="Story title" required>
+                <textarea name="story" placeholder="Problem, affected persons, action taken, change and impact" required></textarea>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="main-footer">
-    <div class="container">
-      <p class="lang lang-az">Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkilinin (Ombudsman) rəsmi internet səhifəsi</p>
-      <p class="lang lang-en hidden">Official website of the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan</p>
-      <p><a href="https://www.ombudsman.az" target="_blank">www.ombudsman.az</a></p>
-      <p>© 2026 Bütün hüquqlar qorunur</p>
-    </div>
-  </footer>
+    <section id="contact" class="content-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="lang lang-az">Əlaqə</h2>
+          <h2 class="lang lang-en hidden">Contact</h2>
+        </div>
+
+        <div class="section-card-wrap">
+          <div class="card">
+            <div class="lang lang-az">
+              <p class="contact-note">Sayt, videolar və layihə ilə bağlı fikir, rəy və təkliflərinizi bizə göndərə bilərsiniz.</p>
+              <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+                <input type="hidden" name="_subject" value="Touching Human Life Contact Message">
+                <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
+                <input type="text" name="name" placeholder="Ad və soyad" required>
+                <input type="email" name="email" placeholder="E-mail ünvanınız" required>
+                <textarea name="message" placeholder="Mesajınızı yazın" required></textarea>
+                <button type="submit">Göndər</button>
+              </form>
+            </div>
+
+            <div class="lang lang-en hidden">
+              <p class="contact-note">You may send your comments, feedback and suggestions regarding the website and the project.</p>
+              <form action="https://formspree.io/f/xreozoaj" method="POST" class="contact-form">
+                <input type="hidden" name="_subject" value="Touching Human Life Contact Message">
+                <input type="hidden" name="_next" value="https://touchinghumanlife.com/">
+                <input type="text" name="name" placeholder="Full name" required>
+                <input type="email" name="email" placeholder="Your email address" required>
+                <textarea name="message" placeholder="Write your message" required></textarea>
+                <button type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="container">
+        <p class="lang lang-az">Azərbaycan Respublikasının İnsan Hüquqları üzrə Müvəkkilinin (Ombudsman) rəsmi internet səhifəsi</p>
+        <p class="lang lang-en hidden">Official website of the Commissioner for Human Rights (Ombudsman) of the Republic of Azerbaijan</p>
+        <p><a href="https://www.ombudsman.az" target="_blank">www.ombudsman.az</a></p>
+        <p>© 2026 Bütün hüquqlar qorunur</p>
+      </div>
+    </footer>
+  </main>
 
   <script>
     const btnAz = document.getElementById("btnAz");
@@ -811,7 +780,7 @@
     const menuToggle = document.getElementById("menuToggle");
     const mainNav = document.getElementById("mainNav");
     const brandText = document.getElementById("brandText");
-    const sections = document.querySelectorAll("section[id]");
+    const sections = document.querySelectorAll("main section[id]");
 
     function setLanguage(lang) {
       if (lang === "az") {
@@ -819,7 +788,7 @@
         langEn.forEach(el => el.classList.add("hidden"));
         btnAz.classList.add("active");
         btnEn.classList.remove("active");
-        brandText.textContent = "İnsan həyatına toxunmaq";
+        brandText.textContent = "Touching Human Life";
       } else {
         langAz.forEach(el => el.classList.add("hidden"));
         langEn.forEach(el => el.classList.remove("hidden"));
@@ -838,8 +807,7 @@
     btnAz.addEventListener("click", () => setLanguage("az"));
     btnEn.addEventListener("click", () => setLanguage("en"));
 
-    const savedLanguage = localStorage.getItem("siteLanguage") || "az";
-    setLanguage(savedLanguage);
+    setLanguage(localStorage.getItem("siteLanguage") || "az");
 
     menuToggle.addEventListener("click", () => {
       mainNav.classList.toggle("open");
